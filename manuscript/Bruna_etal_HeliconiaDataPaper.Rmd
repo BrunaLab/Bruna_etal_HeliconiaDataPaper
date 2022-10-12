@@ -587,52 +587,55 @@ B. **Publications and results:** The following articles have included analyses o
 
 1.  Bruna, E. M. and W. J. Kress. 2002. Habitat fragmentation and the demographic structure of an Amazonian understory herb (*Heliconia acuminata*). *Conservation Biology*, 16(5): 1256-1266.
 
-2.  Bruna, E. M., O. Nardy, S. Y. Strauss, and S. P. Harrison. 2002. Experimental assessment of *Heliconia acuminata* growth in a fragmented Amazonian landscape. *Journal of Ecology*, 90(4): 639-649.
+1.  Bruna, E. M., O. Nardy, S. Y. Strauss, and S. P. Harrison. 2002. Experimental assessment of *Heliconia acuminata* growth in a fragmented Amazonian landscape. *Journal of Ecology*, 90(4): 639-649.
 
-3.  Bruna, E. M. 2002. Effects of forest fragmentation on *Heliconia acuminata* seedling recruitment in the central Amazon. *Oecologia*, 132:235-243.
+1.  Bruna, E. M. 2002. Effects of forest fragmentation on *Heliconia acuminata* seedling recruitment in the central Amazon. *Oecologia*, 132:235-243.
 
-4.  Bruna, E. M. 2003. Are plant populations in fragmented habitats recruitment limited? Tests with an Amazonian herb. *Ecology*, 84(4): 932-947.
+1.  Bruna, E. M. 2003. Are plant populations in fragmented habitats recruitment limited? Tests with an Amazonian herb. *Ecology*, 84(4): 932-947.
 
-5.  Bruna, E. M. 2004. Biological impacts of deforestation and fragmentation. Pages 85-90 in *The Encyclopaedia of Forest Sciences*. J. Burley, J Evans, and J Youngquist, (eds.). Elsevier Press, London.
+1.  Bruna, E. M. 2004. Biological impacts of deforestation and fragmentation. Pages 85-90 in *The Encyclopaedia of Forest Sciences*. J. Burley, J Evans, and J Youngquist, (eds.). Elsevier Press, London.
 
-6.  Morris, W. F., C. A. Pfister, S. Tuljapurkar, C. V. Haridas, C. Boggs, M. S. Boyce, E. M. Bruna, D. R. Church, T. Coulson, D. F. Doak,, S. Forsyth, J-M. Gaillard, C. C. Horvitz, S. Kalisz, B. E. Kendall, T. M. Knight, C. T. Lee, and E. S. Menges. 2008. Longevity can buffer plant and animal populations against changing climatic variability. *Ecology* 89(1): 19-25.
+1. Bruna, E. M., and M. K. Oli. 2005. Demographic effects of habitat fragmentation on a tropical herb: Life-table response experiments. *Ecology* 86:1816-1824.  
 
-7.  Fiske, I., E. M. Bruna, and B. M. Bolker. 2008. Effect of sample size on estimates of population growth rates calculated with matrix models. *PLoS ONE* 3(8): e3080.
+1. Bruna E. M. & W. J. Kress.  2005.  Forest fragments and plant reproduction in Amazonian Brazil.  pp. 141-146 in G. A. Krupnick & W. J. Kress (eds). *Plant conservation: a natural history approach*.  University of Chicago Press, Chicago.
 
-8.  Fiske, I. and E. M. Bruna. 2010. Alternative spatial sampling in studies of plant demography: consequences for estimates of population growth rate. *Plant Ecology* 207(2): 213-225.
+1.  Morris, W. F., C. A. Pfister, S. Tuljapurkar, C. V. Haridas, C. Boggs, M. S. Boyce, E. M. Bruna, D. R. Church, T. Coulson, D. F. Doak,, S. Forsyth, J-M. Gaillard, C. C. Horvitz, S. Kalisz, B. E. Kendall, T. M. Knight, C. T. Lee, and E. S. Menges. 2008. Longevity can buffer plant and animal populations against changing climatic variability. *Ecology* 89(1): 19-25.
 
-9.  Uriarte, M., E. M. Bruna, P. Rubim, M. Anciaes, and I. Jonckeeere. 2010. Effects of forest fragmentation on seedling recruitment of an understory herb: assessing seed vs. safe-site limitation. *Ecology* 91(5):1317-1328.
+1.  Fiske, I., E. M. Bruna, and B. M. Bolker. 2008. Effect of sample size on estimates of population growth rates calculated with matrix models. *PLoS ONE* 3(8): e3080.
 
-10. Gagnon, P. R., E. M. Bruna, P. Rubim, M. R. Darrigo, R. C. Littlel, M. Uriarte, and W. J. Kress. 2011. The growth of an understory herb is chronically reduced in Amazonian forest fragments. *Biological Conservation* 144: 830-835.
+1.  Fiske, I. and E. M. Bruna. 2010. Alternative spatial sampling in studies of plant demography: consequences for estimates of population growth rate. *Plant Ecology* 207(2): 213-225.
 
-11. Uriarte, M. Anciães, M. T.B. da Silva, P. Rubim, E. Johnson, and E. M. Bruna. 2011. Disentangling the drivers of reduced long-distance seed dispersal by birds in an experimentally fragmented landscape. *Ecology* 92(4): 924-93.
+1.  Uriarte, M., E. M. Bruna, P. Rubim, M. Anciaes, and I. Jonckeeere. 2010. Effects of forest fragmentation on seedling recruitment of an understory herb: assessing seed vs. safe-site limitation. *Ecology* 91(5):1317-1328.
 
-12. Côrtes, M., M. Uriarte, M. Lemes, R. Gribel, W. J. Kress, P. Smouse, E. M. Bruna. 2013. Low plant density enhances gene flow in the Amazonian understory herb *Heliconia acuminata*. *Molecular Ecology* 22: 5716-5729.
+1. Gagnon, P. R., E. M. Bruna, P. Rubim, M. R. Darrigo, R. C. Littlel, M. Uriarte, and W. J. Kress. 2011. The growth of an understory herb is chronically reduced in Amazonian forest fragments. *Biological Conservation* 144: 830-835.
 
-13. Brooks, M. E., K. Kristensen, M. R. Darrigo, P. Rubim, M. Uriarte, E. M. Bruna, and B. M Bolker. 2019. Statistical modeling of patterns in annual reproductive rates. *Ecology* 100(7): e02706.
+1. Uriarte, M. Anciães, M. T.B. da Silva, P. Rubim, E. Johnson, and E. M. Bruna. 2011. Disentangling the drivers of reduced long-distance seed dispersal by birds in an experimentally fragmented landscape. *Ecology* 92(4): 924-93.
 
-14. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_. 28(2):463-479.
+1. Côrtes, M., M. Uriarte, M. Lemes, R. Gribel, W. J. Kress, P. Smouse, E. M. Bruna. 2013. Low plant density enhances gene flow in the Amazonian understory herb *Heliconia acuminata*. *Molecular Ecology* 22: 5716-5729.
+
+1. Brooks, M. E., K. Kristensen, M. R. Darrigo, P. Rubim, M. Uriarte, E. M. Bruna, and B. M Bolker. 2019. Statistical modeling of patterns in annual reproductive rates. *Ecology* 100(7): e02706.
+
+1. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_. 28(2):463-479.
 
 \noindent  
 C. **Other relevant publications and datasets:** The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An updated list can be found in the HDP's Github repository (https://github.com/BrunaLab/HeliconiaSurveys).
 
-1. Bruna, Emilio M. 2014. _Heliconia acuminata_ seed set (seeds per fruit), 2008. Figshare. Dataset. https://doi.org/10.6084/m9.figshare.1273926.v2 
 
-1. Emilio M. Bruna and Ana Segalin Andrade. 2011. Edge effects on growth and biomass partitioning of an Amazonian understory herb (_Heliconia acuminata_; Heliconiaceae). _American Journal of Botany_. 98(10):1727–1734. 
-
-1. M. C. Cortes, V. Gowda, W. J. Kress, E. M. Bruna, and M. Uriarte. 2009. Characterization of 10 microsatellite markers for the understorey Amazonian herb _Heliconia acuminata_. _Molecular Ecology Resources_ 9(4):1261–1264.
-
-1.  Emilio M. Bruna and Maria Beatriz Nogueira Ribeiro. 2005. Regeneration and population structure of _Heliconia acuminata_ in Amazonian secondary forests with contrasting land-use histories. _Journal of Tropical Ecology_. 21(1):127–131.
-
-1. Emilio M. Bruna, W. John Kress, Francisco Marques, and Osmaildo Ferreira da Silva. 2004. _Heliconia acuminata_ reproductive success is independent of local floral density. _Acta Amazonica_ 34(3):467–471.
+1. Bruna, E. M. 1999. Seed germination in rainforest fragments. _Nature_ 402(6758):139–139.
  
-1. Emilio M. Bruna (1999). Seed germination in rainforest fragments. _Nature_ 402(6758):139–139.
- 
- 1. Maria Beatriz N. Ribeiro, Emilio M. Bruna, and Waldir Mantovani. 2010. Influence of post-clearing treatment on the recovery of herbaceous plant communities in Amazonian secondary forests. _Restoration Ecology_ 18: 50–58.
- 
-1. Emilio M. Bruna and Maria Beatriz Nogueira Ribeiro. 2005. The compensatory responses of an understory herb to experimental damage are habitat‐dependent. _American Journal of Botany_ 92(12):2101–2106.
+1. Bruna, E. M., W. John Kress, Francisco Marques, and Osmaildo Ferreira da Silva. 2004. _Heliconia acuminata_ reproductive success is independent of local floral density. _Acta Amazonica_ 34(3):467–471.
+
+1. E. M. Bruna and M. B. N. Ribeiro. 2005. The compensatory responses of an understory herb to experimental damage are habitat‐dependent. _American Journal of Botany_ 92(12):2101–2106.
   
-1. Emilio M. Bruna and Maria Beatriz Nogueira Ribeiro. 2005. Regeneration and population structure of _Heliconia acuminata_ in Amazonian secondary forests with contrasting land-use histories. _Journal of Tropical Ecology_ 21(1):127–131.
+1. E. M. Bruna and M. B. N. Ribeiro. 2005. Regeneration and population structure of _Heliconia acuminata_ in Amazonian secondary forests with contrasting land-use histories. _Journal of Tropical Ecology_ 21(1):127–131.
+
+1. Côrtes, M. C., V. Gowda, W. J. Kress, E. M. Bruna, and M. Uriarte. 2009. Characterization of 10 microsatellite markers for the understorey Amazonian herb _Heliconia acuminata_. _Molecular Ecology Resources_ 9(4):1261–1264.
+
+1. Ribeiro, M. B. N., E. M. Bruna, and Waldir Mantovani. 2010. Influence of post-clearing treatment on the recovery of herbaceous plant communities in Amazonian secondary forests. _Restoration Ecology_ 18: 50–58.
+ 
+1. Bruna, Em. M. and A. S. Andrade. 2011. Edge effects on growth and biomass partitioning of an Amazonian understory herb (_Heliconia acuminata_; Heliconiaceae). _American Journal of Botany_. 98(10):1727–1734. 
+
+1. Bruna, E. M. 2014. _Heliconia acuminata_ seed set (seeds per fruit). 2008. Figshare. Dataset. https://doi.org/10.6084/m9.figshare.1273926.v2 
 
 
 # ACKNOWLEDGMENTS

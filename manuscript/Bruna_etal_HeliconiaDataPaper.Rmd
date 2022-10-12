@@ -73,6 +73,11 @@ author:
       - Validation
       - Visualization
       - Writing – review & editing
+  - name          : "Osmaildo Ferreira da Silva"
+    affiliation   : "3"
+    role: 
+      - Investigation
+      - Project administration
   - name        : "W. John Kress"
     affiliation : "5"
     role:
@@ -146,7 +151,7 @@ fontsize: 12pt
 #       after_body: "appendix.tex"
 # appendix: "Appendix.Rmd"
 # appendix: "Bruna_etal_s1_plots.Rmd"
-bibliography: ["references.bib"]
+bibliography: "references.bib"
 csl: ecology.csl
 fig_caption: yes #yes will automatically add "Figure X" to the start 
 always_allow_html: yes
@@ -173,8 +178,7 @@ options(knitr.duplicate.label = 'allow')
 ```
 
 ```{r setup, include = FALSE}
-# library("papaja")
-# r_refs("APCpaper_QSS.bib")
+library("papaja")
 knitr::opts_chunk$set(echo = FALSE,message=FALSE,warning=FALSE)
 library(tidyverse)
 library(gridExtra)
@@ -182,8 +186,8 @@ library(kableExtra)
 library(knitr)
 library(cowplot)
 # library(egg)
-# library(magick)
-# library(citr)
+library(magick)
+library(citr)
 # library(devtools)
 # devtools::install_github("crsh/papaja")
 ```

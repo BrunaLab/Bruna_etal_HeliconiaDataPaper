@@ -135,7 +135,7 @@
   {}{\typeout{Failed to patch title.}}
 \makeatother
 \shorttitle{Tropical plant demography}
-\keywords{Amazon, Brazil, deforestation, demography, edge effects, flowering, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates\newline\indent Word count: 4823}
+\keywords{Amazon, Brazil, deforestation, demography, edge effects, flowering, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates\newline\indent Word count: 4824}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -428,7 +428,7 @@ Plots in 1-ha fragments, 10-ha fragments, and three of the continuous forest sit
 \setcounter{enumi}{3}
 \tightlist
 \item
-  \textbf{Frequency of Data Collection} Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall (available at the HDP Github repository: \url{https://github.com/BrunaLab/HeliconiaDataPaper}), and recorded if plants were damaged by fallen branches or palm fronds (reported here).
+  \textbf{Frequency of Data Collection} Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall (available at the HDP Github repository: \url{https://github.com/BrunaLab/HeliconiaSurveys}), and recorded if plants were damaged by fallen branches or palm fronds (reported here).
 \end{enumerate}
 \end{quote}
 
@@ -489,13 +489,13 @@ Regular visits were made to all 13 plots throughout the rainy season to identify
   \textbf{Latest archive date:} {[}\emph{date of archiving at Dryad to be added upon acceptance}{]}
 \item
   \textbf{Metadata status:} Complete (last update:
-  2022-10-11)
+  NA)
 \item
   \textbf{Data verification \& quality control procedures:} Following each survey, the measurements of plant height and stem number were compared with those from the previous year to identify potential errors in either plant measurement or entry (e.g., a plant with 1 shoot in year t and 11 shoots in year t+1 is likely an error in data entry). Discrepancies were investigated by referring to the original data sheets and, on occasion, returning to the field to remeasure plants.
 \end{enumerate}
 
 \begin{quote}
-An extensive review of the data was also conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g.~extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language (Team 2014). We also used the \texttt{pointblank} library (Iannone and Vargas 2022), which similarly identifies cases in a dataset for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the dataset were also made using R scripts; the code documenting and implementing these changes is archived at Zenodo {[}\emph{url to be added upon acceptance}{]}. Questions regarding the dataset or code should be referred to E. M. Bruna, who will investigate and update the database or code as needed. Code for any post-publication updates is maintained at the \href{https://github.com/BrunaLab/HeliconiaDataPaper}{HDP Github Repository}.
+An extensive review of the data was also conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g.~extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language (Team 2014). We also used the \texttt{pointblank} library (Iannone and Vargas 2022), which similarly identifies cases in a dataset for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the dataset were also made using R scripts; the code documenting and implementing these changes is archived at Zenodo {[}\emph{url to be added upon acceptance}{]}. Questions regarding the dataset or code should be referred to E. M. Bruna, who will investigate and update the database or code as needed. Code for any post-publication updates is maintained at the \href{https://github.com/BrunaLab/HeliconiaSurveys}{HDP Github Repository}.
 \end{quote}
 
 \noindent 
@@ -612,7 +612,7 @@ An extensive review of the data was also conducted in preparation for archiving.
 \end{enumerate}
 
 \begin{quote}
-The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the log is available at the \href{https://github.com/BrunaLab/HeliconiaDataPaper}{HDP Github repository}. In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases the original number was maintained in the database with the plant's status noted as `missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling.
+The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the log is available at the \href{https://github.com/BrunaLab/HeliconiaSurveys}{HDP Github repository}. In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases the original number was maintained in the database with the plant's status noted as `missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling.
 \end{quote}
 
 \begin{quote}
@@ -638,10 +638,10 @@ Due to logistical or financial constraints, no surveys were conducted in plot CF
 \textbf{CLASS V. SUPPLEMENTAL DESCRIPTORS}
 
 \noindent  
-A. \textbf{Computer programs and data-processing algorithms:} The version of the R code used to prepare the data for archiving can be found at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to the code or data can be found at the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaDataPaper}).
+A. \textbf{Computer programs and data-processing algorithms:} The version of the R code used to prepare the data for archiving can be found at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to the code or data can be found at the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}).
 
 \noindent  
-B. \textbf{Publications and results:} The following articles have included analyses of part or all of the dataset. An update list can be found at the HDP Github repository (\url{https://github.com/BrunaLab/HeliconiaDataPaper}).
+B. \textbf{Publications and results:} The following articles have included analyses of part or all of the dataset. An update list can be found at the HDP Github repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -676,7 +676,7 @@ B. \textbf{Publications and results:} The following articles have included analy
 \end{enumerate}
 
 \noindent  
-C. \textbf{Other relevant publications and datasets:} The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An updated list can be found in the HDP's Github repository (\url{https://github.com/BrunaLab/HeliconiaDataPaper}).
+C. \textbf{Other relevant publications and datasets:} The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An updated list can be found in the HDP's Github repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}).
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}

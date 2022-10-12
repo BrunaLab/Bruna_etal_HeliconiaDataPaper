@@ -195,10 +195,10 @@ library(citr)
 ```{r data_load, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
 # knitr::opts_chunk$set(echo = FALSE)
 
-urlfile_plants<-("https://raw.githubusercontent.com/BrunaLab/HeliconiaDataPaper/master/data_clean/HDP_1997_2009.csv")
+urlfile_plants<-("https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data_clean/HDP_1997_2009.csv")
 ha_plants<-read_csv(url(urlfile_plants))
 
-urlfile_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaDataPaper/master/data_clean/HDP_plots.csv"
+urlfile_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data_clean/HDP_plots.csv"
 ha_plots<-read_csv(url(urlfile_plots))
 
 ```
@@ -210,7 +210,7 @@ ha_plots<-read_csv(url(urlfile_plots))
 # Function to find size and last commit (update) of the file
 library(rvest)
 
-plot_url<-paste0("https://github.com/BrunaLab/HeliconiaDataPaper/",
+plot_url<-paste0("https://github.com/BrunaLab/HeliconiaSurveys/",
             "blob/30d5ab92d3b724359d2ae0cf31de413ab01cf6b6/",
             "data_clean/HDP_plots.csv")
   plot_page <- read_html(plot_url)
@@ -259,7 +259,7 @@ file_plots_rows <- nrow(ha_plots)+1
  # Function to find size and last commit (update) of the file
  library(rvest)
 
- plant_url<-paste0("https://github.com/BrunaLab/HeliconiaDataPaper/",
+ plant_url<-paste0("https://github.com/BrunaLab/HeliconiaSurveys/",
              "blob/30d5ab92d3b724359d2ae0cf31de413ab01cf6b6/",
              "data_clean/HDP_1997_2009.csv")
 
@@ -435,7 +435,7 @@ max_infl<-infl_table %>% select(infl) %>% max()
 
 >>Plots in 1-ha fragments, 10-ha fragments, and three of the continuous forest sites were demarcated in January-April 1997. The remaining three plots in continuous forest were demarcated in January 1998, which was also when the first complete census in all plots was conducted. To mark the plants, a team of 2-3 people slowly walked through each subplot and located all *Heliconia acuminata* and marked them with a wooden stake to which was attached an individually numbered aluminum tag. The size of each plant was measured in two ways: (1) by counting its number of vegetative shoots and (2) by measuring the height of the plant from the ground to the top of its highest leaf (rounded to the nearest cm). Three additional plots were established in continuous forest sites in 1998 (CF 4-6); all plants in these plots were tagged and measuring in the same way as in other plots.
 
->d. **Frequency of Data Collection**  Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall (available at the HDP Github repository: https://github.com/BrunaLab/HeliconiaDataPaper), and recorded if plants were damaged by fallen branches or palm fronds (reported here). 
+>d. **Frequency of Data Collection**  Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall (available at the HDP Github repository: https://github.com/BrunaLab/HeliconiaSurveys), and recorded if plants were damaged by fallen branches or palm fronds (reported here). 
 
 >>Regular visits were made to all 13 plots throughout the rainy season to identify reproductive individuals and record the number of flowering shoots (i.e., infloresences) that they had produced.  
 
@@ -459,11 +459,11 @@ max_infl<-infl_table %>% select(infl) %>% max()
 2.  **Latest archive date:** [_date of archiving at Dryad to be added upon acceptance_]
 
 3.  **Metadata status:** Complete (last update: 
-`r substr(file.info("./manuscript/Bruna_etal_HeliconiaDataPaper.Rmd")$mtime, 1,10)`)
+`r substr(file.info("./manuscript/Bruna_etal_HeliconiaSurveys.Rmd")$mtime, 1,10)`)
 
 4.  **Data verification & quality control procedures:** Following each survey, the measurements of plant height and stem number were compared with those from the previous year to identify potential errors in either plant measurement or entry (e.g., a plant with 1 shoot in year t and 11 shoots in year t+1 is likely an error in data entry). Discrepancies were investigated by referring to the original data sheets and, on occasion, returning to the field to remeasure plants. 
 
->An extensive review of the data was also conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022], which similarly identifies cases in a dataset for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the dataset were also made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_]. Questions regarding the dataset or code should be referred to E. M. Bruna, who will investigate and update the database or code as needed. Code for any post-publication updates is maintained at the [HDP Github Repository](https://github.com/BrunaLab/HeliconiaDataPaper).  
+>An extensive review of the data was also conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022], which similarly identifies cases in a dataset for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the dataset were also made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_]. Questions regarding the dataset or code should be referred to E. M. Bruna, who will investigate and update the database or code as needed. Code for any post-publication updates is maintained at the [HDP Github Repository](https://github.com/BrunaLab/HeliconiaSurveys).  
 
 \noindent 
 **B. Accessibility**  
@@ -562,7 +562,7 @@ fwt_perc <- fwt_plots %>%
   round(0)
 ```
 
->The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the log is available at the [HDP Github repository](https://github.com/BrunaLab/HeliconiaDataPaper). In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases the original number was maintained in the database with the plant's status noted as 'missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling. 
+>The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the log is available at the [HDP Github repository](https://github.com/BrunaLab/HeliconiaSurveys). In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases the original number was maintained in the database with the plant's status noted as 'missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling. 
 
 >There were also cases in which established plants were found without tags in subplots where all previously tagged plants had already been located and measured, indicating previous survey teams had failed to find and mark them. These plants were marked, measured, and added to the database with a code indicating they were a established (i.e., post-seedling) but previously unmarked plant (See Table 2). Of the N = `r ent` plants in the dataset, `r perc_ent`% were found without tags after the plot had been established. Almost half of these (`r fwt_perc`%) were in the three plots where _H. acuminata_ density was highest (`r top_3_fwt`).
 
@@ -577,10 +577,10 @@ fwt_perc <- fwt_plots %>%
 **CLASS V. SUPPLEMENTAL DESCRIPTORS**
 
 \noindent  
-A. **Computer programs and data-processing algorithms:** The version of the R code used to prepare the data for archiving can be found at Zenodo [_url to be added_]. Post-publication updates to the code or data can be found at the HDP Github Repository (https://github.com/BrunaLab/HeliconiaDataPaper).  
+A. **Computer programs and data-processing algorithms:** The version of the R code used to prepare the data for archiving can be found at Zenodo [_url to be added_]. Post-publication updates to the code or data can be found at the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys).  
 
 \noindent  
-B. **Publications and results:** The following articles have included analyses of part or all of the dataset. An update list can be found at the HDP Github repository (https://github.com/BrunaLab/HeliconiaDataPaper).
+B. **Publications and results:** The following articles have included analyses of part or all of the dataset. An update list can be found at the HDP Github repository (https://github.com/BrunaLab/HeliconiaSurveys).
 
 <!-- no cite: @brunaEffectsForestFragmentation2002; @cortesLowPlantDensity2013 -->
 
@@ -613,7 +613,7 @@ B. **Publications and results:** The following articles have included analyses o
 14. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_. 28(2):463-479.
 
 \noindent  
-C. **Other relevant publications and datasets:** The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An updated list can be found in the HDP's Github repository (https://github.com/BrunaLab/HeliconiaDataPaper).
+C. **Other relevant publications and datasets:** The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An updated list can be found in the HDP's Github repository (https://github.com/BrunaLab/HeliconiaSurveys).
 
 1. Bruna, Emilio M. 2014. _Heliconia acuminata_ seed set (seeds per fruit), 2008. Figshare. Dataset. https://doi.org/10.6084/m9.figshare.1273926.v2 
 

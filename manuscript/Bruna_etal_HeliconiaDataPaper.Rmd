@@ -151,8 +151,9 @@ fontsize: 12pt
 #       after_body: "appendix.tex"
 # appendix: "Appendix.Rmd"
 # appendix: "Bruna_etal_s1_plots.Rmd"
-bibliography: "references.bib"
-csl: ecology.csl
+bibliography: ["../references.bib"] 
+#.// indicates it is in the parent directory (used for both ms and appendix)
+csl: "../ecology.csl"
 fig_caption: yes #yes will automatically add "Figure X" to the start 
 always_allow_html: yes
 header-includes:

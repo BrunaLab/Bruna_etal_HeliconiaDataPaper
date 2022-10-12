@@ -25,6 +25,8 @@ author:
     
   - name          : "Eric R. Scott"
     affiliation   : "1"
+  - name          : "Osmaildo Ferreira da Silva"
+    affiliation   : "3"
   - name        : "W. John Kress"
     affiliation : "5"
 affiliation:
@@ -58,8 +60,9 @@ output: papaja::apa6_pdf
 #     latex_engine: xelatex
 mainfont: Times New Roman
 fontsize: 12pt
-bibliography: ["references.bib"]
-csl: ecology.csl
+bibliography: ["../references.bib"] 
+#.// indicates it is in the parent directory (used for both ms and appendix)
+csl: "../ecology.csl"
 fig_caption: yes #yes will automatically add "Figure X" to the start 
 always_allow_html: yes
 header-includes:
@@ -110,21 +113,21 @@ The dimensions of the Heliconia Demographic Project (HDP) plots are $50\times100
 ```{r figs, out.width = "100%", fig.cap='Schematic of the location, orientation, and layout of each \\textit{Heliconia} Demographic Plots. The plots are located in Forest Fragments (A-G) or Continuous Forest (H-M).', echo=FALSE}
 
 
-ff1 <- ggdraw() + draw_image('./Manuscript/figures/ff1.jpeg', scale = 1)
-ff2 <- ggdraw() + draw_image('./Manuscript/figures/ff2.jpeg', scale = 1)
-ff3 <- ggdraw() + draw_image('./Manuscript/figures/ff3.jpeg', scale = 1)
-ff4 <- ggdraw() + draw_image('./Manuscript/figures/ff4.jpeg', scale = 1)
-ff5 <- ggdraw() + draw_image('./Manuscript/figures/ff5.jpeg', scale = 1)
-ff6 <- ggdraw() + draw_image('./Manuscript/figures/ff6.jpeg', scale = 1)
-ff7 <- ggdraw() + draw_image('./Manuscript/figures/ff7.jpeg', scale = 1)
+ff1 <- ggdraw() + draw_image('./appendix/figures_app/ff1.jpeg', scale = 1)
+ff2 <- ggdraw() + draw_image('./appendix/figures_app/ff2.jpeg', scale = 1)
+ff3 <- ggdraw() + draw_image('./appendix/figures_app/ff3.jpeg', scale = 1)
+ff4 <- ggdraw() + draw_image('./appendix/figures_app/ff4.jpeg', scale = 1)
+ff5 <- ggdraw() + draw_image('./appendix/figures_app/ff5.jpeg', scale = 1)
+ff6 <- ggdraw() + draw_image('./appendix/figures_app/ff6.jpeg', scale = 1)
+ff7 <- ggdraw() + draw_image('./appendix/figures_app/ff7.jpeg', scale = 1)
 
 
-cf1<- ggdraw() + draw_image('./Manuscript/figures/cf1.jpeg', scale = 1)
-cf2<- ggdraw() + draw_image('./Manuscript/figures/cf2.jpeg', scale = 1)
-cf3<- ggdraw() + draw_image('./Manuscript/figures/cf3.jpeg', scale = 1)
-cf4 <- ggdraw() + draw_image('./Manuscript/figures/cf4.jpeg')
-cf5 <- ggdraw() + draw_image('./Manuscript/figures/cf5.jpeg')
-cf6 <- ggdraw() + draw_image('./Manuscript/figures/cf6.jpeg', scale = 1)
+cf1<- ggdraw() + draw_image('./appendix/figures_app/cf1.jpeg', scale = 1)
+cf2<- ggdraw() + draw_image('./appendix/figures_app/cf2.jpeg', scale = 1)
+cf3<- ggdraw() + draw_image('./appendix/figures_app/cf3.jpeg', scale = 1)
+cf4 <- ggdraw() + draw_image('./appendix/figures_app/cf4.jpeg')
+cf5 <- ggdraw() + draw_image('./appendix/figures_app/cf5.jpeg')
+cf6 <- ggdraw() + draw_image('./appendix/figures_app/cf6.jpeg', scale = 1)
 
 ```
 

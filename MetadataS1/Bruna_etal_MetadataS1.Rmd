@@ -124,7 +124,7 @@ note: |
 # keywords: "Amazon, Brazil, deforestation, demography, edge effects, flowering, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates"  
 # 
 
-floatsintext      : no
+floatsintext      : yes
 figurelist        : yes
 tablelist         : no
 footnotelist      : no
@@ -154,6 +154,8 @@ csl: "../ecology.csl"
 fig_caption: yes #yes will automatically add "Figure X" to the start 
 always_allow_html: yes
 header-includes:
+  - \usepackage{float} #to keep figure in the location placed instead of end
+  - \floatplacement{figure}{H}
   - \usepackage{booktabs}
   - \raggedbottom
  # - \usepackage{endfloat} #[nomarkers] excludes the {insert figure x around here] from main text. The others exclude the list of tables and figures. https://cs.brown.edu/about/system/managed/latex/doc/endfloat.pdf
@@ -171,8 +173,9 @@ editor_options:
     wrap: 72
 ---
 
-```{r GlobalOptions}
+```{r GlobalOptions, include=FALSE}
 options(knitr.duplicate.label = 'allow')
+knitr::opts_chunk$set(fig.pos = 'h')
 ```
 
 ```{r setup, include = FALSE}
@@ -352,6 +355,14 @@ nrows<-nrow(ha_plants)
 
 6.  **Sources of funding:** The initial establishment of plots and the 1997-2002 surveys were supported by grants to E. M. Bruna from the Smithsonian Institution (Graduate Student Research Award), the University of California, Davis (Center for Population Biology Graduate Research Grant, M. E. Mathias Graduate Research Grant), the Biological Dynamics of Forest Fragments Project (Graduate Student Logistics Grant), the National Science Foundation (Dissertation Improvement Grant INT 98-06351), and the Ford Foundation (Dissertation Year Fellowship). The 2001-2005 surveys were supported a grant from the National Science Foundation to E. M. Bruna (Research Starter Grant DEB-0309819). The 2006-2009 surveys were supported by grants from the National Science Foundation to E. M. Bruna (DEB-0614149) and María Uriarte (DEB-0614339). Subsequent analyses and the preparation of these data for archiving were supported by the National Science Foundation (DEB-1948607).  
 
+
+<!-- ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'} -->
+
+<!-- ggdraw() + draw_image('./MetadataS1/figures/bdffp_sat.jpg', scale = 1.0) -->
+
+<!-- ``` -->
+
+
 \noindent  
 **B. Subproject description**  
 
@@ -394,7 +405,7 @@ max_infl<-infl_table %>% select(infl) %>% max()
 
 >> _Heliconia acuminata_ is pollinated by the 'traplining' hummingbirds *Phaeothornis superciliosus* and *P. bourcieri*. Visitation rates to flowers are extremely low [<1 visit hour^-1^, @brunaHeliconiaAcuminataReproductive2004], as are rates of fruit production [@brunaHabitatFragmentationDemographic2002]. The fleshy blue fruits are consumed by birds [@uriarteDisentanglingDriversReduced2011]; in our study sites the primary dispersers are the White-necked Thrush (_Turdus albicollis_), the Thrush-like-Manakin (_Schiffornis turdinus_), and several species of manakin (_Pipra erythrocephala_, _P. pipra_, _Lepidothrix serena_, and _Corapipo gutturalis_). The seeds germinate 6-7 months after dispersal, which coincides with the onset of the rainy season [@brunaSeedGerminationRainforest1999; @brunaEffectsForestFragmentation2002]. Experiments indicate that post-dispersal seed predation is negligible and while rates of seed germination and seedling establishment were generally low, they were significantly higher in continuous forest than forest fragments [@brunaSeedGerminationRainforest1999; @brunaEffectsForestFragmentation2002]. Although some seeds germinated >1 year after experimental dispersal, this was generally rare - especially in fragments. These results are consistent with the generalization that few plant species in lowland tropical forests have long-lived seed banks [@vazquez-yanesPatternsSeedLongevity1993a].   
 
->b.  **Permanent Plots:** Each demographic plot is $50\times100$m and is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Plots in 1-ha fragments were established in a randomly selected half of the fragment, plots in 10-ha fragments are located in the center of the fragment, and plots in continuous forest are located 500-4000 m from any borders with cattle pastures or secondary forest (Fig. 2). The plots furthest apart are from each other are separated by \~70 km.
+>b.  **Permanent Plots:** Each demographic plot is $50\times100$m and is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Plots in 1-ha fragments were established in a randomly selected half of the fragment (Fig. 2), plots in 10-ha fragments are located in the center of the fragment (Fig. 3), and plots in continuous forest are located 500-4000 m from any borders with cattle pastures or secondary forest (Fig. 4). The plots furthest apart are from each other are separated by \~70 km.
 
 >>Plots in 1-ha fragments, 10-ha fragments, and three of the continuous forest sites were demarcated in January-April 1997. The remaining three plots in continuous forest were demarcated in January 1998, which was also when the first complete census in all plots was conducted. To mark the plants, a team of 2-3 people slowly walked through each subplot and located all *Heliconia acuminata* and marked them with a wooden stake to which was attached an individually numbered aluminum tag. The size of each plant was measured in two ways: (1) by counting its number of vegetative shoots and (2) by measuring the height of the plant from the ground to the top of its highest leaf (rounded to the nearest cm). Three additional plots were established in continuous forest sites in 1998 (CF 4-6); all plants in these plots were tagged and measuring in the same way as in other plots.
 
@@ -472,7 +483,88 @@ max_infl<-infl_table %>% select(infl) %>% max()
 
 8. **Start & End Columns:** Start: ``r names(ha_plots)[1]``, End: ``r names(ha_plots)[ncol(ha_plots)]``
 
-9. **Variable Information:** Each row is one plot, with the columns providing plot-specific values for each variable.
+9. **Variable Information:** Each row is one plot, with the columns providing plot-specific values for each variable (Table 1).
+
+<!-- ```{=tex} -->
+<!-- \newpage -->
+<!-- \blandscape -->
+<!-- \nolinenumbers  -->
+<!-- ``` -->
+
+<!-- **Table 1**. Variable Information for Data set File 1: _Descriptors of demographic plots_. -->
+<!-- <!-- table row spacing set with arraystretch --> -->
+<!-- \renewcommand{\arraystretch}{0.75}  -->
+<!-- ```{r table1, caption = 'Iris Table', echo=FALSE, message = FALSE, warning=FALSE, results='asis'} -->
+<!-- # ha_plots <- read_csv("./data_clean/HDP_plots.csv", col_types = cols()) -->
+<!-- Variables<-names(ha_plots) -->
+
+<!-- Definition<-c( -->
+<!--   "Code used to identify a plot", -->
+<!--   "Habitat in which a plot is located", -->
+<!--   "Ranch in which a plot is located", -->
+<!--   "The ID code assigned by the BDFFP to a reserve", -->
+<!--   "For fragments, the year they were initially isolated") -->
+<!-- #  -->
+
+<!-- Code<-c( -->
+<!--   "FF1-FF7: plots in fragments -->
+<!--   \nCF1-CF6: plots in continuous forest", -->
+<!--   "one: 1-ha fragment -->
+<!--   \nten: 10-ha fragment -->
+<!--   \nforest: continuous forest", -->
+<!--   "porto alegre -->
+<!--   \nesteio -->
+<!--   \ndimona", -->
+<!--   "1104, 1202, 1301, 1501, 2107, 2108, 2206, 3209, 3402, NA: For an explanation of the numbering scheme see Gascon and Bierregaard 2001. `NA` indicates a plot is not inside the boundaries of a demarcated BDFFP reserve.", -->
+<!--   "1980, 1983, 1984" -->
+<!-- ) -->
+
+<!-- Storage<-c( -->
+<!--   "string", -->
+<!--   "string", -->
+<!--   "string", -->
+<!--   "string", -->
+<!--   "integer" -->
+<!-- ) -->
+
+<!-- table1<-bind_cols(Variable=Variables, -->
+<!--                   'Definition'=Definition, -->
+<!--                   'Codes'=Code, -->
+<!--                   Storage=Storage) -->
+
+
+<!-- tmp<-knitr::kable(table1, -->
+<!--      align="l", -->
+<!--      # caption.short = "Demo Table", -->
+<!--      # escape=FALSE, -->
+<!--      # row.names = FALSE, -->
+<!--      # caption = "Description of the column names for HDP_plots.csv and description of the data in each column", -->
+<!--      booktabs=T, -->
+<!--      linesep = "" #removes the blank line after every 5 lines -->
+<!--      ) %>%  -->
+<!--   kable_styling(bootstrap_options = "striped",  -->
+<!--                 full_width = F,  -->
+<!--                 position = "left") %>%  -->
+<!--   # kable_styling(bootstrap_options = c("hover"), -->
+<!--   #               full_width = TRUE, -->
+<!--   #               latex_options = c("scale_down", -->
+<!--   #                                 "repeat_header"), -->
+<!--   #               font_size = 10, -->
+<!--   #               position = "left") %>% -->
+<!--   column_spec(1, width = "4em") %>%  -->
+<!--   column_spec(2, width = "15em") %>%  -->
+<!--   column_spec(3, width = "22em") %>%  -->
+<!--   column_spec(4, width = "3em") %>%  -->
+<!--   row_spec(c(1:4), hline_after = T) %>%  -->
+<!--   row_spec(c(0), bold = T) -->
+
+<!-- knitr::asis_output(tmp) -->
+<!-- ``` -->
+
+<!-- ```{=tex} -->
+<!-- \newpage -->
+<!-- \elandscape -->
+<!-- ``` -->
 
 \noindent 
 **B. Data set File 2:** *Heliconia* Demographic Data
@@ -529,8 +621,190 @@ fwt_perc <- fwt_plots %>%
 
 >Due to logistical or financial constraints, no surveys were conducted in plot CF-6 in 2003, in plots CF-4, CF-5, and CF-6 in 2000, or plots FF-5,FF-6, and FF-7 in 2008-2009. 
 
-8. **Variable information:** Each row in the data set is a demographic plot, with columns of data describing that plot. Blanks do not denote missing information, but rather nothing relevant to report.
+8. **Variable information:** Each row in the data set is a demographic plot, with columns of data describing that plot (Table 2). Blanks do not denote missing information, but rather nothing relevant to report.
 
+<!-- ```{=tex} -->
+<!-- \newpage -->
+<!-- \blandscape -->
+<!-- \nolinenumbers  -->
+<!-- ``` -->
+
+<!-- <!-- \renewcommand{\arraystretch}{1.5} --> -->
+<!-- **Table 2**. Variable Information for Data set File 2: _Heliconia Demographic Data_. -->
+<!-- \renewcommand{\arraystretch}{0.75} -->
+<!-- ```{r table2, echo=FALSE, message = FALSE, warning=FALSE} -->
+<!-- ha_plants_t1 <- ha_plants %>% select(-tag_number) -->
+<!-- Variables<-names(ha_plants_t1) -->
+
+<!-- Definition<-c( -->
+<!--   "Plot in which plant is located", -->
+<!--   "Subplot in which plant is located", -->
+<!--   "Unique ID no. assigned to plant", -->
+<!--   "Calendar year of survey", -->
+<!--   "No. of shoots when surveyed", -->
+<!--   "Plant height when surveyed", -->
+<!--   "if flowering, the no. of inflorescences",  -->
+<!--   "Plant was new seedling that year", -->
+<!--   "Plant was established, post-seedling individual with no tag", -->
+<!--   "Plants under fallen trees trunks or crowns, branches, or leaf litter", -->
+<!--   "Obs. of resprouting by plants that had previously lost above-ground parts", -->
+<!--   "Plant status in a census" -->
+<!--   ) -->
+
+<!-- Codes<-c("FF1-FF7, CF1-CF6", -->
+<!--   "A1-E10 in all plots except CF3, where F6-J10", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   # "TRUE = seedling -->
+<!--   # \nFALSE = not a seedling", -->
+<!--   "TRUE, FALSE", -->
+<!--   "TRUE, FALSE", -->
+<!--   # "TRUE = established plant with no tag -->
+<!--   # \nFALSE = seedling or previously marked plant", -->
+<!--   "branch: under fallen branches or tree limbs -->
+<!--   \ntree: under tree crown or multiple fallen trees -->
+<!--   \nlitter: under accumulated leaf-litter", -->
+<!--   " ", -->
+<!--   "measured: alive, measured -->
+<!--   \ndead: died between current and prior census -->
+<!--   \nmissing: not found during census" -->
+<!--   ) -->
+
+<!-- Storage<-c( -->
+<!--   "string", -->
+<!--   "string", -->
+<!--   "integer", -->
+<!--   "integer", -->
+<!--   "integer", -->
+<!--   "integer", -->
+<!--   "integer", -->
+<!--   "logical", -->
+<!--   "logical", -->
+<!--   "string", -->
+<!--   "string", -->
+<!--   "string" -->
+<!-- ) -->
+
+<!-- Range<-c( -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-", -->
+<!--   "-" -->
+<!-- ) -->
+
+
+<!-- Precision<-c( -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   "1", -->
+<!--   "1", -->
+<!--   "1", -->
+<!--   "1", -->
+<!--   "1", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - ", -->
+<!--   " - " -->
+<!-- ) -->
+
+
+<!-- table2<-bind_cols(Variable=Variables,  -->
+<!--                   Definition=Definition, -->
+<!--                   Codes=Codes, -->
+<!--                   Range=Range, -->
+<!--                   Storage=Storage -->
+<!--                   # , -->
+<!--                   # Units=Units, -->
+<!--                   # Precision=Precision -->
+<!--                   ) -->
+
+
+<!-- range_id <-   as.character(range(ha_plants_t1$plant_id, na.rm=TRUE)) -->
+<!-- range_shts <- as.character(range(ha_plants_t1$shts, na.rm=TRUE)) -->
+<!-- range_ht <-   as.character(range(ha_plants_t1$ht, na.rm=TRUE)) -->
+<!-- range_infl <- as.character(range(ha_plants_t1$infl, na.rm=TRUE)) -->
+<!-- range_year <- as.character(range(ha_plants_t1$year, na.rm=TRUE)) -->
+
+
+<!-- range_id<-paste(range_id[1],range_id[2],sep="-") -->
+<!-- range_id<-paste("range =",range_id,"(units = number, precision = 1)",sep=" ") -->
+<!-- range_shts <- paste(range_shts[1],range_shts[2],sep="-") -->
+<!-- range_shts<-paste("range =",range_shts,"(units = shoots, precision = 1)",sep=" ") -->
+<!-- range_ht <- paste(range_ht[1],range_ht[2],sep="-") -->
+<!-- range_ht<-paste("range =",range_ht,"(units = cm, precision = 1)",sep=" ") -->
+<!-- range_infl <- paste(range_infl[1],range_infl[2],sep="-") -->
+<!-- range_infl<-paste("range =",range_infl,"(units = shoots, precision = 1)",sep=" ") -->
+<!-- range_year <- paste(range_year[1],range_year[2],sep="-") -->
+<!-- range_year<-paste("range =",range_year,"(units = year, precision = 1)",sep=" ") -->
+
+<!-- table2<-table2 %>% mutate(Codes=case_when( -->
+<!--     Variable=="shts" ~ range_shts, -->
+<!--     Variable=="ht" ~ range_ht, -->
+<!--     Variable=="infl" ~ range_infl, -->
+<!--     Variable=="year" ~ range_year, -->
+<!--     Variable=="plant_id" ~ range_id, -->
+<!--     TRUE ~ Codes -->
+<!--   )) %>% rename("Codes or Range of Values (Units, Precision)"=Codes) %>%  -->
+<!--   select(-Range) -->
+
+
+<!-- # table2$Definition<-paste(table2$Definition, table2$Range, sep="(Range: ") -->
+<!-- table2<-table2 %>%  -->
+<!--   # filter(Variable !="treefall_status") %>%  -->
+<!--   filter(Variable !="condition")  -->
+
+<!-- tmp<-knitr::kable(table2, -->
+<!--      digits = 2, -->
+<!--      # caption = "Description of the column names for HDP_1997_2009.csv and description of the data in each column", -->
+<!--      format = "latex", -->
+<!--      align="l", -->
+<!--      longtable=F, -->
+<!--      # escape=FALSE, -->
+<!--      # row.names = FALSE, -->
+<!--      booktabs=T, -->
+<!--     linesep = "" #removes the blank line after every 5 lines -->
+<!--     ) %>% -->
+<!--     kable_styling(bootstrap_options = "striped",  -->
+<!--                 full_width = T,  -->
+<!--                 position = "left", -->
+<!--                 latex_options = c("scale_down", -->
+<!--                                   "repeat_header")) %>%  -->
+<!--    # kable_styling(bootstrap_options = c("hover"), -->
+<!--    #              full_width = TRUE, -->
+<!--    #              latex_options = c("scale_down", -->
+<!--    #                                "repeat_header"), -->
+<!--    #              font_size = 10, -->
+<!--    #              position = "left") %>% -->
+<!--   row_spec(c(1:10), hline_after = T) %>%  -->
+<!--   row_spec(c(0), bold = T) %>%  -->
+<!--   column_spec(1, width = "8em") %>% -->
+<!--   column_spec(2, width = "16em") %>% -->
+<!--   column_spec(3, width = "22em") %>% -->
+<!--   column_spec(4, width = "3em") -->
+<!-- # %>%  -->
+<!-- #   column_spec(6, width = "3em") -->
+<!--   # column_spec(6, width = "6em") -->
+
+<!-- knitr::asis_output(tmp) -->
+<!-- ``` -->
+
+
+<!-- ```{=tex} -->
+<!-- \newpage -->
+<!-- \elandscape -->
+<!-- ``` -->
 
 \noindent
 **CLASS V. SUPPLEMENTAL DESCRIPTORS**
@@ -632,19 +906,93 @@ This work would not have been possible without the technicians and field assista
 :::
 \endgroup
 
-<!-- \newpage -->
 
+
+```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
+
+ggdraw() + draw_image('./MetadataS1/figures/bdffp_sat.jpg', scale = 1)
+
+```
+
+\newpage
+
+```{r plotsone, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 1-hectare forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
+ff_one <- ggdraw() + 
+  draw_image('./MetadataS1/figures/Slide1.jpeg',x = -0.25, y = 0.2, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide2.jpeg',x = 0.25, y =0.2, scale = .5)+
+draw_image('./MetadataS1/figures/Slide3.jpeg',x = -0.25, y =-0.15, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide4.jpeg',x = 0.25, y = -0.15, scale = .5)
+
+ff_one
+# 
+# ff1 <- ggdraw() + draw_image('./MetadataS1/figures/Slide1.jpeg', scale = 1)
+# ff2 <- ggdraw() + draw_image('./MetadataS1/figures/Slide2.jpeg', scale = 1)
+# ff3 <- ggdraw() + draw_image('./MetadataS1/figures/Slide3.jpeg', scale = 1)
+# ff4 <- ggdraw() + draw_image('./MetadataS1/figures/Slide4.jpeg', scale = 1)
+# plot_grid(ff1,ff2,ff3,ff4,
+#             # align="hv",
+#             axis = "rlbt",
+# #           # labels = c('A. FF-1 (Dimona, 2017', 'B. FF-2 (Dimona, 2018)', 'C. FF-3 (Esteio, 1104)','D. FF-3 (Porto Alegre, 1301)'),
+#          ncol=2)
+```
+
+\newpage
+```{r plotsten, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 10-ha forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
+
+ff_ten <- ggdraw() + 
+  draw_image('./MetadataS1/figures/Slide5.jpeg',x = -0.25, y = 0.2, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide6.jpeg',x = 0.25, y =0.2, scale = .5)+
+draw_image('./MetadataS1/figures/Slide7.jpeg',x = 0, y =-0.2, scale = .5)
+
+ff_ten
+
+# 
+# ff5 <- ggdraw() + draw_image('./MetadataS1/figures/Slide5.jpeg', scale = 1)
+# ff6 <- ggdraw() + draw_image('./MetadataS1/figures/Slide6.jpeg', scale = 1)
+# ff7 <- ggdraw() + draw_image('./MetadataS1/figures/Slide7.jpeg', scale = 1)
+# plot_grid(ff5,ff6,ff7,
+#           # labels = c('A', 'B', 'C','D','E', 'F', 'G'),
+#           ncol=2)
+```
+\newpage
+```{r plotscf, fig.height = 8, fig.width = 5, fig.align = "center", fig.cap='Schematic of each \\textit{Heliconia} Demographic Plot in the BDFFP Continuous Forest reserves. Note: not to scale.', fig.height = 10, fig.width = 7, fig.align = "center"}
+#
+# cf1<- ggdraw() + draw_image('./MetadataS1/figures/Slide8.jpeg', scale = 1)
+# cf2<- ggdraw() + draw_image('./MetadataS1/figures/Slide9.jpeg', scale = 1)
+# cf3<- ggdraw() + draw_image('./MetadataS1/figures/Slide10.jpeg', scale = 1)
+# cf4 <- ggdraw() + draw_image('./MetadataS1/figures/Slide11.jpeg', scale = 1)
+# cf5 <- ggdraw() + draw_image('./MetadataS1/figures/Slide12.jpeg', scale = 1)
+# cf6 <- ggdraw() + draw_image('./MetadataS1/figures/Slide13.jpeg', scale = 1)
+
+
+cf <- ggdraw() +
+  draw_image('./MetadataS1/figures/Slide8.jpeg',x = -0.25, y = 0.3, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide9.jpeg',x = 0.25, y =0.3, scale = .5)+
+draw_image('./MetadataS1/figures/Slide10.jpeg',x = -0.25, y =-0.05, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide11.jpeg',x = 0.25, y = -0.05, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide12.jpeg',x = -0.25, y = -0.35, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide13.jpeg',x = 0.25, y =-0.35, scale = .5)
+
+cf
+
+# plot_grid(cf1,cf2,cf3,cf4,cf5,cf6,
+#           # labels = c('A', 'B', 'C','D','E', 'F'),
+#           ncol=2)
+
+```
+
+\newpage
 
 ```{=tex}
 \newpage
 \blandscape
-\nolinenumbers 
+\nolinenumbers
 ```
 
-<!-- \renewcommand{\arraystretch}{1.5} -->
-
-
-```{r table1, echo=FALSE, message = FALSE, warning=FALSE, results='asis'}
+**Table 1**. Variable Information for "Data set File 1: _Descriptors of demographic plots_".
+<!-- table row spacing set with arraystretch -->
+\renewcommand{\arraystretch}{0.75} 
+```{r table1, caption = 'Iris Table', echo=FALSE, message = FALSE, warning=FALSE, results='asis'}
 # ha_plots <- read_csv("./data_clean/HDP_plots.csv", col_types = cols())
 Variables<-names(ha_plots)
 
@@ -652,8 +1000,8 @@ Definition<-c(
   "Code used to identify a plot",
   "Habitat in which a plot is located",
   "Ranch in which a plot is located",
-  "The ID code assigned by the BDFFP to a reserve",
-  "For fragments, the year they were initially isolated")
+  "BDFFP's Reserve ID NumberHACKIT",
+  "For fragments, the year initially isolated")
 # 
 
 Code<-c(
@@ -662,10 +1010,11 @@ Code<-c(
   "one: 1-ha fragment
   \nten: 10-ha fragment
   \nforest: continuous forest",
-  "porto alegre
-  \nesteio
-  \ndimona",
-  "1104, 1202, 1301, 1501, 2107, 2108, 2206, 3209, 3402, NA: For an explanation of the numbering scheme see Gascon and Bierregaard 2001. `NA` indicates a plot is not inside the boundaries of a demarcated BDFFP reserve.",
+  "porto alegre, esteio, dimona",
+  # "porto alegre
+  # \nesteio
+  # \ndimona",
+  "1104, 1202, 1301, 1501, 2107, 2108, 2206, 3209, 3402, NA",
   "1980, 1983, 1984"
 )
 
@@ -682,7 +1031,7 @@ table1<-bind_cols(Variable=Variables,
                   'Codes'=Code,
                   Storage=Storage)
 
- 
+
 tmp<-knitr::kable(table1,
      align="l",
      # caption.short = "Demo Table",
@@ -702,27 +1051,42 @@ tmp<-knitr::kable(table1,
   #               font_size = 10,
   #               position = "left") %>%
   column_spec(1, width = "5em") %>% 
-  column_spec(2, width = "16em") %>% 
-  column_spec(3, width = "22em") %>% 
+  column_spec(2, width = "18em") %>% 
+  column_spec(3, width = "21em") %>% 
   column_spec(4, width = "3em") %>% 
-  row_spec(c(1:4), hline_after = T)
-
-knitr::asis_output(tmp)
+  row_spec(c(1:4), hline_after = T) %>% 
+  row_spec(c(0), bold = T) %>% 
+  footnote(
+  #         # general = "Here is a general comments of the table. ",
+            number = "See Gascon and Bierregaard (2001) for details of the reserve numbering scheme. `NA` indicates the plot is not inside a formally demarcated BDFFP reserve.", threeparttable = T)
+  #         # ,
+  #          # alphabet = c("Footnote A; ", "Footnote B; "),
+  #          # symbol = c("Footnote Symbol 1; ", "Footnote Symbol 2")
+  #          )
+knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
+# knitr::asis_output(tmp)
 ```
 
 
+
+\newpage
+
+
+<!-- \renewcommand{\arraystretch}{1.5} -->
+**Table 2**. Variable Information for "Data set File 2: _Heliconia Demographic Data_".
+\renewcommand{\arraystretch}{0.75}
 ```{r table2, echo=FALSE, message = FALSE, warning=FALSE}
 ha_plants_t1 <- ha_plants %>% select(-tag_number)
 Variables<-names(ha_plants_t1)
 
 Definition<-c(
   "Plot in which plant is located",
-  "Subplot in which plant is located",
+  "Subplot in which plant is locatedHACKIT",
   "Unique ID no. assigned to plant",
   "Calendar year of survey",
   "No. of shoots when surveyed",
   "Plant height when surveyed",
-  "if flowering, the no. of inflorescences", 
+  "If flowering, the no. of inflorescences", 
   "Plant was new seedling that year",
   "Plant was established, post-seedling individual with no tag",
   "Plants under fallen trees trunks or crowns, branches, or leaf litter",
@@ -867,72 +1231,16 @@ tmp<-knitr::kable(table2,
    #              font_size = 10,
    #              position = "left") %>%
   row_spec(c(1:10), hline_after = T) %>% 
-  column_spec(1, width = "9em") %>%
+  row_spec(c(0), bold = T) %>% 
+  column_spec(1, width = "8em") %>%
   column_spec(2, width = "16em") %>%
-  column_spec(3, width = "21em") %>%
-  column_spec(4, width = "3em") 
-# %>% 
-#   column_spec(6, width = "3em")
-  # column_spec(6, width = "6em")
+  column_spec(3, width = "22em") %>%
+  column_spec(4, width = "3em") %>% 
+    footnote(number = "For the arrangment of the subplots see Figures 2-4")
 
-knitr::asis_output(tmp)
+knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 ```
-
-
-```{r map, out.width = "100%", fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
-
-ggdraw() + draw_image('./MetadataS1/figures/bdffp_sat.jpg', scale = 1.0)
-
-```
-
 
 ```{=tex}
 \elandscape
 ```
-
-<!-- renaming and renumbering SI: https://github.com/crsh/papaja/issues/259 -->
-<!-- \appendix -->
-<!-- \renewcommand{\appendixname}{Appendix S1} -->
-<!-- \renewcommand{\thefigure}{S\arabic{figure}} \setcounter{figure}{0} -->
-
-<!-- <!-- \renewcommand{\thetable}{SI\arabic{table}} \setcounter{table}{0} --> 
-<!-- <!-- \renewcommand{\theequation}{SI\arabic{table}} \setcounter{equation}{0} -->
-<!-- # Figures S1 & S2 -->
-
-<!-- The dimensions of the Heliconia Demographic Project (HDP) plots are $50\times100$m, and each plot is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Figures S1 and S2 show the orientation of each HDP plot and numbering of the subplots.  -->
-
-<!-- \setcounter{page}{1} -->
-<!-- ```{r figs, out.width = "100%", fig.cap='Schematic of the location, orientation, and layout of each \\textit{Heliconia} Demographic Plots. The plots are located in Forest Fragments (A-G) or Continuous Forest (H-M).', echo=FALSE} -->
-
-
-<!-- ff1 <- ggdraw() + draw_image('./Manuscript/figures/ff1.jpeg', scale = 1) -->
-<!-- ff2 <- ggdraw() + draw_image('./Manuscript/figures/ff2.jpeg', scale = 1) -->
-<!-- ff3 <- ggdraw() + draw_image('./Manuscript/figures/ff3.jpeg', scale = 1) -->
-<!-- ff4 <- ggdraw() + draw_image('./Manuscript/figures/ff4.jpeg', scale = 1) -->
-<!-- ff5 <- ggdraw() + draw_image('./Manuscript/figures/ff5.jpeg', scale = 1) -->
-<!-- ff6 <- ggdraw() + draw_image('./Manuscript/figures/ff6.jpeg', scale = 1) -->
-<!-- ff7 <- ggdraw() + draw_image('./Manuscript/figures/ff7.jpeg', scale = 1) -->
-
-
-<!-- cf1<- ggdraw() + draw_image('./Manuscript/figures/cf1.jpeg', scale = 1) -->
-<!-- cf2<- ggdraw() + draw_image('./Manuscript/figures/cf2.jpeg', scale = 1) -->
-<!-- cf3<- ggdraw() + draw_image('./Manuscript/figures/cf3.jpeg', scale = 1) -->
-<!-- cf4 <- ggdraw() + draw_image('./Manuscript/figures/cf4.jpeg') -->
-<!-- cf5 <- ggdraw() + draw_image('./Manuscript/figures/cf5.jpeg') -->
-<!-- cf6 <- ggdraw() + draw_image('./Manuscript/figures/cf6.jpeg', scale = 1) -->
-
-<!-- ``` -->
-
-<!-- ```{r fig2, fig.cap='Schematic of the orientation and layout of the \\textit{Heliconia} Demographic Plots in forest fragments.',fig.height = 10, fig.width = 7, fig.align = "center"} -->
-<!-- plot_grid(ff1,ff2,ff3,ff4,ff5,ff6,ff7, -->
-<!--           # labels = c('A', 'B', 'C','D','E', 'F', 'G'), -->
-<!--           ncol=2) -->
-<!-- ``` -->
-
-<!-- ```{r fig3, fig.height = 8, fig.width = 5, fig.align = "center", fig.cap='Schematic of the orientation and layout of each \\textit{Heliconia} Demographic Plot in continuous forest.', fig.height = 10, fig.width = 7, fig.align = "center"} -->
-<!-- plot_grid(cf1,cf2,cf3,cf4,cf5,cf6, -->
-<!--           # labels = c('A', 'B', 'C','D','E', 'F'), -->
-<!--           ncol=2) -->
-
-<!-- ``` -->
-

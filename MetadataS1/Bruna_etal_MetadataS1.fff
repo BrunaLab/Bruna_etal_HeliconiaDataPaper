@@ -1,5 +1,10 @@
 \begin{figure*}[hbt]
 \ifnextchar[{\eatarg}{}
-
+[H]
+\includegraphics[width=1\linewidth]{Bruna_etal_MetadataS1_files/figure-latex/plot-1} \caption{ }\label{fig:plot}
+\end{figure*}
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H]
 \includegraphics[width=1\linewidth]{Bruna_etal_MetadataS1_files/figure-latex/map-1} \caption{Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.}\label{fig:map}
 \end{figure*}

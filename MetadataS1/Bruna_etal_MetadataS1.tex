@@ -123,6 +123,20 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
 % \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\HyOrg@maketitle}
@@ -134,7 +148,15 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-\shorttitle{Metadata, Bruna et al.}
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
 \usepackage{lineno}
 
 \linenumbers
@@ -151,6 +173,7 @@
 \usepackage{booktabs}
 \raggedbottom
 \usepackage{tabu}
+\usepackage{makecell}
 \usepackage{pdflscape}
 \usepackage{longtable}
 \newcommand{\blandscape}{\begin{landscape}}
@@ -174,6 +197,16 @@
 \date{}
 
 
+\shorttitle{Metadata, Bruna et al.}
+
+\authornote{
+
+Correspondence concerning this article should be addressed to Emilio M. Bruna. E-mail: \href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA}
+
 \note{
 
 \emph{Open Research Statement}: Data are available as Supporting Information and are also available in Dryad at \url{https://doi.org/------}
@@ -183,8 +216,6 @@
 \newpage
 
 }
-
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA}
 
 \begin{document}
 \maketitle
@@ -815,6 +846,16 @@ Due to logistical or financial constraints, no surveys were conducted in plot CF
 \setcounter{enumi}{15}
 \tightlist
 \item
+  Leite, MCA, R. Sauchuk, F.B. Agusto, O. G. Gaoue, B. Chen-Charpentier. 2021. Modeling the persistence of plant populations in fragmented ecosystems. Ecological Modelling 457:109681.
+\end{enumerate}
+\end{quote}
+
+\begin{quote}
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{16}
+\tightlist
+\item
   Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. \emph{Global Change Biology}. 28(2):463-479.
 \end{enumerate}
 \end{quote}
@@ -1128,7 +1169,6 @@ Zartman, C. E., J. A. Amaral, J. N. Figueiredo, and C. D. Dambros. 2015. Drought
 
 \caption{Schematic of each \textit{Heliconia} Demographic Plot in the BDFFP Continuous Forest reserves. Note: not to scale.}\label{fig:plotscf}
 \end{figure}
-
 \newpage
 
 \newpage
@@ -1136,10 +1176,12 @@ Zartman, C. E., J. A. Amaral, J. N. Figueiredo, and C. D. Dambros. 2015. Drought
 \nolinenumbers
 
 \textbf{Table 1}. Variable Information for ``Data set File 1: \emph{Descriptors of demographic plots}''.
-\renewcommand{\arraystretch}{0.75}
+\renewcommand{\arraystretch}{0.5}
 
+\begin{table}
+\centering
 \begin{threeparttable}
-\begin{tabular}{>{\raggedright\arraybackslash}p{5em}>{\raggedright\arraybackslash}p{18em}>{\raggedright\arraybackslash}p{21em}>{\raggedright\arraybackslash}p{3em}}
+\begin{tabular}{>{\raggedright\arraybackslash}p{6em}>{\raggedright\arraybackslash}p{19em}>{\raggedright\arraybackslash}p{17em}>{\raggedright\arraybackslash}p{3em}}
 \toprule
 \textbf{Variable} & \textbf{Definition} & \textbf{Codes} & \textbf{Storage}\\
 \midrule
@@ -1155,7 +1197,7 @@ forest: continuous forest & string\\
 \midrule
 ranch & Ranch in which a plot is located & porto alegre, esteio, dimona & string\\
 \midrule
-bdffp\_no & BDFFP's Reserve ID Number$^{1}$ & 1104, 1202, 1301, 1501, 2107, 2108, 2206, 3209, 3402, NA & string\\
+bdffp\_no & BDFFPs Reserve ID Number$^{1}$ & 1104, 1202, 1301, 1501, 2107, 2108, 2206, 3209, 3402, NA & string\\
 \midrule
 yr\_isolated & For fragments, the year initially isolated & 1980, 1983, 1984 & integer\\
 \bottomrule
@@ -1164,49 +1206,58 @@ yr\_isolated & For fragments, the year initially isolated & 1980, 1983, 1984 & i
 \item[1] See Gascon and Bierregaard (2001) for details of the reserve numbering scheme. `NA` indicates the plot is not inside a formally demarcated BDFFP reserve.
 \end{tablenotes}
 \end{threeparttable}
+\end{table}
 
 \newpage
 
 \textbf{Table 2}. Variable Information for ``Data set File 2: \emph{Heliconia Demographic Data}''.
-\renewcommand{\arraystretch}{0.75}
+\renewcommand{\arraystretch}{0.5}
 
-\resizebox{\linewidth}{!}{
-\begin{tabu} to \linewidth {>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{16em}>{\raggedright\arraybackslash}p{22em}>{\raggedright\arraybackslash}p{3em}}
+\begin{longtable}[l]{>{\raggedright\arraybackslash}p{8em}>{\raggedright\arraybackslash}p{15em}>{\raggedright\arraybackslash}p{19em}>{\raggedright\arraybackslash}p{3em}}
 \toprule
-\textbf{Variable} & \textbf{Definition} & \textbf{Codes or Range of Values (Units, Precision)} & \textbf{Storage}\\
+\textbf{Variable} & \textbf{Definition} & \textbf{Codes or Range of Values} & \textbf{Storage}\\
 \midrule
+\endfirsthead
+\multicolumn{4}{@{}l}{\textit{(continued)}}\\
+\toprule
+\textbf{Variable} & \textbf{Definition} & \textbf{Codes or Range of Values} & \textbf{Storage}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} For the arrangment of the subplots see Figures 2-4}\\
+\endlastfoot
 plot & Plot in which plant is located & FF1-FF7, CF1-CF6 & string\\
 \midrule
-subplot & Subplot in which plant is located$^{1}$ & A1-E10 in all plots except CF3, where F6-J10 & string\\
+subplot & Subplot in which plant is located & A1-E10 except in CF3, where F6-J10$^{1}$ & string\\
 \midrule
-plant\_id & Unique ID no. assigned to plant & range = 1-8660 (units = number, precision = 1) & integer\\
+plant\_id & Unique ID no. assigned to plant & range = 1-8660 (units: number, precision: 1) & integer\\
 \midrule
-year & Calendar year of survey & range = 1998-2009 (units = year, precision = 1) & integer\\
+year & Calendar year of survey & range = 1998-2009 (units: year, precision: 1) & integer\\
 \midrule
-shts & No. of shoots when surveyed & range = 0-24 (units = shoots, precision = 1) & integer\\
+shts & No. of shoots when surveyed & range = 0-24 (units: shoots, precision: 1) & integer\\
 \midrule
-ht & Plant height when surveyed & range = 0-226 (units = cm, precision = 1) & integer\\
+ht & Plant height when surveyed & range = 0-226 (units: cm, precision: 1) & integer\\
 \midrule
-infl & If flowering, the no. of inflorescences & range = 1-7 (units = shoots, precision = 1) & integer\\
+infl & No. of inflorescences (if flowering) & range = 1-7 (units: shoots, precision: 1) & integer\\
 \midrule
-recorded\_sdlg & Plant was new seedling that year & TRUE, FALSE & logical\\
+recorded\_sdlg & New seedling & TRUE, FALSE & logical\\
 \midrule
-found\_without\_tag & Plant was established, post-seedling individual with no tag & TRUE, FALSE & logical\\
+found\_without\_tag & Established (i.e., post-seedling) individual without tag & TRUE, FALSE & logical\\
 \midrule
-treefall\_status & Plants under fallen trees trunks or crowns, branches, or leaf litter & branch: under fallen branches or tree limbs
+treefall\_status & Plant under fallen tree crowns, branches, or leaf litter & branch: under fallen tree limbs
   
-tree: under tree crown or multiple fallen trees
+tree: under tree crown or fallen trees
   
 litter: under accumulated leaf-litter & string\\
 \midrule
 census\_status & Plant status in a census & measured: alive, measured
   
-dead: died between current and prior census
+dead: died prior to census
   
-missing: not found during census & string\\
-\bottomrule
-\multicolumn{4}{l}{\rule{0pt}{1em}\textsuperscript{1} For the arrangment of the subplots see Figures 2-4}\\
-\end{tabu}}
+missing: not found during census & string\\*
+\end{longtable}
 
 \elandscape
 

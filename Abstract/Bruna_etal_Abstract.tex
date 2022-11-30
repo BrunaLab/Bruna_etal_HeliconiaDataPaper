@@ -100,6 +100,20 @@
 % \setlength{\parindent}{0.5in}
 % \setlength{\parskip}{0pt plus 0pt minus 0pt}
 
+% Overwrite redefinition of paragraph and subparagraph by the default LaTeX template
+% See https://github.com/crsh/papaja/issues/292
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{\parindent}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-1em}%
+  {\normalfont\normalsize\bfseries\itshape\typesectitle}}
+
+\renewcommand{\subparagraph}[1]{\@startsection{subparagraph}{5}{1em}%
+  {0\baselineskip \@plus 0.2ex \@minus 0.2ex}%
+  {-\z@\relax}%
+  {\normalfont\normalsize\itshape\hspace{\parindent}{#1}\textit{\addperi}}{\relax}}
+\makeatother
+
 % \usepackage{etoolbox}
 \makeatletter
 \patchcmd{\HyOrg@maketitle}
@@ -111,8 +125,16 @@
   {\section*{\protect\normalfont{\@title}}}
   {}{\typeout{Failed to patch title.}}
 \makeatother
-\shorttitle{Tropical plant demography}
-\keywords{Amazon, Brazil, deforestation, demography, edge effects, flowering, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates}
+
+\usepackage{xpatch}
+\makeatletter
+\xapptocmd\appendix
+  {\xapptocmd\section
+    {\addcontentsline{toc}{section}{\appendixname\ifoneappendix\else~\theappendix\fi\\: #1}}
+    {}{\InnerPatchFailed}%
+  }
+{}{\PatchFailed}
+\keywords{Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
@@ -147,7 +169,7 @@
 \hypersetup{
   pdfauthor={Emilio M. Bruna1,2,3, Maria Uriarte4, Maria Rosa Darrigo3, Paulo Rubim3, Cristiane F. Jurinitz3, Eric R. Scott1, Osmaildo Ferreira da Silva3, \& W. John Kress5},
   pdflang={en-EN},
-  pdfkeywords={Amazon, Brazil, deforestation, demography, edge effects, flowering, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates},
+  pdfkeywords={Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
@@ -157,6 +179,20 @@
 \date{}
 
 
+\shorttitle{Tropical plant demography}
+
+\authornote{
+
+\emph{Conflict of interest Statement}: The authors declare no conflict of interest.
+
+The authors made the following contributions. Emilio M. Bruna: Methodology, Data curation, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- original draft; Maria Uriarte: Methodology, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- review \& editing; Maria Rosa Darrigo: Methodology, Investigation, Project administration, Writing -- review \& editing; Paulo Rubim: Methodology, Investigation, Project administration, Writing -- review \& editing; Cristiane F. Jurinitz: Methodology, Investigation, Project administration, Writing -- review \& editing; Eric R. Scott: Methodology, Data curation, Software, Validation, Visualization, Writing -- review \& editing; Osmaildo Ferreira da Silva: Investigation, Project administration; W. John Kress: Methodology, Investigation, Funding acquisition, Conceptualization, Methodology, Resources, Writing -- review \& editing.
+
+Correspondence concerning this article should be addressed to Emilio M. Bruna. E-mail: \href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}}
+
+}
+
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA}
+
 \note{
 
 \emph{Corresponding author}: Emilio M. Bruna (\href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}})
@@ -165,24 +201,14 @@
 
 }
 
-\authornote{
-
-\emph{Conflict of interest Statement}: The authors declare no conflict of interest.
-
-The authors made the following contributions. Emilio M. Bruna: Methodology, Data curation, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- original draft; Maria Uriarte: Methodology, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- review \& editing; Maria Rosa Darrigo: Methodology, Investigation, Project administration, Writing -- review \& editing; Paulo Rubim: Methodology, Investigation, Project administration, Writing -- review \& editing; Cristiane F. Jurinitz: Methodology, Investigation, Project administration, Writing -- review \& editing; Eric R. Scott: Methodology, Data curation, Software, Validation, Visualization, Writing -- review \& editing; Osmaildo Ferreira da Silva: Investigation, Project administration; W. John Kress: Methodology, Investigation, Funding acquisition, Conceptualization, Methodology, Resources, Writing -- review \& editing.
-
-}
-
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA}
-
-\abstract{
+\abstract{%
 \par
 
-Habitat fragmentation remains a major focus of research by ecologists decades after being identified as a threat to the integrity of ecosystems. A large body of empirical research has documented the local extinction of plant species from fragments; although the demographic mechanisms underlying these extinctions are rarely known, they are often hypothesized to result from reduced rates of individual growth and survivorship in fragments. This is thought to be especially true in lowland tropical forest, where abiotic conditions in fragments are often dramatically different from those in primary forest. Tests of this hypothesis have been limited by the paucity of long-term demographic data collected in both forest fragments and continuous forest sites.
+Habitat fragmentation remains a major focus of research by ecologists decades after being identified as a threat to the integrity of ecosystems. A large body of empirical research has documented the local extinction of plant species from fragments; although the demographic mechanisms underlying these extinctions are rarely known, they are often hypothesized to result from reduced rates of individual growth and survivorship in fragments. This is thought to be especially true in lowland tropical forest, where abiotic conditions in fragments are often dramatically different from those in primary forest. Tests of this hypothesis have been limited by the paucity of long-term demographic data collected in both forest fragments and continuous forest sites.\\
 
 \par
 
-Here we report 12 years (1997-2009) of annual censuses of 13 populations of the Amazonian understory herb \emph{Heliconia acuminata} (LC Rich.). These surveys were conducted in plots established in the experimentally fragmented landscape of the Biological Dynamics of Forest Fragments Project, located north of Manaus, Brazil. The plots, each \(50\times100\)m, are located in forest fragments of different sizes (N = 4 plots in 1-ha fragments and N = 3 plots in 10-ha fragments) as well as continuous forest (N = 6 plots). The population in each plot was censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that had died, and recorded the size of individuals that survived. During the flowering season we conducted regular surveys to recorded the identity of flowering plants and the number of inflorescences each produced. The resulting dataset comprises \textgreater{} 67,000 plant\(\times\)year records of \textgreater8500 plants, including \textgreater3400 seedlings that became established after the initial census. These data have been used in publications on topics ranging from how fragmentation-related reductions in germination influence population dynamics to tests of statistical methods for analyzing reproductive rates.
+Here we report 12 years (1997-2009) of annual censuses of 13 populations of the Amazonian understory herb \emph{Heliconia acuminata} (LC Rich.). These surveys were conducted in 13 plots established in the experimentally fragmented landscape of the Biological Dynamics of Forest Fragments Project, located north of Manaus, Brazil. Each plot is \(50\times100\)m; four plots are in 1-ha fragments, three plots are in 10-ha fragments, and six plots are in continuous forest. The population in each plot was censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of suriving individuals. Plots were also surveyed during the flowering season to identify reproductive plants and record the number of inflorescences each produced. The dataset comprises \textgreater67,000 plant\(\times\)year records of \textgreater8500 plants, including \textgreater3400 seedlings established after the first census. These data have been used to investigate topics ranging from how fragmentation-related reductions in germination influence population dynamics to tests of statistical methods for analyzing reproductive rates.
 }
 
 

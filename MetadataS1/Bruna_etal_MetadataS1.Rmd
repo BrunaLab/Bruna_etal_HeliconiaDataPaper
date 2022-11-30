@@ -160,6 +160,7 @@ header-includes:
   - \raggedbottom
  # - \usepackage{endfloat} #[nomarkers] excludes the {insert figure x around here] from main text. The others exclude the list of tables and figures. https://cs.brown.edu/about/system/managed/latex/doc/endfloat.pdf
   - \usepackage{tabu}
+  - \usepackage{makecell}
   - \usepackage{pdflscape}
   - \usepackage{longtable}
   - \newcommand{\blandscape}{\begin{landscape}}
@@ -358,7 +359,7 @@ nrows<-nrow(ha_plants)
 
 <!-- ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'} -->
 
-<!-- ggdraw() + draw_image('./MetadataS1/figures/bdffp_sat.jpg', scale = 1.0) -->
+<!-- ggdraw() + draw_image('./MetadataS1/figures/bdffpsat.jpg', scale = 1.0) -->
 
 <!-- ``` -->
 
@@ -864,7 +865,10 @@ fwt_perc <- fwt_plots %>%
 
 >15. Brooks, M. E., K. Kristensen, M. R. Darrigo, P. Rubim, M. Uriarte, E. M. Bruna, and B. M Bolker. 2019. Statistical modeling of patterns in annual reproductive rates. *Ecology* 100(7): e02706.  
 
->16. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_. 28(2):463-479.  
+>16. Leite, MCA, R. Sauchuk, F.B. Agusto, O. G. Gaoue, B. Chen-Charpentier. 2021. Modeling the persistence of plant populations in fragmented ecosystems. Ecological Modelling 457:109681. 
+<!-- DOI: 10.1016/j.ecolmodel.2021.109681   -->
+
+>17. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_. 28(2):463-479.  
 
 2. **Related publications and data sets:** The following data archives and articles include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An update list and downloadable *BibTeX* file can be found at the [HDP Github repository](https://github.com/BrunaLab/HeliconiaSurveys).   
 
@@ -910,21 +914,21 @@ This work would not have been possible without the technicians and field assista
 
 ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
 
-ggdraw() + draw_image('./MetadataS1/figures/bdffp_sat.jpg', scale = 1)
+ggdraw() + draw_image('./MetadataS1/figures/bdffpsat.jpg', scale = 1)
 
 ```
 
 \newpage
 
 ```{r plotsone, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 1-hectare forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
-ff_one <- ggdraw() + 
-  draw_image('./MetadataS1/figures/Slide1.jpeg',x = -0.25, y = 0.2, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide2.jpeg',x = 0.25, y =0.2, scale = .5)+
-draw_image('./MetadataS1/figures/Slide3.jpeg',x = -0.25, y =-0.15, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide4.jpeg',x = 0.25, y = -0.15, scale = .5)
+ff_one <- ggdraw() +
+  draw_image('./MetadataS1/figures/Slide1.jpeg',x = -0.26, y = 0.2, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide2.jpeg',x = 0.26, y =0.2, scale = .5)+
+draw_image('./MetadataS1/figures/Slide3.jpeg',x = -0.26, y =-0.15, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide4.jpeg',x = 0.26, y = -0.15, scale = .5)
 
 ff_one
-# 
+#
 # ff1 <- ggdraw() + draw_image('./MetadataS1/figures/Slide1.jpeg', scale = 1)
 # ff2 <- ggdraw() + draw_image('./MetadataS1/figures/Slide2.jpeg', scale = 1)
 # ff3 <- ggdraw() + draw_image('./MetadataS1/figures/Slide3.jpeg', scale = 1)
@@ -939,14 +943,14 @@ ff_one
 \newpage
 ```{r plotsten, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 10-ha forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
 
-ff_ten <- ggdraw() + 
-  draw_image('./MetadataS1/figures/Slide5.jpeg',x = -0.25, y = 0.2, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide6.jpeg',x = 0.25, y =0.2, scale = .5)+
+ff_ten <- ggdraw() +
+  draw_image('./MetadataS1/figures/Slide5.jpeg',x = -0.26, y = 0.2, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide6.jpeg',x = 0.26, y =0.2, scale = .5)+
 draw_image('./MetadataS1/figures/Slide7.jpeg',x = 0, y =-0.2, scale = .5)
 
 ff_ten
 
-# 
+#
 # ff5 <- ggdraw() + draw_image('./MetadataS1/figures/Slide5.jpeg', scale = 1)
 # ff6 <- ggdraw() + draw_image('./MetadataS1/figures/Slide6.jpeg', scale = 1)
 # ff7 <- ggdraw() + draw_image('./MetadataS1/figures/Slide7.jpeg', scale = 1)
@@ -966,12 +970,12 @@ ff_ten
 
 
 cf <- ggdraw() +
-  draw_image('./MetadataS1/figures/Slide8.jpeg',x = -0.25, y = 0.3, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide9.jpeg',x = 0.25, y =0.3, scale = .5)+
-draw_image('./MetadataS1/figures/Slide10.jpeg',x = -0.25, y =-0.05, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide11.jpeg',x = 0.25, y = -0.05, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide12.jpeg',x = -0.25, y = -0.35, scale = .5)+
-  draw_image('./MetadataS1/figures/Slide13.jpeg',x = 0.25, y =-0.35, scale = .5)
+  draw_image('./MetadataS1/figures/Slide8.jpeg',x = -0.26, y = 0.3, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide9.jpeg',x = 0.26, y =0.3, scale = .5)+
+draw_image('./MetadataS1/figures/Slide10.jpeg',x = -0.26, y =-0.01, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide11.jpeg',x = 0.26, y = -0.01, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide12.jpeg',x = -0.26, y = -0.325, scale = .5)+
+  draw_image('./MetadataS1/figures/Slide13.jpeg',x = 0.26, y =-0.28, scale = .5)
 
 cf
 
@@ -980,7 +984,6 @@ cf
 #           ncol=2)
 
 ```
-
 \newpage
 
 ```{=tex}
@@ -991,8 +994,8 @@ cf
 
 **Table 1**. Variable Information for "Data set File 1: _Descriptors of demographic plots_".
 <!-- table row spacing set with arraystretch -->
-\renewcommand{\arraystretch}{0.75} 
-```{r table1, caption = 'Iris Table', echo=FALSE, message = FALSE, warning=FALSE, results='asis'}
+\renewcommand{\arraystretch}{0.5}
+```{r table1, echo=FALSE, message = FALSE, warning=FALSE, results='asis'}
 # ha_plots <- read_csv("./data_clean/HDP_plots.csv", col_types = cols())
 Variables<-names(ha_plots)
 
@@ -1000,9 +1003,9 @@ Definition<-c(
   "Code used to identify a plot",
   "Habitat in which a plot is located",
   "Ranch in which a plot is located",
-  "BDFFP's Reserve ID NumberHACKIT",
+  "BDFFPs Reserve ID NumberHACKIT",
   "For fragments, the year initially isolated")
-# 
+#
 
 Code<-c(
   "FF1-FF7: plots in fragments
@@ -1031,31 +1034,38 @@ table1<-bind_cols(Variable=Variables,
                   'Codes'=Code,
                   Storage=Storage)
 
+# %>% 
+#   mutate_all(linebreak)
+
+# %>%
+#   mutate_all(linebreak)
+
 
 tmp<-knitr::kable(table1,
      align="l",
+     "latex",
      # caption.short = "Demo Table",
      # escape=FALSE,
      # row.names = FALSE,
      # caption = "Description of the column names for HDP_plots.csv and description of the data in each column",
      booktabs=T,
      linesep = "" #removes the blank line after every 5 lines
-     ) %>% 
-  kable_styling(bootstrap_options = "striped", 
-                full_width = F, 
-                position = "left") %>% 
+     ) %>%
+  kable_styling(bootstrap_options = "striped",
+                full_width = F,
+                position = "center") %>%
   # kable_styling(bootstrap_options = c("hover"),
   #               full_width = TRUE,
   #               latex_options = c("scale_down",
   #                                 "repeat_header"),
   #               font_size = 10,
   #               position = "left") %>%
-  column_spec(1, width = "5em") %>% 
-  column_spec(2, width = "18em") %>% 
-  column_spec(3, width = "21em") %>% 
-  column_spec(4, width = "3em") %>% 
-  row_spec(c(1:4), hline_after = T) %>% 
-  row_spec(c(0), bold = T) %>% 
+  column_spec(1, width = "6em") %>%
+  column_spec(2, width = "19em") %>%
+  column_spec(3, width = "17em") %>%
+  column_spec(4, width = "3em") %>%
+  row_spec(c(1:4), hline_after = T) %>%
+  row_spec(c(0), bold = T) %>%
   footnote(
   #         # general = "Here is a general comments of the table. ",
             number = "See Gascon and Bierregaard (2001) for details of the reserve numbering scheme. `NA` indicates the plot is not inside a formally demarcated BDFFP reserve.", threeparttable = T)
@@ -1067,35 +1077,31 @@ knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 # knitr::asis_output(tmp)
 ```
 
-
-
 \newpage
-
-
 <!-- \renewcommand{\arraystretch}{1.5} -->
 **Table 2**. Variable Information for "Data set File 2: _Heliconia Demographic Data_".
-\renewcommand{\arraystretch}{0.75}
+\renewcommand{\arraystretch}{0.5}
 ```{r table2, echo=FALSE, message = FALSE, warning=FALSE}
 ha_plants_t1 <- ha_plants %>% select(-tag_number)
 Variables<-names(ha_plants_t1)
 
 Definition<-c(
   "Plot in which plant is located",
-  "Subplot in which plant is locatedHACKIT",
+  "Subplot in which plant is located",
   "Unique ID no. assigned to plant",
   "Calendar year of survey",
   "No. of shoots when surveyed",
   "Plant height when surveyed",
-  "If flowering, the no. of inflorescences", 
-  "Plant was new seedling that year",
-  "Plant was established, post-seedling individual with no tag",
-  "Plants under fallen trees trunks or crowns, branches, or leaf litter",
+  "No. of inflorescences (if flowering)",
+  "New seedling",
+  "Established (i.e., post-seedling) individual without tag",
+  "Plant under fallen tree crowns, branches, or leaf litter",
   "Obs. of resprouting by plants that had previously lost above-ground parts",
   "Plant status in a census"
   )
 
 Codes<-c("FF1-FF7, CF1-CF6",
-  "A1-E10 in all plots except CF3, where F6-J10",
+  "A1-E10 except in CF3, where F6-J10HACKIT",
   " - ",
   " - ",
   " - ",
@@ -1107,12 +1113,12 @@ Codes<-c("FF1-FF7, CF1-CF6",
   "TRUE, FALSE",
   # "TRUE = established plant with no tag
   # \nFALSE = seedling or previously marked plant",
-  "branch: under fallen branches or tree limbs
-  \ntree: under tree crown or multiple fallen trees
+  "branch: under fallen tree limbs
+  \ntree: under tree crown or fallen trees
   \nlitter: under accumulated leaf-litter",
   " ",
   "measured: alive, measured
-  \ndead: died between current and prior census
+  \ndead: died prior to census
   \nmissing: not found during census"
   )
 
@@ -1163,7 +1169,7 @@ Precision<-c(
 )
 
 
-table2<-bind_cols(Variable=Variables, 
+table2<-bind_cols(Variable=Variables,
                   Definition=Definition,
                   Codes=Codes,
                   Range=Range,
@@ -1182,15 +1188,15 @@ range_year <- as.character(range(ha_plants_t1$year, na.rm=TRUE))
 
 
 range_id<-paste(range_id[1],range_id[2],sep="-")
-range_id<-paste("range =",range_id,"(units = number, precision = 1)",sep=" ")
+range_id<-paste("range =",range_id,"(units: number, precision: 1)",sep=" ")
 range_shts <- paste(range_shts[1],range_shts[2],sep="-")
-range_shts<-paste("range =",range_shts,"(units = shoots, precision = 1)",sep=" ")
+range_shts<-paste("range =",range_shts,"(units: shoots, precision: 1)",sep=" ")
 range_ht <- paste(range_ht[1],range_ht[2],sep="-")
-range_ht<-paste("range =",range_ht,"(units = cm, precision = 1)",sep=" ")
+range_ht<-paste("range =",range_ht,"(units: cm, precision: 1)",sep=" ")
 range_infl <- paste(range_infl[1],range_infl[2],sep="-")
-range_infl<-paste("range =",range_infl,"(units = shoots, precision = 1)",sep=" ")
+range_infl<-paste("range =",range_infl,"(units: shoots, precision: 1)",sep=" ")
 range_year <- paste(range_year[1],range_year[2],sep="-")
-range_year<-paste("range =",range_year,"(units = year, precision = 1)",sep=" ")
+range_year<-paste("range =",range_year,"(units: year, precision: 1)",sep=" ")
 
 table2<-table2 %>% mutate(Codes=case_when(
     Variable=="shts" ~ range_shts,
@@ -1199,43 +1205,45 @@ table2<-table2 %>% mutate(Codes=case_when(
     Variable=="year" ~ range_year,
     Variable=="plant_id" ~ range_id,
     TRUE ~ Codes
-  )) %>% rename("Codes or Range of Values (Units, Precision)"=Codes) %>% 
+  )) %>% rename("Codes or Range of Values"=Codes) %>%
   select(-Range)
 
 
 # table2$Definition<-paste(table2$Definition, table2$Range, sep="(Range: ")
-table2<-table2 %>% 
-  # filter(Variable !="treefall_status") %>% 
-  filter(Variable !="condition") 
+table2<-table2 %>%
+  # filter(Variable !="treefall_status") %>%
+  filter(Variable !="condition")
 
 tmp<-knitr::kable(table2,
      digits = 2,
      # caption = "Description of the column names for HDP_1997_2009.csv and description of the data in each column",
      format = "latex",
      align="l",
-     longtable=F,
+     longtable=T,
+     # escape = F,
      # escape=FALSE,
      # row.names = FALSE,
      booktabs=T,
     linesep = "" #removes the blank line after every 5 lines
     ) %>%
-    kable_styling(bootstrap_options = "striped", 
-                full_width = T, 
+    kable_styling(bootstrap_options = "striped",
+                full_width = F,
                 position = "left",
+                # font_size = 10,
                 latex_options = c("scale_down",
-                                  "repeat_header")) %>% 
+                                  "repeat_header")) %>%
    # kable_styling(bootstrap_options = c("hover"),
    #              full_width = TRUE,
    #              latex_options = c("scale_down",
    #                                "repeat_header"),
    #              font_size = 10,
    #              position = "left") %>%
-  row_spec(c(1:10), hline_after = T) %>% 
-  row_spec(c(0), bold = T) %>% 
+  row_spec(c(1:10), hline_after = T) %>%
+  row_spec(c(0), bold = T) %>%
   column_spec(1, width = "8em") %>%
-  column_spec(2, width = "16em") %>%
-  column_spec(3, width = "22em") %>%
-  column_spec(4, width = "3em") %>% 
+  column_spec(2, width = "15em") %>%
+  column_spec(3, width = "19em") %>%
+  column_spec(4, width = "3em") %>%
     footnote(number = "For the arrangment of the subplots see Figures 2-4")
 
 knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))

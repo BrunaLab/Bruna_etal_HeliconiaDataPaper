@@ -197,6 +197,7 @@ library(citr)
 urlfile_plants<-("https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data_clean/HDP_1998_2009.csv")
 ha_plants<-read_csv(url(urlfile_plants))
 
+
 urlfile_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data_clean/HDP_plots.csv"
 ha_plots<-read_csv(url(urlfile_plots))
 
@@ -486,7 +487,7 @@ max_infl<-infl_table %>% select(infl) %>% max()
 
 6. **Special Characters:** Missing values are represented with NA.
 
-7. **Authentication Procedures**: checksum (MD5:2d3ec96006667abab1ecc14e72055850)
+7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: :291f80d787c45bb1f4c41180cbbb2de6).
 
 8. **Start & End Columns:** Start: ``r names(ha_plots)[1]``, End: ``r names(ha_plots)[ncol(ha_plots)]``
 
@@ -507,7 +508,8 @@ max_infl<-infl_table %>% select(infl) %>% max()
 
 6. **Special Characters:** Missing values are represented with NA. 
 
-7. **Authentication Procedures**: Checksum (MD5:15bbb4869fe192649e93d3474d3145d1)
+7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: :291f80d787c45bb1f4c41180cbbb2de6).
+
 
 8. **Start & End Columns:** Start: ``r names(ha_plants)[1]``, End: ``r names(ha_plants)[ncol(ha_plants)]``
 
@@ -547,7 +549,7 @@ fwt_perc <- fwt_plots %>%
 
 >Due to logistical or financial constraints, no surveys were conducted in plot CF-6 in 2003, in plots CF-4, CF-5, and CF-6 in 2000, or plots FF-5,FF-6, and FF-7 in 2008-2009. 
 
-8. **Variable information:** Each row in the data set is a demographic plot, with columns of data describing that plot (Table 2). Blanks do not denote missing information, but rather nothing relevant to report.
+10. **Variable information:** Each row in the data set is a demographic plot, with columns of data describing that plot (Table 2). Blanks do not denote missing information, but rather nothing relevant to report.
 
 \noindent
 **CLASS V. SUPPLEMENTAL DESCRIPTORS**
@@ -655,7 +657,7 @@ This work would not have been possible without the technicians and field assista
 \endgroup
 
 
-
+\newpage
 ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
 
 ggdraw() + draw_image('./MetadataS1/figures/bdffpsat.jpg', scale = 1)

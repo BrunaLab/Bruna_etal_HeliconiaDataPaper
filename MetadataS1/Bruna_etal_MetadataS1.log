@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  6 JAN 2023 18:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.1.4)  13 JAN 2023 17:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -801,67 +801,67 @@ File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 317.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28]
-<Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf, id=387, 469.755pt x 277.035pt>
+) [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]
+<Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf, id=391, 469.755pt x 277.035pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf  used on input line 1144.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf  used on input line 1145.
 (pdftex.def)             Requested size: 469.75386pt x 277.03432pt.
-[29 <./Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf, id=399, 505.89pt x 506.89375pt>
+[30 <./Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf>]
+<Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf, id=403, 505.89pt x 506.89375pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf  used on input line 1151.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf  used on input line 1152.
 (pdftex.def)             Requested size: 469.76265pt x 470.69475pt.
-[30 <./Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf, id=414, 505.89pt x 543.02875pt>
+[31 <./Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf>]
+<Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf, id=419, 505.89pt x 543.02875pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf  used on input line 1161.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf  used on input line 1162.
 (pdftex.def)             Requested size: 469.76265pt x 504.24919pt.
-[31 <./Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf, id=429, 505.89pt x 681.54625pt>
+[32 <./Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf>]
+<Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf, id=433, 505.89pt x 681.54625pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf  used on input line 1170.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf  used on input line 1171.
 (pdftex.def)             Requested size: 469.76265pt x 632.87471pt.
 
-LaTeX Warning: Float too large for page by 40.43965pt on input line 1175.
+LaTeX Warning: Float too large for page by 40.43965pt on input line 1176.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[32 <./Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf>]
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1190--1191
+[33 <./Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf>]
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1191--1192
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
-[33
+[34
 
 ]
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1222--1223
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1223--1224
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
 
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1227--1228
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1228--1229
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
-[34] AED endfloat: Processing end Figures and Tables (./Bruna_etal_MetadataS1.aux) ) 
+[35] AED endfloat: Processing end Figures and Tables (./Bruna_etal_MetadataS1.aux) ) 
 Here is how much of TeX's memory you used:
- 19673 strings out of 478053
- 328665 string characters out of 5839637
+ 19674 strings out of 478053
+ 328672 string characters out of 5839637
  1867793 words of memory out of 5000000
  39096 multiletter control sequences out of 15000+600000
  567797 words of font info for 143 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  74i,14n,81p,1776b,693s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Bruna_etal_MetadataS1.pdf (34 pages, 5777382 bytes).
+Output written on Bruna_etal_MetadataS1.pdf (35 pages, 5777635 bytes).
 PDF statistics:
- 558 PDF objects out of 1000 (max. 8388607)
- 470 compressed objects within 5 object streams
- 198 named destinations out of 1000 (max. 500000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 474 compressed objects within 5 object streams
+ 199 named destinations out of 1000 (max. 500000)
  28717 words of extra memory for PDF output out of 29859 (max. 10000000)
 

@@ -200,15 +200,28 @@ ha_plants<-read_csv(url(urlfile_plants))
 urlfile_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_plots.csv"
 ha_plots<-read_csv(url(urlfile_plots))
 
+# This is to save the info on the version of the data sets used in the paper 
 urlfile_v_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_plots_version_info.txt"
 version_plots<-read_lines(url(urlfile_v_plots))
 
 urlfile_v_survey<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_survey_version_info.txt"
 version_survey<-read_lines(url(urlfile_v_survey))
 
+version_survey$file<-"survey"
+names(version_survey)<-c("version", "date", "file")
+version_plots$file<-"plots"
+names(version_plots)<-c("version", "date", "file")
+versions_for_ms<-bind_rows(as_tibble(version_survey),
+                           as_tibble(version_plots)) %>% 
+  relocate(file,.before=1)
+write_csv(versions_for_ms,"./MetadataS1/versions_for_ms.csv")
+
+
+
 # these data were for a pilot study on self-fertilization and are useful records of number fof flowers, fruits, etc.
 urlfile_reprodata2<-paste0("https://raw.githubusercontent.com/BrunaLab/Hacuminata_leaf_shoot_height_data/master/data_clean/ha_size_data_1998_cor.csv")
 ha_repro2<-read_csv(url(urlfile_reprodata2))
+
 
 ```
 
@@ -340,7 +353,7 @@ nrows<-nrow(ha_plants)
 <!-- Be sure to include number of plants, transitions, years, etc in abstract and text! -->
 
 
-2. **Abstract:** Habitat fragmentation is thought to be a leading cause of extinction, but the demography of species in fragmented landscapes remains poorly understood. This is particularly true of those in tropical ecosystems, where studies monitoring populations of species across all life-history stages in both fragments and continuous habitat are virtually nonexistent. Here we report 11 years (1998-2009) of annual censuses of 13 populations of the Amazonian understory herb _Heliconia acuminata_ (LC Rich.). These surveys were conducted in plots established in the experimentally fragmented landscape of the Biological Dynamics of Forest Fragments Project, located north of Manaus, Brazil. The plots, each $50\times100$m, are located in forest fragments of different sizes (N = 4 plots in 1-ha fragments and N = 3 plots in 10-ha fragments) as well as continuous forest (N = 6 plots). The population in each plot was censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that had died, and recorded the size of individuals that survived. During the flowering season we conducted regular surveys to recorded the identity of flowering plants and the number of inflorescences each produced. The resulting data set comprises >`r round(nrows,-3)` plant$\times$year records of `r nplants` plants, including `r nsdlgs` seedlings that became established after the initial census. These data have been used in publications on topics ranging from how fragmentation-related reductions in germination influence population dynamics to tests of statistical methods for analyzing reproductive rates (see _Class V Supplemental Descriptors_, below). 
+2. **Abstract:** Habitat fragmentation remains a major focus of research by ecologists decades after being put forward as a threat to the integrity of ecosystems. While studies have documented myriad biotic changes in fragmented landscapes, including the local extinction of species from fragments, the demographic mechanisms underlying these extinctions are rarely known. However, many of them – especially in lowland tropical forests – are thought to be driven by one of two mechanisms: (1) reduced recruitment in fragments resulting from changes in the diversity or abundance of pollinators and seed dispersers or (2) increased rates of individual mortality in fragments due to dramatically altered abiotic conditions, especially near fragment edges. Unfortunately, there have been few tests of these potential mechanisms due to the paucity of long-term and comprehensive demographic data collected in both forest fragments and continuous forest sites. Here we report 11 years (1998-2009) of demographic data from populations of the Amazonian understory herb _Heliconia acuminata_ (LC Rich.) found at Brazil's Biological Dynamics of Forest Fragments Project (BDFFP). The resulting data set comprises >`r round(nrows,-3)` plant$\times$year records of `r nplants` plants, including `r nsdlgs` seedlings that became established after the initial census. Seven populations were in experimentally isolated fragments (one in each of four 1-ha fragments and one in each of three 10-ha fragments), with the remaining six populations in continuous forest. Each population was in a $50\times100$m permanent plot, with the distance between plots ranging from 500 m-60 km. The plants in each plot were censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of surviving individuals. Each plot was also surveyed 4-5 times during the flowering season to identify reproductive plants and record the number of inflorescences each produced. These data have been used to investigate topics ranging from the way fragmentation-related reductions in germination influence population dynamics to statistical methods for analyzing reproductive rates. This breadth of prior use reflects the value of these data to future researchers. In addition to analyses of plant responses to habitat fragmentation, these data can be used to address fundamental questions in plant demography, the evolutionary ecology of tropical plants, and for developing and testing demographic models and tools. Though we welcome opportunities to collaborate with interested users, there are no restrictions on the use this data set. However, we do request that those using the data for teaching or research inform us of how they are doing so and cite this paper and the data archive when appropriate. Any publication using the data must also include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator or E. M. Bruna. 
 
 
 \noindent
@@ -362,9 +375,9 @@ nrows<-nrow(ha_plants)
 
 >Most studies investigating the effects of forest fragmentation on tropical plants focus on trees [@cordeiroDisperserLimitationRecruitment2009; @jurinitzAbioticBioticInfluences2013; @zambranoForestFragmentationAlters2014], in part because they are major reservoirs of carbon [@laskyRelationshipTreeBiodiversity2014; @slikEnvironmentalCorrelatesTree2010]. However, herbaceous species can comprise up to 30% of the plant species in lowland tropical forests [@gentryGeographicalVariationFertility1987; @iannonePointblankDataValidation2022; @ribeiroInfluencePostclearingTreatment2010; @spicerHerbaceousPlantDiversity2022], where they are habitat and food for myriad animal taxa as well as economically and culturally important non-timber forest products [@deathaydeParticipatoryResearchManagement2006; @nakazonoExperimentalHarvestingNontimber2004]. Despite their biocultural importance, however, the way in which habitat fragmentation and other global change phenomena influences the population dynamics of tropical understory plants remains conspicuously understudied [@brunaHabitatFragmentationPlant2009]. 
 
->The *Heliconia* Demography Project (HDP) was established to address the lack of data on the demography of understory plants in fragmented tropical landscapes. The core of the HDP is annual censuses of thirteen populations of *Heliconia acuminata* located in either continuous forest or experimentally isolated forest fragments at Brazil's Biological Dynamiocs of Forest Fragments Project [@lauranceFateAmazonianForest2011] The primary purpose behind their initial collection was to parameterize size-structured demographic models [@caswellMatrixPopulationModels2000; @ellnerIntegralProjectionModels2006] with which to (1) compare the demography and population dynamics of *H. acuminata* populations in fragments and continuous forest, and (2) test the hypothesis that reductions in seedling establishment in forest fragments would lead to population declines.
+>The *Heliconia* Demography Project (HDP) was established to address the lack of data on the demography of understory plants in fragmented tropical landscapes. The core of the HDP is annual censuses of thirteen populations of *Heliconia acuminata* located in either continuous forest or experimentally isolated forest fragments at Brazil's Biological Dynamiocs of Forest Fragments Project [@lauranceFateAmazonianForest2011] The primary purpose behind their initial collection was to parameterize size-structured demographic models [@caswellMatrixPopulationModels2000; @ellnerIntegralProjectionModels2006] with which to (1) compare the demography and population dynamics of *H. acuminata* populations in fragments and continuous forest, and (2) test the hypothesis that reductions in seedling establishment in forest fragments would lead to population declines. Simulations suggested extreme reductions in recruitment were necessary for population declines [@brunaArePlantPopulations2003], and empirical estimates of seedling establishment in fragments were frequently below these thresholds [@brunaEffectsForestFragmentation2002]. Other early studies demonstrated that the growth rates of plants in fragments, where abiotic conditions are often[@broadbentForestFragmentationEdge2008] severely altered, are much lower than in continuous forest [@brunaExperimentalAssessmentHeliconia2002]. Chronically reduced growth [@gagnonGrowthUnderstoryHerb2011], especially of large plants, is a primary contributor to lower population growth rates in forest fragments [@brunaDemographicEffectsHabitat2005]. More recent studies using the data described here have, among other things, assessed the effects of local environmental conditions, disperser diversity, and disperser behavior on safe-site vs. seed-limitation [@uriarteDisentanglingDriversReduced2011; @uriarteEffectsForestFragmentation2010], quantified genetic structure [@cortesLowPlantDensity2013], and investigated statistical methods for modeling reproductive rates [@brooksStatisticalModelingPatterns2019].
 
-5. **Abstract:** Here we report 12 years (1998-2009) of demographic data from populations of the Amazonian understory herb _H. acuminata_ (LC Rich.) found at Brazil's Biological Dynamics of Forest Fragments Project. The resulting data set comprises >`r round(nrows,-3)` plant$\times$year records of N = `r nplants` plants, including N = `r nsdlgs` seedlings that became established after the initial census. The thirteen populations were in permanent plots located in experimentally isolated fragments (one in each of four 1-ha fragments and one in each of three 10-ha fragments) as well as in six continuous forest sites. Each plot was $50\times100$m, with the distance between plots ranging from 500 m-60 km. The plants in each plot were censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of surviving individuals. Plots were also surveyed during the flowering season to identify reproductive plants and record the number of inflorescences each produced. These data have been used to investigate topics ranging from the way fragmentation-related reductions in germination influence population dynamics to statistical methods for analyzing reproductive rates. This breadth of prior use reflects the potential value of these data to future researchers - an invaluable resource for studies of plant responses to habitat fragmentation, but also also an exceptional one with to address fundamental questions in plant demography, the evolutionary ecology of tropical plants, and for developing and testing demographic models and tools. 
+5. **Abstract:** Habitat fragmentation remains a major focus of research by ecologists decades after being put forward as a threat to the integrity of ecosystems. While studies have documented myriad biotic changes in fragmented landscapes, including the local extinction of species from fragments, the demographic mechanisms underlying these extinctions are rarely known. However, many of them – especially in lowland tropical forests – are thought to be driven by one of two mechanisms: (1) reduced recruitment in fragments resulting from changes in the diversity or abundance of pollinators and seed dispersers or (2) increased rates of individual mortality in fragments due to dramatically altered abiotic conditions, especially near fragment edges. Unfortunately, there have been few tests of these potential mechanisms due to the paucity of long-term and comprehensive demographic data collected in both forest fragments and continuous forest sites. Here we report 11 years (1998-2009) of demographic data from populations of the Amazonian understory herb _Heliconia acuminata_ (LC Rich.) found at Brazil's Biological Dynamics of Forest Fragments Project (BDFFP). The resulting data set comprises >`r round(nrows,-3)` plant$\times$year records of `r nplants` plants, including `r nsdlgs` seedlings that became established after the initial census. Seven populations were in experimentally isolated fragments (one in each of four 1-ha fragments and one in each of three 10-ha fragments), with the remaining six populations in continuous forest. Each population was in a $50\times100$m permanent plot, with the distance between plots ranging from 500 m-60 km. The plants in each plot were censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of surviving individuals. Each plot was also surveyed 4-5 times during the flowering season to identify reproductive plants and record the number of inflorescences each produced. These data have been used to investigate topics ranging from the way fragmentation-related reductions in germination influence population dynamics to statistical methods for analyzing reproductive rates. This breadth of prior use reflects the value of these data to future researchers. In addition to analyses of plant responses to habitat fragmentation, these data can be used to address fundamental questions in plant demography, the evolutionary ecology of tropical plants, and for developing and testing demographic models and tools. Though we welcome opportunities to collaborate with interested users, there are no restrictions on the use this data set. However, we do request that those using the data for teaching or research inform us of how they are doing so and cite this paper and the data archive when appropriate. Any publication using the data must also include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator or E. M. Bruna.  
 
 6.  **Sources of funding:** The initial establishment of plots and the 1998-2002 surveys were supported by grants to E. M. Bruna from the Smithsonian Institution (Graduate Student Research Award), the University of California, Davis (Center for Population Biology Graduate Research Grant, M. E. Mathias Graduate Research Grant), the Biological Dynamics of Forest Fragments Project (Graduate Student Logistics Grant), the National Science Foundation (Dissertation Improvement Grant INT 98-06351), and the Ford Foundation (Dissertation Year Fellowship). The 2001-2005 surveys were supported a grant from the National Science Foundation to E. M. Bruna (Research Starter Grant DEB-0309819). The 2006-2009 surveys were supported by grants from the National Science Foundation to E. M. Bruna (DEB-0614149) and María Uriarte (DEB-0614339). Subsequent analyses and the preparation of these data for archiving were supported by the National Science Foundation (DEB-1948607).  
 
@@ -440,17 +453,17 @@ seed_data <- read_csv(url) %>%
             sd=round(sd(No_of_seeds),2),
             n=n())
 ```
->>_Heliconia acuminata_ flowers during the rainy season, and the likelihood an individual will flower is strongly size size-dependent [@brunaEffectsForestFragmentation2002; @brunaHabitatFragmentationDemographic2002]. Reproductive plants produce distinct flowering shoots without leaves; each shoot terminates in single infloresence comprising red bracts (i.e., modified leaves) subtending white flowers. Reproductive plants can produce multiple flowering shoots, but `r mode_infl`% of the reproductive plants recorded in our demographic suveys produced a single inflorescence (range = `r min_infl`-`r max_infl`). Flowers remain open for a single day, after which the style and perianth abscice and fall from the plant. In 1998 we documented the phenology of N = `r flr_table$n` flowering plants found along the trails of BDFFP Reserve #1501 and found that they produced an average of `r flr_table$mean` $/pm$ `r flr_table$sd` SD flowers each (range: `r flr_table$min`-`r flr_table$max`). Flowers remain open for a single day, after which the style and perianth abscise and fall from the plant. Pollen transfer experiments indicate self-compatibility is extremely low (Bruna and Darrigo, _unpubl. data_).
+>>_Heliconia acuminata_ flowers during the rainy season, and the likelihood an individual will flower is strongly size size-dependent [@brunaEffectsForestFragmentation2002; @brunaHabitatFragmentationDemographic2002; Fig. 2]. Reproductive plants produce distinct flowering shoots without leaves; each shoot terminates in single infloresence comprising red bracts (i.e., modified leaves) subtending white flowers. Reproductive plants can produce multiple flowering shoots, but `r mode_infl`% of the reproductive plants recorded in our demographic suveys produced a single inflorescence (range = `r min_infl`-`r max_infl`). Flowers remain open for a single day, after which the style and perianth abscice and fall from the plant. In 1998 we documented the phenology of N = `r flr_table$n` flowering plants found along the trails of BDFFP Reserve #1501 and found that they produced an average of `r flr_table$mean` $/pm$ `r flr_table$sd` SD flowers each (range: `r flr_table$min`-`r flr_table$max`). Flowers remain open for a single day, after which the style and perianth abscise and fall from the plant. Pollen transfer experiments indicate self-compatibility is extremely low (Bruna and Darrigo, _unpubl. data_).
 
->>_Heliconia_ in the Americas are hummingbird-pollinated. In our field sites _H. acuminata_ is pollinated by the 'traplining' hummingbirds *Phaeothornis superciliosus* and *P. bourcieri*, whose visitation rates to flowers are extremely low [<1 visit hour^-1^, @brunaHeliconiaAcuminataReproductive2004]. This, coupled with _C. nigriceps_ damage to the developing ovaries, results in low rates of fruit production [@brunaHabitatFragmentationDemographic2002]. Successfully pollinated flowers produce a fleshy blue fruit with 1-3 seeds (average = `r seed_data$mean` $\pm$ `r seed_data$sd` SD seeds per fruit; N = `r seed_data$n` fruits) [@Bruna2014]. 
+>>_Heliconia_ in the Americas are hummingbird-pollinated. In our field sites _H. acuminata_ is pollinated by the 'traplining' hummingbirds *Phaeothornis superciliosus* and *P. bourcieri* [@stoufferEffectsForestFragmentation1995; @stoufferForestFragmentationSeasonal1996], whose visitation rates to flowers are extremely low [<1 visit hour^-1^, @brunaHeliconiaAcuminataReproductive2004]. This, coupled with _C. nigriceps_ damage to the developing ovaries, results in low rates of fruit production [@brunaHabitatFragmentationDemographic2002]. Successfully pollinated flowers produce a fleshy blue fruit with 1-3 seeds (average = `r seed_data$mean` $\pm$ `r seed_data$sd` SD seeds per fruit; N = `r seed_data$n` fruits) [@Bruna2014]. 
 
 >>_Heliconia_ fruits are consumed by frugivorous birds, which then disperse the seeds. In our study sites the primary dispersers of _Heliconia acuminata_ seeds are several species of manakin (_Pipra erythrocephala_, _P. pipra_, _Lepidothrix serena_, _Schiffornis turdinus_, _Corapipo gutturalis_) and the White-necked Thrush (_Turdus albicollis_) [@uriarteDisentanglingDriversReduced2011]. Seeds germinate 6-7 months after they are dispersed, which coincides with the onset of the rainy season [@brunaSeedGerminationRainforest1999; @brunaEffectsForestFragmentation2002]. Rates of seed germination and seedling establishment in field experiments were generally low, but they were significantly higher in continuous forest than forest fragments [@brunaSeedGerminationRainforest1999; @brunaEffectsForestFragmentation2002]. Experiments also indicate that post-dispersal seed predation is negligible and that while some seeds did germinate >1 year after experimental dispersal, this was generally rare - especially in fragments. These results are consistent with the generalization that few plant species in lowland tropical forests have long-lived seed banks [@vazquez-yanesPatternsSeedLongevity1993a]. Our experiments, surveys, and field observations also support the conclusion that while clonal spread is common in the _Heliconia_ species found in open or disturbed habitats [e.g., @schleuningFloodingCanopyDynamics2008], the understory _Heliconia_ species such as _H. acuminata_ recruit primarily via seed [@brunaEffectsForestFragmentation2002; @brunaSeedGerminationRainforest1999].
 
 >>*Heliconia acuminata* individuals are easily collected in the field and can be grown in pots or transplanted directly into the ground [@brunaCompensatoryResponsesUnderstory2005; @brunaExperimentalAssessmentHeliconia2002]. Plants can also be readily propagated by segmenting the rhizome [@berryHeliconiaIdentificationGuide1991], resulting in multiple plants of the same genotyope [@brunaEdgeEffectsGrowth2011]. Seeds collected from ripe fruits and treated using protocols described in @brunaEffectsForestFragmentation2002 can be stored for weeks for use in experiments [@brunaEffectsForestFragmentation2002; @brunaRegenerationPopulationStructure2005] and they have high germination rates in field shadehouses. A library of microsatellite markers developed with plants from the demographic surveys is available for analyses based on population genetics [@cortesCharacterization10Microsatellite2009].  
 
->b.  **Permanent Plots:** Each demographic plot is $50\times100$m and is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Plots in 1-ha fragments were established in a randomly selected half of the fragment (Fig. 2), plots in 10-ha fragments are located in the center of the fragment (Fig. 3), and plots in continuous forest are located 500-4000 m from any borders with cattle pastures or secondary forest (Fig. 4). The plots furthest apart are from each other are separated by \~70 km.
+>b.  **Permanent Plots:** Each demographic plot is $50\times100$m and is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Plots in 1-ha fragments were established in a randomly selected half of the fragment (Fig. 3), plots in 10-ha fragments are located in the center of the fragment (Fig. 4), and plots in continuous forest are located 500-4000 m from any borders with cattle pastures or secondary forest (Fig. 5). The plots furthest apart are from each other are separated by \~70 km.
 
->>Plots in 1-ha fragments, 10-ha fragments, and three of the continuous forest sites (i.e., CF 1-3) were demarcated in January-April 1997, at which time a preliminary census was conducted to test the survey protocols. The remaining three plots in continuous forest (i.e., CF 4-6) were demarcated in January 1998, which was also when the first complete census in all plots was conducted. To mark the plants, a team of 2-3 people slowly walked through each subplot and located all *Heliconia acuminata* and marked them with a wooden stake to which was attached an individually numbered aluminum tag. The size of each plant was measured in two ways: (1) by counting its number of vegetative shoots and (2) by measuring the height of the plant from the ground to the top of its highest leaf (rounded to the nearest cm). Three additional plots were established in continuous forest sites in 1998 (CF 4-6); all plants in these plots were tagged and measuring in the same way as in other plots.
+>>In January 1997 we demarcated four demographic plots in fragments (FF-3,FF-4, FF-6, FF-7) and one in a continuous forest (CF 1) to test survey protocols and conduct a preliminary census. The remaining plots were established in 1998, which was also when the first complete census was conducted in all plots. To find and mark the plants, a team of 2-3 people walked slowly through each subplot to locate any *Heliconia acuminata*, which they then marked with a wooden stake to which was attached an individually numbered aluminum tag. They also recorded (1) how many vegetative shoots the plant had, and (2) its height, measured as the distance from the ground to the top of the tallest leaf (rounded to the nearest cm). Both of these size metrics are highly cvorrelated with the total leaf-area of a plant.
 
 >c. **Frequency of Data Collection:**  Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. Regular visits were made to all 13 plots throughout the rainy season to identify reproductive individuals and record the number of flowering shoots and infloresences that they had produced.  
 
@@ -486,7 +499,7 @@ seed_data <- read_csv(url) %>%
 3.  **Metadata status:** Complete (last update: 
 `r substr(file.info("./MetadataS1/Bruna_etal_MetadataS1.Rmd")$mtime, 1,10)`)
 
-4.  **Data verification:** An extensive review of the data was conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022] to identify cases in the data set for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the data set were made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_], as is the code for generating this manuscript  [_url to be added_]. Questions regarding the data set or code should be posted as ‘issues’ on the project repository (https://github.com/BrunaLab/HeliconiaSurveys/issues) or referred to E. M. Bruna, who will investigate and update the database or code as needed.  Summaries of any post-publication updates will be posted to the ‘updates’ page of the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys), with revised data sets assigned new version numbers based on the ‘Frictionless Data’ guidelines (https://frictionlessdata.io/specs/patterns/). This will allow users to reference the version of the data used in their analyses to ensure their reproducibility.
+4.  **Data verification:** An extensive review of the data was conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022] to identify cases in the data set for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the data set were made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_], as is the code for generating this manuscript  [_url to be added_]. Questions regarding the data set or code should be posted as ‘issues’ on the project repository (https://github.com/BrunaLab/HeliconiaSurveys/issues) or referred to E. M. Bruna, who will investigate and update the database or code as needed.  Summaries of any post-publication updates will be posted to the ‘updates’ page of the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys), with revised data sets assigned new version numbers based on the ‘Frictionless Data’ guidelines (https://frictionlessdata.io/specs/patterns/). This will allow users to reference the version of the data used in their analyses to ensure their reproducibility [reviewed in @10.1371/journal.pbio.3000125].
 
 
 
@@ -700,9 +713,152 @@ This work would not have been possible without the technicians and field assista
 
 
 \newpage
+
 ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
 
 ggdraw() + draw_image('./MetadataS1/figures/bdffpsat.jpg', scale = 1)
+
+```
+
+\newpage
+
+```{r repro, fig.cap='The abundance of and probability of flowering of \\textit{Heliconia acuminata} in Continuous Forest. For each of the survey years (gray lines) we pooled the data from the six demographic plots in Continuous Forest to calculate (A) the number of post-seedling \\textit{H. acuminata} in size categories based on shoot number and (B) the percentage of plants in each size class that produced at least 1 infloresence. The green line is the average of the annual values for each size category.'}
+# fig.cap='', fig.height = 10, fig.width = 7, fig.align = "center"
+
+hacf<-ha_plants %>%
+  filter(str_detect(plot_id,"CF")==TRUE) %>%
+  filter(recorded_sdlg==FALSE) %>%
+  filter(shts>0) %>%
+  filter(is.na(shts)==FALSE)
+
+size<-hacf %>%
+  group_by(year,shts) %>%
+  summarize(n=n_distinct((plant_id)))
+
+repro<-hacf %>%
+  group_by(year,shts) %>%
+  filter(is.na(infl)==FALSE) %>%
+  summarize(n_rep=n_distinct((plant_id)))
+
+
+max_shts<-max(size$shts,na.rm = TRUE)
+cf_rep<-full_join(size,repro) %>%
+  mutate(n_rep = replace_na(n_rep, 0)) %>%
+  mutate(shts_bin = cut(shts, breaks=c(0,1,2, 3, 4, 5,6,7,max_shts),
+                      labels = c("1", "2", "3", "4","5","6","7","8")),
+       .after=shts) %>%
+  group_by(year,shts_bin) %>%
+  mutate(n_bin=sum(n),.after=shts_bin) %>%
+  group_by(year,shts_bin) %>%
+  mutate(n_rep_bin=sum(n_rep),.after=n_bin) %>%
+  relocate(n,.after=shts) %>%
+  relocate(n_rep,.after=n) %>%
+  mutate(perc_n=n_rep/n*100) %>%
+  mutate(perc_bin=n_rep_bin/n_bin*100) %>%
+  arrange(year,shts_bin)
+# cf_rep
+
+cf_rep_summary<-cf_rep %>%
+    group_by(shts_bin) %>%
+    summarize(perc_bin=mean(perc_bin),sd=sd(perc_bin)) %>%
+    mutate(year="mean\n(1998-2012)")
+
+cf_rep<- cf_rep %>%
+  mutate(year=as.character(year))
+
+  plot_data<- full_join(cf_rep,cf_rep_summary,
+                        by=c("perc_bin","shts_bin","year")) %>%
+    mutate(year=as.factor(year)) %>%
+    mutate(shts_bin=as.factor(shts_bin)) %>%
+    mutate(highlight=ifelse(year=="mean\n(1998-2012)","mean\n(1998-2012)","other")) %>%
+    mutate(year=as.character(year))
+# library(hrbrthemes)
+  perc_plot<-plot_data %>%
+    ggplot(aes(x=shts_bin,
+               y=perc_bin,
+               group=year, size=highlight,color=highlight)) +
+    scale_y_continuous(breaks=c(0,10,20,30,40,50,60))+
+    labs(x="shoots",y="% flowering")+
+    geom_line() +
+    expand_limits(x= c(-0, 9))+
+    geom_text(data=plot_data %>% filter(shts_bin=="8") %>% filter(year=="mean\n(1998-2012)"),
+              aes(label = year,
+                  x = shts_bin,
+                  y = perc_bin,
+                  color = highlight),
+              size=2,
+              hjust = 0.6,
+              nudge_x=0.5,
+              # position = position_dodge(0.0)
+              )+
+    scale_x_discrete(labels = c(seq(1,7),expression("">=8)))+
+    # geom_text(aes(label = year))+
+    scale_color_manual(values = c("darkgreen","lightgrey")) +
+    scale_size_manual(values=c(1.0,0.5)) +
+    theme(legend.position="none") +
+    # ggtitle("title") +
+    theme_classic() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=14)
+    )
+  # perc_plot
+# n plot ------------------------------------------------------------------
+  cf_n_summary<-cf_rep %>%
+    group_by(shts_bin) %>%
+    summarize(n_bin=mean(n_bin)) %>%
+    mutate(year="mean\n(1998-2012)")
+
+  cf_rep<- cf_rep %>%
+    mutate(year=as.character(year))
+
+  plot_n_data<- full_join(cf_rep,cf_n_summary,
+                        by=c("n_bin","shts_bin","year")) %>%
+    mutate(year=as.factor(year)) %>%
+    mutate(shts_bin=as.factor(shts_bin)) %>%
+    mutate(highlight=ifelse(year=="mean\n(1998-2012)","mean\n(1998-2012)","other")) %>%
+    mutate(year=as.character(year))
+
+  n_plot<-plot_n_data %>%
+    ggplot(aes(x=shts_bin,
+               y=n_bin,
+               group=year, size=highlight,color=highlight)) +
+    # scale_y_continuous(breaks=c(0,10,20,30,40,50,60))+
+    labs(x="shoots",y="number of plants")+
+    geom_line() +
+    expand_limits(x= c(-0, 9))+
+    geom_text(data=plot_n_data %>% filter(shts_bin=="8") %>% filter(year=="mean\n(1998-2012)"),
+              aes(label = year,
+                  x = shts_bin,
+                  y = n_bin,
+                  color = highlight),
+              size=2,
+              hjust = 0.6,
+              nudge_x=0.5,
+              # position = position_dodge(0.0)
+    )+
+    scale_x_discrete(labels = c(seq(1,7),expression("">=8)))+
+    # geom_text(aes(label = year))+
+    scale_color_manual(values = c("darkgreen","lightgrey")) +
+    scale_size_manual(values=c(1.0,0.5)) +
+    theme(legend.position="none") +
+    # ggtitle("title") +
+    theme_classic() +
+    theme(
+      legend.position="none",
+      plot.title = element_text(size=14)
+    )
+  # n_plot
+
+# join plots --------------------------------------------------------------
+
+library(gridExtra)
+figure_rep<-grid.arrange(n_plot, perc_plot, ncol = 1)
+# figure_rep
+# grid.arrange(n_plot, perc_plot, ncol = 1)
+#
+# figure_rep <- ggdraw() +
+#   draw_image('./MetadataS1/figures/repro_figure.jpeg',x = -0.26, y = 0.3, scale = .5)
 
 ```
 
@@ -746,8 +902,10 @@ ff_ten
 #           # labels = c('A', 'B', 'C','D','E', 'F', 'G'),
 #           ncol=2)
 ```
+
 \newpage
-```{r plotscf, fig.height = 8, fig.width = 5, fig.align = "center", fig.cap='Schematic of each \\textit{Heliconia} Demographic Plot in the BDFFP Continuous Forest reserves. Note: not to scale.', fig.height = 10, fig.width = 7, fig.align = "center"}
+
+```{r plotscf, fig.height = 9, fig.width = 6, fig.align = "center", fig.cap='Schematic of each \\textit{Heliconia} Demographic Plot in the BDFFP Continuous Forest reserves. Note: not to scale.'}
 #
 # cf1<- ggdraw() + draw_image('./MetadataS1/figures/Slide8.jpeg', scale = 1)
 # cf2<- ggdraw() + draw_image('./MetadataS1/figures/Slide9.jpeg', scale = 1)
@@ -772,166 +930,6 @@ cf
 #           ncol=2)
 
 ```
-<!-- \newpage -->
-
-<!-- ```{r repro_fig, fig.cap='Heliconia acuminata abundance and probability of flowering in Continuous Forest. For each of the survey years (gray lines) we pooled the data from the six plots to calculate (A) the number of post-seedling H. acuminata in size categories based on shoot number and (B) the percentage of plants in each size class that produced at least 1 infloresence. The green line is the average of the annual values for each size category.', fig.height = 10, fig.width = 7, fig.align = "center"} -->
-
-
-<!-- hacf<-ha_plants %>%  -->
-<!--   filter(str_detect(plot_id,"CF")==TRUE) %>%  -->
-<!--   filter(recorded_sdlg==FALSE) %>%  -->
-<!--   filter(shts>0) %>%  -->
-<!--   filter(is.na(shts)==FALSE) -->
-
-<!-- size<-hacf %>%  -->
-<!--   group_by(year,shts) %>%  -->
-<!--   summarize(n=n_distinct((plant_id))) -->
-
-<!-- repro<-hacf %>% -->
-<!--   group_by(year,shts) %>%  -->
-<!--   filter(is.na(infl)==FALSE) %>%  -->
-<!--   summarize(n_rep=n_distinct((plant_id))) -->
-
-
-<!-- max_shts<-max(size$shts,na.rm = TRUE) -->
-<!-- cf_rep<-full_join(size,repro) %>%  -->
-<!--   mutate(n_rep = replace_na(n_rep, 0)) %>%  -->
-<!--   mutate(shts_bin = cut(shts, breaks=c(0,1,2, 3, 4, 5,6,7,max_shts),  -->
-<!--                       labels = c("1", "2", "3", "4","5","6","7","8")), -->
-<!--        .after=shts) %>%  -->
-<!--   group_by(year,shts_bin) %>%  -->
-<!--   mutate(n_bin=sum(n),.after=shts_bin) %>%  -->
-<!--   group_by(year,shts_bin) %>%  -->
-<!--   mutate(n_rep_bin=sum(n_rep),.after=n_bin) %>%  -->
-<!--   relocate(n,.after=shts) %>%  -->
-<!--   relocate(n_rep,.after=n) %>%  -->
-<!--   mutate(perc_n=n_rep/n*100) %>%  -->
-<!--   mutate(perc_bin=n_rep_bin/n_bin*100) %>%  -->
-<!--   arrange(year,shts_bin)  -->
-
-<!-- # cf_rep -->
-
-<!-- cf_rep_summary<-cf_rep %>%  -->
-<!--     group_by(shts_bin) %>%  -->
-<!--     summarize(perc_bin=mean(perc_bin),sd=sd(perc_bin)) %>%  -->
-<!--     mutate(year="mean\n(1998-2012)") -->
-
-<!-- cf_rep<- cf_rep %>%  -->
-<!--   mutate(year=as.character(year)) -->
-
-
-
-<!--   plot_data<- full_join(cf_rep,cf_rep_summary, -->
-<!--                         by=c("perc_bin","shts_bin","year")) %>%  -->
-<!--     mutate(year=as.factor(year)) %>%  -->
-<!--     mutate(shts_bin=as.factor(shts_bin)) %>% -->
-<!--     mutate(highlight=ifelse(year=="mean\n(1998-2012)","mean\n(1998-2012)","other")) %>%  -->
-<!--     mutate(year=as.character(year)) -->
-
-
-<!-- # library(hrbrthemes) -->
-
-
-
-
-<!--   perc_plot<-plot_data %>% -->
-<!--     ggplot(aes(x=shts_bin,  -->
-<!--                y=perc_bin,  -->
-<!--                group=year, size=highlight,color=highlight)) + -->
-<!--     scale_y_continuous(breaks=c(0,10,20,30,40,50,60))+ -->
-<!--     labs(x="shoots",y="percent flowering")+ -->
-<!--     geom_line() + -->
-<!--     expand_limits(x= c(-0, 9))+ -->
-<!--     geom_text(data=plot_data %>% filter(shts_bin=="8") %>% filter(year=="mean\n(1998-2012)"),  -->
-<!--               aes(label = year, -->
-<!--                   x = shts_bin,  -->
-<!--                   y = perc_bin,  -->
-<!--                   color = highlight), -->
-<!--               size=5, -->
-<!--               hjust = 0.5, -->
-<!--               nudge_x=0.4, -->
-<!--               # position = position_dodge(0.0) -->
-<!--               )+  -->
-<!--     scale_x_discrete(labels = c(seq(1,7), "\u2265 8"))+ -->
-<!--     # geom_text(aes(label = year))+ -->
-<!--     scale_color_manual(values = c("darkgreen","lightgrey")) + -->
-<!--     scale_size_manual(values=c(1.0,0.5)) + -->
-<!--     theme(legend.position="none") + -->
-<!--     # ggtitle("title") + -->
-<!--     theme_classic() + -->
-<!--     theme( -->
-<!--       legend.position="none", -->
-<!--       plot.title = element_text(size=14) -->
-<!--     ) -->
-<!--   # perc_plot -->
-
-
-
-
-<!-- # n plot ------------------------------------------------------------------ -->
-
-
-<!--   cf_n_summary<-cf_rep %>%  -->
-<!--     group_by(shts_bin) %>%  -->
-<!--     summarize(n_bin=mean(n_bin)) %>%  -->
-<!--     mutate(year="mean\n(1998-2012)") -->
-
-<!--   cf_rep<- cf_rep %>%  -->
-<!--     mutate(year=as.character(year)) -->
-
-
-
-<!--   plot_n_data<- full_join(cf_rep,cf_n_summary, -->
-<!--                         by=c("n_bin","shts_bin","year")) %>%  -->
-<!--     mutate(year=as.factor(year)) %>%  -->
-<!--     mutate(shts_bin=as.factor(shts_bin)) %>% -->
-<!--     mutate(highlight=ifelse(year=="mean\n(1998-2012)","mean\n(1998-2012)","other")) %>%  -->
-<!--     mutate(year=as.character(year))   -->
-
-
-<!--   n_plot<-plot_n_data %>% -->
-<!--     ggplot(aes(x=shts_bin,  -->
-<!--                y=n_bin,  -->
-<!--                group=year, size=highlight,color=highlight)) + -->
-<!--     # scale_y_continuous(breaks=c(0,10,20,30,40,50,60))+ -->
-<!--     labs(x="shoots",y="number of plants")+ -->
-<!--     geom_line() + -->
-<!--     expand_limits(x= c(-0, 9))+ -->
-<!--     geom_text(data=plot_n_data %>% filter(shts_bin=="8") %>% filter(year=="mean\n(1998-2012)"),  -->
-<!--               aes(label = year, -->
-<!--                   x = shts_bin,  -->
-<!--                   y = n_bin,  -->
-<!--                   color = highlight), -->
-<!--               size=5, -->
-<!--               hjust = 0.5, -->
-<!--               nudge_x=0.4, -->
-<!--               # position = position_dodge(0.0) -->
-<!--     )+  -->
-<!--     scale_x_discrete(labels = c(seq(1,7), "\u2265 8"))+ -->
-<!--     # geom_text(aes(label = year))+ -->
-<!--     scale_color_manual(values = c("darkgreen","lightgrey")) + -->
-<!--     scale_size_manual(values=c(1.0,0.5)) + -->
-<!--     theme(legend.position="none") + -->
-<!--     # ggtitle("title") + -->
-<!--     theme_classic() + -->
-<!--     theme( -->
-<!--       legend.position="none", -->
-<!--       plot.title = element_text(size=14) -->
-<!--     ) -->
-<!--   # n_plot -->
-
-
-<!-- # join plots -------------------------------------------------------------- -->
-
-<!-- library(gridExtra) -->
-<!-- figure_rep<-grid.arrange(n_plot, perc_plot, ncol = 1) -->
-<!-- figure_rep -->
-<!-- #  -->
-<!-- # figure_rep <- ggdraw() + -->
-<!-- #   draw_image('./MetadataS1/figures/repro_figure.jpeg',x = -0.26, y = 0.3, scale = .5) -->
-
-<!-- ``` -->
-
 \newpage
 
 ```{=tex}
@@ -1030,13 +1028,16 @@ knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 **Table 2**. Variable Information for "Data set File 2: _Heliconia Demographic Data_".
 \renewcommand{\arraystretch}{0.5}
 ```{r table2, echo=FALSE, message = FALSE, warning=FALSE}
-ha_plants_t1 <- ha_plants %>% select(-tag_number)
+ha_plants_t1 <- ha_plants %>% 
+  relocate(tag_number,.after=plant_id)
+# %>% select(-tag_number)
 Variables<-names(ha_plants_t1)
 
 Definition<-c(
   "Plot in which plant is located",
   "Subplot in which plant is located",
   "Unique ID no. assigned to plant",
+  "Number on tag attached to plant",
   "Calendar year of survey",
   "No. of shoots when surveyed",
   "Plant height when surveyed",
@@ -1055,6 +1056,7 @@ Codes<-c("FF1-FF7, CF1-CF6",
   " - ",
   " - ",
   " - ",
+  " - ",
   # "TRUE = seedling
   # \nFALSE = not a seedling",
   "TRUE, FALSE",
@@ -1064,7 +1066,7 @@ Codes<-c("FF1-FF7, CF1-CF6",
   "branch: under fallen tree limbs
   \ntree: under tree crown or fallen trees
   \nlitter: under accumulated leaf-litter
-  \nNA: no observation recorded",
+  \nNA: not relevant or no observation recorded",
   # " ",
   "measured: alive, measured
   \ndead: died prior to census
@@ -1074,6 +1076,7 @@ Codes<-c("FF1-FF7, CF1-CF6",
 Storage<-c(
   "string",
   "string",
+  "integer",
   "integer",
   "integer",
   "integer",
@@ -1097,6 +1100,7 @@ Range<-c(
   "-",
   "-",
   "-",
+  "-",
   "-"
 )
 
@@ -1104,6 +1108,7 @@ Range<-c(
 Precision<-c(
   " - ",
   " - ",
+  "1",
   "1",
   "1",
   "1",
@@ -1129,20 +1134,26 @@ table2<-bind_cols(Variable=Variables,
 
 
 range_id <-   as.character(range(ha_plants_t1$plant_id, na.rm=TRUE))
+range_tag <-   as.character(range(ha_plants_t1$tag_number, na.rm=TRUE))
 range_shts <- as.character(range(ha_plants_t1$shts, na.rm=TRUE))
 range_ht <-   as.character(range(ha_plants_t1$ht, na.rm=TRUE))
 range_infl <- as.character(range(ha_plants_t1$infl, na.rm=TRUE))
 range_year <- as.character(range(ha_plants_t1$year, na.rm=TRUE))
 
 
+range_tag<-paste(range_tag[1],range_tag[2],sep="-")
+range_tag<-paste("range =",range_tag,"(units: number, precision: 1)",sep=" ")
+
 range_id<-paste(range_id[1],range_id[2],sep="-")
 range_id<-paste("range =",range_id,"(units: number, precision: 1)",sep=" ")
+
 range_shts <- paste(range_shts[1],range_shts[2],sep="-")
-range_shts<-paste("range =",range_shts,"(units: shoots, precision: 1)\nNA: missing",sep=" ")
+range_shts<-paste("range =",range_shts,"(units: shoots, precision: 1)\n \nNA: data missing",sep=" ")
+
 range_ht <- paste(range_ht[1],range_ht[2],sep="-")
-range_ht<-paste("range =",range_ht,"(units: cm, precision: 1)\nNA: missing",sep=" ")
+range_ht<-paste("range =",range_ht,"(units: cm, precision: 1)\n \nNA: data missing",sep=" ")
 range_infl <- paste(range_infl[1],range_infl[2],sep="-")
-range_infl<-paste("range =",range_infl,"(units: shoots, precision: 1)\nNA: missing",sep=" ")
+range_infl<-paste("range =",range_infl,"(units: shoots, precision: 1)\n \nNA: data missing",sep=" ")
 range_year <- paste(range_year[1],range_year[2],sep="-")
 range_year<-paste("range =",range_year,"(units: year, precision: 1)",sep=" ")
 
@@ -1152,6 +1163,7 @@ table2<-table2 %>% mutate(Codes=case_when(
     Variable=="infl" ~ range_infl,
     Variable=="year" ~ range_year,
     Variable=="plant_id" ~ range_id,
+    Variable=="tag_number" ~ range_tag,
     TRUE ~ Codes
   )) %>% rename("Codes or Range of Values"=Codes) %>%
   select(-Range)
@@ -1192,7 +1204,7 @@ tmp<-knitr::kable(table2,
   column_spec(2, width = "15em") %>%
   column_spec(3, width = "20em") %>%
   column_spec(4, width = "3em") %>%
-    footnote(number = "For the arrangment of the subplots see Figures 2-4") 
+    footnote(number = "For the arrangment of the subplots see Figures 3-5") 
 
 knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 

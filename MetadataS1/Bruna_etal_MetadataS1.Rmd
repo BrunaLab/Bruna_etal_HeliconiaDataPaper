@@ -108,7 +108,7 @@ note: |
     
     _Corresponding author_: Emilio M. Bruna (embruna@ufl.edu)  
       
-    _Open Research Statement_: The data described here have are available as Supporting Information at [_url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is at Zenodo [_url to be added_]. The code used to prepare this manuscript -- including statistical summaries, tables, and figures -- has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found at the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). 
+    _Open Research Statement_: The data described here have are available as Supporting Information at [_url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is at Zenodo [_url to be added_]. The code used to prepare this manuscript -- including statistical summaries, tables, and figures -- has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). 
 # wordcount: "4824"
 # authornote: |
 #    
@@ -183,10 +183,11 @@ library(tidyverse)
 library(gridExtra)
 library(kableExtra)
 library(knitr)
+library(tools)
 library(cowplot)
 # library(egg)
 library(magick)
-library(citr)
+# library(citr)
 # library(devtools)
 # devtools::install_github("crsh/papaja")
 ```
@@ -196,9 +197,11 @@ library(citr)
 
 urlfile_plants<-("https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_survey.csv")
 ha_plants<-read_csv(url(urlfile_plants))
+write_csv(ha_plants,"./MetadataS1/data_downloaded/ha_plants.csv")
 
 urlfile_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_plots.csv"
 ha_plots<-read_csv(url(urlfile_plots))
+write_csv(ha_plots,"./MetadataS1/data_downloaded/ha_plots.csv")
 
 # This is to save the info on the version of the data sets used in the paper 
 urlfile_v_plots<-"https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_plots_version_info.txt"
@@ -214,7 +217,7 @@ names(version_plots)<-c("version", "date", "file")
 versions_for_ms<-bind_rows(as_tibble(version_survey),
                            as_tibble(version_plots)) %>% 
   relocate(file,.before=1)
-write_csv(versions_for_ms,"./MetadataS1/versions_for_ms.csv")
+write_csv(versions_for_ms,"./MetadataS1/data_downloaded/versions_for_ms.csv")
 
 
 
@@ -469,7 +472,7 @@ seed_data <- read_csv(url) %>%
 
 3. Research Methods 
 
->a. **Demographic Surveys:**  During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall, and recorded if plants were under treefalls or damaged by fallen branches or palm fronds. These treefall records are available in the ‘data/survey_clean’ subfolder of the HDP Github repository (https://github.com/BrunaLab/HeliconiaSurveys).
+>a. **Demographic Surveys:**  During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall, and recorded if plants were under treefalls or damaged by fallen branches or palm fronds. These treefall records (`treefall_impacts.csv` and `subplot_treefalls.csv`) are in the `data/survey_clean` subfolder of the HDP Repository (https://github.com/BrunaLab/HeliconiaSurveys).
 
 >b. **Taxonomy and systematics:** *Heliconia* is the only genus in the family Heliconiaceae. This family is distinguished from the others in the order Zingiberales by having inverted flowers, a single staminode, and drupaceous fruits [@kressDiversityDistributionHeliconia1990]. It is estimated that there are 200-250 species of *Heliconia*, almost all of which are native to the Neotropics. *Heliconia acuminata* L. C. (Rich.) (Richard 1831) is one of the approximately 20 *Heliconia* species found in the Brazilian Amazon [@kressDiversityDistributionHeliconia1990].  We deposited voucher specimens of _H. acuminata_  collected in areas adjacent to demographic plots at the herbaria of the Instituto Nacional de Pesquisas da Amazônia (Accession Numbers INPA 189569-189573) and the University of California, Davis (Accession Numbers DAV 69391-69396).
 
@@ -499,7 +502,7 @@ seed_data <- read_csv(url) %>%
 3.  **Metadata status:** Complete (last update: 
 `r substr(file.info("./MetadataS1/Bruna_etal_MetadataS1.Rmd")$mtime, 1,10)`)
 
-4.  **Data verification:** An extensive review of the data was conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022] to identify cases in the data set for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the data set were made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_]. Questions regarding the data set or code should be posted as ‘issues’ on the project repository (https://github.com/BrunaLab/HeliconiaSurveys/issues) or referred to E. M. Bruna, who will investigate and update the database or code as needed.  Summaries of any post-publication updates will be posted to the ‘updates’ page of the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys), with revised data sets assigned new version numbers based on the ‘Frictionless Data’ guidelines (https://frictionlessdata.io/specs/patterns/). This will allow users to reference the version of the data used in their analyses to ensure their reproducibility [reviewed in @10.1371/journal.pbio.3000125].
+4.  **Data verification:** An extensive review of the data was conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022] to identify cases in the data set for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the data set were made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_]. Questions regarding the data set or code should be posted as `Issues` on the HDP Repository (https://github.com/BrunaLab/HeliconiaSurveys/issues) or referred to E. M. Bruna, who will investigate and update the database or code as needed.  Summaries of any post-publication updates will be posted to the `NEWS.md` file of the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys), with revised data sets assigned new version numbers based on the ‘Frictionless Data’ guidelines (https://frictionlessdata.io/specs/patterns/). This will allow users to reference the version of the data used in their analyses to ensure their reproducibility [reviewed in @10.1371/journal.pbio.3000125].
 
 
 
@@ -542,7 +545,12 @@ seed_data <- read_csv(url) %>%
 
 6. **Special Characters:** Missing values are represented with NA.
 
-7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: :291f80d787c45bb1f4c41180cbbb2de6).
+```{r md5_plot, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
+
+md5_plot<-as.vector(md5sum("./MetadataS1/data_downloaded/ha_plots.csv"))
+```
+
+7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: `r md5_plot`.
 
 8. **Start & End Columns:** Start: ``r names(ha_plots)[1]``, End: ``r names(ha_plots)[ncol(ha_plots)]``
 
@@ -563,8 +571,12 @@ seed_data <- read_csv(url) %>%
 
 6. **Special Characters:** Missing values are represented with NA. 
 
-7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: :291f80d787c45bb1f4c41180cbbb2de6).
+```{r md5_plants, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
 
+md5_plants<-as.vector(md5sum("./MetadataS1/data_downloaded/ha_plants.csv"))
+```
+
+7. **Authentication Procedures**: checksum (MD5 of the file downloaded to computer from the online repository: `r md5_plants`.
 
 8. **Start & End Columns:** Start: ``r names(ha_plants)[1]``, End: ``r names(ha_plants)[ncol(ha_plants)]``
 
@@ -598,7 +610,7 @@ fwt_perc <- fwt_plots %>%
   round(0)
 ```
 
->The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the log is available in the `data/survey_clean` subfolder of the HDP Github repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases, the original number was maintained in the database with the plant's status noted as 'missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling. 
+>The stakes and numbered tags used to mark plants were sometimes displaced, broken, or buried under leaf litter as a result of tree falls or other disturbances. If a plant's tag couldn't be found after an extensive search, it would be marked with a new tag. In some cases, it was straightforward to determine such a plant's original number when entering the survey data (e.g., when all plants in a low-density subplot were found except one, which in the prior year was similar in size as the plant found without a tag). In those cases, the plant's prior measurements were transferred to the new number and we logged the details of the change in tag number; the `tag_changes.csv` file is available in the `data/survey_clean` subfolder of the HDP Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). In other cases, it was impossible to definitively determine a plant's original number (e.g., when two similarly sized plants in a subplots were both missing their tags). In these cases, the original number was maintained in the database with the plant's status noted as 'missing' in subsequent surveys. The record for the new number indicates the plant with which it is associated is an established plant that was found without a tag (see Section IV, Table 2) and not a new seedling. 
 
 >There were also cases in which established plants were found without tags in subplots where all previously tagged plants had already been located and measured, indicating previous survey teams had failed to find and mark them. These plants were marked, measured, and added to the database with a code indicating they were a established (i.e., post-seedling) but previously unmarked plant (See Table 2). Of the N = `r ent` plants in the data set, `r perc_ent`% were found without tags after the plot had been established. Almost half of these (`r fwt_perc`%) were in the three plots where _H. acuminata_ density was highest (`r top_3_fwt`).
 
@@ -612,7 +624,7 @@ fwt_perc <- fwt_plots %>%
 \noindent  
 **A. Data acquisition:**  
 
-1. **Data forms:** Examples of the forms used to collect survey data are available in the `docs` folder of the HDP Github repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).
+1. **Data forms:** Examples of the forms used to collect survey data can be found at `survey_records.md` in the `docs/survey_records/survey_sheets` subfolder of the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).
 
 2. **Location of original data forms, electronic files, and archived copies:** Original data sheets are stored at the University of Florida. Scanned copies of the data sheets (in .pdf format) and the electronic copies of the data (in _.csv_  format) are stored on a desktop computer at the University of Florida that is backed up daily to two portable hard drives and two cloud storage services. The integrity of digital files is verified semi-annually.  
 
@@ -622,15 +634,15 @@ fwt_perc <- fwt_plots %>%
 **B. Quality assurance/quality control procedures:** Once the data for a plot had been entered and verified, they were added to previous years' surveys by using tag ID and subplot as the join keys. The measurements of plant height and stem number were then compared with those from the previous year to identify potential errors in either plant measurement or entry (e.g., a plant with 1 shoot in year t and 11 shoots in year t+1 is likely an error in data entry). Discrepancies were investigated by referring to the original data sheets and, on occasion, returning to the field to remeasure plants. 
 
 \noindent
-**C. Related materials:** Each demographic plots' location, orientation, and subdivision into subplots can be seen in Fig. 1. Links to photographs, the output of data validation algorithms, summaries of other data sets collected by HDP researchers, and other related materials can be found on the `overview` page of the [HDP Github Repository](https://github.com/BrunaLab/HeliconiaSurveys).      
+**C. Related materials:** Each demographic plots' location, orientation, and subdivision into subplots can be seen in Fig. 1. Links to photographs, the output of data validation algorithms, summaries of other data sets collected by HDP researchers, and other related materials can be found on the `README.md` file of the [HDP Github Repository](https://github.com/BrunaLab/HeliconiaSurveys).      
 
 \noindent
-**D. Computer programs and data-processing algorithms:** The version of the R code used to prepare this data archive can be found at Zenodo [_url to be added_]. Any post-publication updates to the code and data will be maintained at the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)) until updated version of the archives are uploaded to Zenodo and Dryad.     
+**D. Computer programs and data-processing algorithms:** The version of the R code used to prepare this data archive can be found at Zenodo [_url to be added_]. Post-publication updates to the code and data will be available on the `NEWS.md` file of the HDP Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)) until updated version of the archives are uploaded to Zenodo and Dryad.     
 
 \noindent
 **F. Publications:** 
 
-1. **Publications including analyses of the data set.** Links to an updated list and downloadable *BibTeX* file of publications that have used the survey data are available on the [‘README.md’](https://github.com/BrunaLab/HeliconiaSurveys) file of the HDP Github repository.
+**Publications including analyses of the data set.** Links to an updated list and downloadable *BibTeX* file of publications that have used the survey data are available on the [‘README.md’](https://github.com/BrunaLab/HeliconiaSurveys) file of the HDP Github repository.
 
 <!-- no cite: @brunaEffectsForestFragmentation2002; @cortesLowPlantDensity2013 -->
 
@@ -671,9 +683,7 @@ fwt_perc <- fwt_plots %>%
 
 > 18. Leite, M. C. A., R. Sauchuk, F. B. Agusto, O. G. Gaoue, and B. Chen-Charpentier. 2021. Modeling the persistence of plant populations in fragmented ecosystems. _Ecological Modelling_ 457: 109681.
 
-2. **Related publications and data sets:** The following data archives and publications include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An update list and downloadable BibTeX file of these data sets us on the HDP Github repository’s [‘README’](https://github.com/BrunaLab/HeliconiaSurveys) file.
-
-**A. Related Publications:** 
+**Related publications and data sets:** The following data archives and publications include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An update list and downloadable BibTeX file of these data sets us on the HDP Github repository’s [`README.md`](https://github.com/BrunaLab/HeliconiaSurveys) file.
 
 >1. Bruna, E. M. 1999. Seed germination in rainforest fragments. _Nature_ 402(6758):139–139.
  
@@ -689,13 +699,11 @@ fwt_perc <- fwt_plots %>%
  
 >7. Bruna, E. M. and A. S. Andrade. 2011. Edge effects on growth and biomass partitioning of an Amazonian understory herb (_Heliconia acuminata_; Heliconiaceae). _American Journal of Botany_. 98(10):1727–1734. 
 
-**B. Related data sets:** 
+>8. Bruna, E. M. 2014. _Heliconia acuminata_ seed set (seeds per fruit). 2008. https://figshare.com/articles/dataset/Heliconia_acuminata_seedset_2008/1273926
 
->1. Bruna, E. M. 2014. _Heliconia acuminata_ seed set (seeds per fruit). 2008. https://figshare.com/articles/dataset/Heliconia_acuminata_seedset_2008/1273926
+>9. Bruna, E. M. 2021. Leaf number, leaf area, shoot number, and height of reproductive _Heliconia acuminata_. https://doi.org/10.5281/zenodo.5041931
 
->2. Bruna, E. M. 2021. Leaf number, leaf area, shoot number, and height of reproductive _Heliconia acuminata_. https://doi.org/10.5281/zenodo.5041931
-
->3. Microsatellite markers for the understorey Amazonian herb _Heliconia acuminata_: GenBank accession nos. FJ644651-FJ644660. https://www.ncbi.nlm.nih.gov/nuccore/
+>10. Microsatellite markers for the understorey Amazonian herb _Heliconia acuminata_: GenBank accession nos. FJ644651-FJ644660. https://www.ncbi.nlm.nih.gov/nuccore/
 
 
 # ACKNOWLEDGMENTS
@@ -730,7 +738,7 @@ ggdraw() + draw_image('./MetadataS1/figures/bdffpsat.jpg', scale = 1)
 
 \newpage
 
-```{r repro, fig.cap='The abundance of and probability of flowering of \\textit{Heliconia acuminata} in Continuous Forest. For each of the survey years (gray lines) we pooled the data from the six demographic plots in Continuous Forest to calculate (A) the number of post-seedling \\textit{H. acuminata} in size categories based on shoot number and (B) the percentage of plants in each size class that produced at least 1 infloresence. The green line is the average of the annual values for each size category.'}
+```{r repro, fig.cap='The abundance and reproduction of \\textit{Heliconia acuminata} in Continuous Forest. In each of survey year (gray lines) the data from the six demographic plots in Continuous Forest were pooled to give (A) the total number of post-seedling \\textit{H. acuminata} in size classes based on shoot number, and (B) the percentage of plants in each size class that produced at least 1 inflorescence. The green line is the average of the annual values for each size category.'}
 # fig.cap='', fig.height = 10, fig.width = 7, fig.align = "center"
 
 hacf<-ha_plants %>%
@@ -872,7 +880,7 @@ figure_rep<-grid.arrange(n_plot, perc_plot, ncol = 1)
 
 \newpage
 
-```{r plotsone, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 1-hectare forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
+```{r plotsone, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 1-hectare forest fragment reserves (note: not to scale). The rectangles filled with a letter-number combination (i.e., F-3, A-2, E-2) are coordinate stakes marking the permanent plots of the BDFFP Phytodemographic Project (Rankin-de-Mérona et al. 1992).',fig.height = 10, fig.width = 7, fig.align = "center"}
 ff_one <- ggdraw() +
   draw_image('./MetadataS1/figures/Slide1.jpeg',x = -0.26, y = 0.2, scale = .5)+
   draw_image('./MetadataS1/figures/Slide2.jpeg',x = 0.26, y =0.2, scale = .5)+
@@ -893,7 +901,7 @@ ff_one
 ```
 
 \newpage
-```{r plotsten, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 10-ha forest fragment reserves. Note: not to scale.',fig.height = 10, fig.width = 7, fig.align = "center"}
+```{r plotsten, fig.cap='Schematic of the \\textit{Heliconia} Demographic Plots in the BDFFP 10-ha forest fragment reserves (note: not to scale). The rectangles filled with a letter-number combination (i.e., I-8, J-8) are coordinate stakes marking the permanent plots of the BDFFP Phytodemographic Project (Rankin-de-Mérona et al. 1992).',fig.height = 10, fig.width = 7, fig.align = "center"}
 
 ff_ten <- ggdraw() +
   draw_image('./MetadataS1/figures/Slide5.jpeg',x = -0.26, y = 0.2, scale = .5)+
@@ -913,7 +921,7 @@ ff_ten
 
 \newpage
 
-```{r plotscf, fig.height = 9, fig.width = 6, fig.align = "center", fig.cap='Schematic of each \\textit{Heliconia} Demographic Plot in the BDFFP Continuous Forest reserves. Note: not to scale.'}
+```{r plotscf, fig.height = 9, fig.width = 6, fig.align = "center", fig.cap='\\textit{Heliconia} Demographic Plots in Continuous Forest (note: not to scale). Rectangles with a letter-number combination (i.e., L-40, J-40, C-1, C-2) are coordinate stakes marking permanent plots of the BDFFP Phytodemographic Project (Rankin-de-Mérona et al. 1992).'}
 #
 # cf1<- ggdraw() + draw_image('./MetadataS1/figures/Slide8.jpeg', scale = 1)
 # cf2<- ggdraw() + draw_image('./MetadataS1/figures/Slide9.jpeg', scale = 1)

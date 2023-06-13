@@ -470,7 +470,7 @@ seed_data <- read_csv(url) %>%
 
 >c. **Frequency of Data Collection:**  Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. Regular visits were made to all 13 plots throughout the rainy season to identify reproductive individuals and record the number of flowering shoots and infloresences that they had produced.  
 
-3. Research Methods 
+3. **Research Methods** 
 
 >a. **Demographic Surveys:**  During each census team members recorded which plants died, the size (i.e., height and number of shoots) of all surviving plants, and the size of all new seedlings, which were also marked with a numbered tag. Survey team members also noted any new canopy gaps created by fallen trees or limbs, estimated the proportion of any suplot that was affected by a treefall, and recorded if plants were under treefalls or damaged by fallen branches or palm fronds. These treefall records (`treefall_impacts.csv` and `subplot_treefalls.csv`) are in the `data/survey_clean` subfolder of the HDP Repository (https://github.com/BrunaLab/HeliconiaSurveys).
 
@@ -518,7 +518,7 @@ seed_data <- read_csv(url) %>%
  
 4.  **Proprietary restrictions:** None.
 
->a. **Conditions of Reuse:** Any publication using data collected at the BDFFP must include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator [pdbff\@inpa.gov.br](mailto:pdbff@inpa.gov.br){.email} or E. M. Bruna.  
+>a. **Conditions of Reuse:** Though we welcome opportunities to collaborate with interested users, there are no restrictions on the use this data set. However, any publication using data collected at the BDFFP -- including this data set -- must include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator ([pdbff\@inpa.gov.br](mailto:pdbff@inpa.gov.br){.email}) or E. M. Bruna ([embruna\@ufl.edu](mailto:embruna@ufl.edu){.email}).  
 
 >b. **Citation:** Authors of any publications or products using these data should cite both this data paper and the Dryad data archive [_citation of Dryad archive to be added upon acceptance_]. We also request that they provide E. M. Bruna a copy of their article upon acceptance, which allows us to track the data set's usage, inform users of any corrections or updates, report articles using the data to the funding agencies that provided support, and document the different ways in which the scientific community uses the data.  
 
@@ -640,9 +640,7 @@ fwt_perc <- fwt_plots %>%
 **D. Computer programs and data-processing algorithms:** The version of the R code used to prepare this data archive can be found at Zenodo [_url to be added_]. Post-publication updates to the code and data will be available on the `NEWS.md` file of the HDP Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)) until updated version of the archives are uploaded to Zenodo and Dryad.     
 
 \noindent
-**F. Publications:** 
-
-**Publications including analyses of the data set.** Links to an updated list and downloadable *BibTeX* file of publications that have used the survey data are available on the [‘README.md’](https://github.com/BrunaLab/HeliconiaSurveys) file of the HDP Github repository.
+**F. Publications using the demographic data set:** The following publications include analyses of the demographic data set. Links to an updated publication list and downloadable *BibTeX* file can be found on the `README.md` file of the HDP Github repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys))
 
 <!-- no cite: @brunaEffectsForestFragmentation2002; @cortesLowPlantDensity2013 -->
 
@@ -681,9 +679,10 @@ fwt_perc <- fwt_plots %>%
 
 >17. Scott, E. R., M. Uriarte, and E. M. Bruna. 2022. Delayed effects of climate on vital rates lead to demographic divergence in Amazonian forest fragments. _Global Change Biology_ 28(2): 463-479.  
 
-> 18. Leite, M. C. A., R. Sauchuk, F. B. Agusto, O. G. Gaoue, and B. Chen-Charpentier. 2021. Modeling the persistence of plant populations in fragmented ecosystems. _Ecological Modelling_ 457: 109681.
+> 18. Leite, M. C. A., R. Sauchuk, F. B. Agusto, O. G. Gaoue, and B. Chen-Charpentier. 2021. Modeling the persistence of plant populations in fragmented ecosystems. _Ecological Modelling_ 457: 109681.  
 
-**Related publications and data sets:** The following data archives and publications include information (e.g., seeds per fruit, seed germination rates, seedling survival rates, plant growth rates following damage) that can be used in concert with the census data to conduct demographic modeling and other analyses. An update list and downloadable BibTeX file of these data sets us on the HDP Github repository’s [`README.md`](https://github.com/BrunaLab/HeliconiaSurveys) file.
+\noindent  
+**G. Related publications and data sets:** The information in the following data archives and publications can be used in concert with the census data to conduct demographic modeling or carry out other analyses. The HDP Github Repository’s `README.md` file provides links to an updated list and downloadable BibTeX file of these publications and data sets ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).
 
 >1. Bruna, E. M. 1999. Seed germination in rainforest fragments. _Nature_ 402(6758):139–139.
  
@@ -702,8 +701,6 @@ fwt_perc <- fwt_plots %>%
 >8. Bruna, E. M. 2014. _Heliconia acuminata_ seed set (seeds per fruit). 2008. https://figshare.com/articles/dataset/Heliconia_acuminata_seedset_2008/1273926
 
 >9. Bruna, E. M. 2021. Leaf number, leaf area, shoot number, and height of reproductive _Heliconia acuminata_. https://doi.org/10.5281/zenodo.5041931
-
->10. Microsatellite markers for the understorey Amazonian herb _Heliconia acuminata_: GenBank accession nos. FJ644651-FJ644660. https://www.ncbi.nlm.nih.gov/nuccore/
 
 
 # ACKNOWLEDGMENTS

@@ -101,14 +101,20 @@ affiliation:
   # - id            : "*"
   #   institution   : "Current Address: ---, University of Arizona, Pheonix, AZ ZIP CODE, USA"
     
-abstract: ""
+abstract: " "
 # 
 #   text
+#
 note: | 
     
     _Corresponding author_: Emilio M. Bruna (embruna@ufl.edu)  
-      
-    _Open Research Statement_: The data described here are available as Supporting Information at [_url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is at Zenodo [_url to be added_]. The code used to prepare this manuscript -- including all statistical summaries, tables, and figures -- has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). 
+    
+    \newpage 
+    \raggedright
+    
+    _Open Research Statement_: The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). ***To be deleted following peer review:*** Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at https://github.com/BrunaLab/HeliconiaSurveys (data management) and https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper (manuscript). 
+    
+    
 floatsintext      : yes
 figurelist        : yes
 tablelist         : no
@@ -135,10 +141,12 @@ header-includes:
   - \newcommand{\blandscape}{\begin{landscape}}
   - \newcommand{\elandscape}{\end{landscape}}
   - \setlength\parindent{22pt}
+  - \renewenvironment{abstract}{}{} #suppress the abstract
 
 bibliography: ["../references.bib"] 
 csl: "../ecology.csl"
 output: papaja::apa6_pdf
+# output: papaja::apa6_docx
 ---
 
 ```{r GlobalOptions, include=FALSE}
@@ -159,14 +167,14 @@ library(magick)
 knitr::opts_chunk$set(echo = FALSE,message=FALSE,warning=FALSE)
 ```
 
-```{r data_load, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
+```{r data_load, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE,results='hide'}
 # knitr::opts_chunk$set(echo = FALSE)
 
 
   if (!dir.exists("./manuscript_files/MetadataS1/data_downloaded")) {
     dir.create("./manuscript_files/MetadataS1/data_downloaded")
   } else {
-    # print(" ") # placeholder
+    print(" ") # placeholder
   }
 
 urlfile_plants<-("https://raw.githubusercontent.com/BrunaLab/HeliconiaSurveys/master/data/survey_archive/HDP_survey.csv")
@@ -407,9 +415,25 @@ seed_data <- read_csv(url) %>%
 
 >b.  **Permanent Plots:** Each demographic plot is $50\times100$m and is subdivided into 50 contiguous subplots of $10\times10$m to facilitate the surveys. Plots in 1-ha fragments were established in a randomly selected half of the fragment (Fig. 3), plots in 10-ha fragments are located in the center of the fragment (Fig. 4), and plots in continuous forest are located 500-4000 m from any borders with cattle pastures or secondary forest (Fig. 5). The plots furthest apart are from each other are separated by \~70 km.
 
->>In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, FF-6, FF-7) and one in a continuous forest (CF 1) to test survey protocols and sample plants for genetic analyses. The remaining plots were established in 1998, which was also when the first complete census was conducted in all plots. To find and mark the plants, a team of 2-3 people walked slowly through each subplot to locate any *Heliconia acuminata*, which they then marked with a wooden stake to which was attached an individually numbered aluminum tag. They also recorded (1) how many vegetative shoots the plant had, and (2) its height, measured as the distance from the ground to the top of the tallest leaf (rounded to the nearest cm). Both of these size metrics are highly correlated with the total leaf-area of a plant.
+```{r sizecorrs, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
+# Correlation tests - shts or ht vs total leaf area of a plant
 
->c. **Frequency of Data Collection:**  Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. Regular visits were made to all 13 plots throughout the rainy season to identify reproductive individuals and record the number of flowering shoots and infloresences that they had produced.  
+cor_shts_la<-cor.test(ha_repro2$shoots,ha_repro2$total_la, method = c("spearman"))
+shts_rho<-round(cor_shts_la$estimate,4)
+shts_p<-format(cor_shts_la$p.value,scientific = FALSE)
+shts_p<-ifelse(cor_shts_la$p.value <0.0001, 0.0001, cor_shts_la$p.value)
+shts_p<-format(shts_p,scientific = FALSE)
+cor_ht_la<-cor.test(ha_repro2$ht,ha_repro2$total_la, method = c("spearman"))
+ht_rho<-round(cor_ht_la$estimate,4)
+ht_p<-ifelse(cor_ht_la$p.value <0.0001, 0.0001, cor_ht_la$p.value)
+ht_p<-format(ht_p,scientific = FALSE)
+```
+
+>>In January 1997 we established four demographic plots in fragments (FF-3, FF-4, FF-6, FF-7) and one in a continuous forest (CF 3) to refine census protocols and sample plants for genetic analyses. The remaining three plots in forest fragments and two additional plots in Contiuous Forest (CF-1, CF-2) were established in January and February 1998, at which time a complete census was conducted in the ten plots established to date. To find and mark the plants, a team of 2-3 people walked slowly through each subplot to locate any *Heliconia acuminata*, which they then marked with a wooden stake to which was attached an individually numbered aluminum tag. They also recorded (1) how many vegetative shoots the plant had, and (2) its height, measured as the distance from the ground to the top of the tallest leaf (rounded to the nearest cm). Both of these size metrics are significantly correlated with the total leaf-area of a plant (shoots-leaf area: $\rho$ = `r shts_rho`, p < `r shts_p`; height-leaf area: $\rho$ = `r ht_rho`, p < `r ht_p`).  Finally, in November 1998 we established the final three plots in Continuouus Forest (CF-4, CF-5, CF-6) and censused them as above.       
+
+>c. **Frequency of Data Collection:**  Demographic surveys were conducted annually. Seedling establishment coincides with the onset of the rainy season, which is typically in late November or early December. We therefore began to census plots in late January and typically completed the survey by mid-February. The exception was the three Continuous Forest plots established in November 1998 -- after being censused in November 1999, they were censused in January from 2001 forward.  
+
+>> Regular visits were made to all 13 plots throughout the rainy season to identify any reproductive individuals and record the number of flowering shoots (i.e., infloresences) that they produced.  
 
 3. **Research Methods** 
 
@@ -419,11 +443,11 @@ seed_data <- read_csv(url) %>%
 
 4.  **Project personnel:** In addition to the Project Originators, other key personnel include the Project Managers that were responsible for coordinating the annual censuses and other field activities, BDFFP Technicians (*"Mateiros"*) that assisted with data collection and provided logistical support in the field, and undergraduate and postgraduate field assistants hired to assist with the surveys.
 
->a. **Project Managers:** Paulo Rubim (2007-2012), Maria Beatriz Nogueira (2002), Maria Rosa Darrigo (2002-2003), Cris Follman Jurinitz (2003), Simone Benedet (2004).
+>a. **Project Managers:** Maria Rosa Darrigo (2002-2003), Cris Follman Jurinitz (2003), Simone Benedet (2004), Maria Beatriz Nogueira (2005), Paulo Rubim (2006-2012)
 
 >b.  **BDFFP Technicians:** Osmaildo Ferreira da Silva, Francisco Marques, Alaercio Marajó dos Reis, João de Deus Fragata, Romeu Cardoso.
 
->c.  **Undergraduate & Postgraduate Field Assistants:** Olavo Nardy (2000), Obed Garcia (2001), Sylvia Heredia (2001-2002), Maria Beatriz Nogueira (2002), Cris Follman Jurinitz (2003), David M. Lapola (2003), Denise Cruz (2003), Cristina Escate (2004), Bruno Turbiani (2005), Elisabete Marques da Costa (2006), Wesley Dáttilo da Cruz (2007), Jefferson José Valsko da Silva (2007). 
+>c.  **Undergraduate & Postgraduate Field Assistants:** Olavo Nardy (2000), Obed Garcia (2001), Sylvia Heredia (2001-2002), Maria Beatriz Nogueira (2002), Cris Follman Jurinitz (2003), David M. Lapola (2003), Denise Cruz (2003), Cristina Escate (2004), Bruno Turbiani (2005), Elisabete Marques da Costa (2006), Wesley Dáttilo da Cruz (2007), Jefferson José Valsko da Silva (2007), Tony Vizcarra Bentos (2007).   
 
 \noindent  
 **CLASS III. DATA SET STATUS AND ACCESSIBILITY**
@@ -446,7 +470,7 @@ seed_data <- read_csv(url) %>%
 \noindent 
 **B. Accessibility**  
 
-1. **Storage location and medium:** The data described here are available as Supporting Information at [_url for ESA Archives to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is at Zenodo [_url to be added_]. The code used to prepare this manuscript -- including all statistical summaries, tables, and figures -- has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).
+1. **Storage location and medium:** The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). ***To be deleted following peer review:*** Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at https://github.com/BrunaLab/HeliconiaSurveys (data management) and https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper (manuscript). 
 
 2.  **Contact person:** Emilio M. Bruna, Department of Wildlife Ecology and Conservation, Box 110430, Gainesville, FL 32611 USA. Phone: (352) 846-0634. Email: [embruna\@ufl.edu](mailto:embruna@ufl.edu){.email}
 

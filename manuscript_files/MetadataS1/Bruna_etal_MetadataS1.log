@@ -1,17 +1,16 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.13)  15 JUN 2023 01:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2023.2.27)  15 JUN 2023 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Bruna_etal_MetadataS1.tex
 (./Bruna_etal_MetadataS1.tex
-LaTeX2e <2023-06-01>
-L3 programming layer <2023-06-05>
-(/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/apa6/apa6.cls
+LaTeX2e <2022-11-01> patch level 1
+L3 programming layer <2023-02-22> (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/apa6/apa6.cls
 Document Class: apa6 2020/01/13 v2.34 APA formatting (6th edition)
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@section=\count186
@@ -72,7 +71,7 @@ File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 Package: geometry 2020/01/02 v5.9 Page Geometry
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks17
+\KV@toks@=\toks16
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/iftex/iftex.sty
@@ -89,7 +88,7 @@ Package: iftex 2022/02/03 v1.0f TeX engine tests
 \Gm@layoutheight=\dimen146
 \Gm@layouthoffset=\dimen147
 \Gm@layoutvoffset=\dimen148
-\Gm@dimlist=\toks18
+\Gm@dimlist=\toks17
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/graphics/graphics.sty
@@ -139,9 +138,9 @@ Package: threeparttable 2003/06/13  v 3.0
 \b@level@five@skip=\skip58
 \e@level@five@skip=\skip59
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2023/03/12 v3.6j Customizing captions (AR)
+Package: caption 2022/03/01 v3.6b Customizing captions (AR)
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2023/03/12 v2.4 caption3 kernel (AR)
+Package: caption3 2022/03/17 v2.3b caption3 kernel (AR)
 \caption@tempdima=\dimen164
 \captionmargin=\dimen165
 \caption@leftmargin=\dimen166
@@ -192,19 +191,19 @@ Package: endfloat 2019/04/15 v2.7 LaTeX2e package puts figures and tables at end
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count275
-\float@exts=\toks19
+\float@exts=\toks18
 \float@box=\box53
-\@float@everytoks=\toks20
+\@float@everytoks=\toks19
 \@floatcapt=\box54
 )) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2023/05/13 v2.17o AMS math features
+Package: amsmath 2022/04/08 v2.17n AMS math features
 \@mathmargin=\skip72
 For additional information on amsmath, use the `?' option.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks21
+\@emptytoks=\toks20
 \ex@=\dimen172
 )) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
@@ -243,21 +242,21 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \dotsspace@=\muskip16
 \c@parentequation=\count283
 \dspbrk@lvl=\count284
-\tag@help=\toks22
+\tag@help=\toks21
 \row@=\count285
 \column@=\count286
 \maxfields@=\count287
-\andhelp@=\toks23
+\andhelp@=\toks22
 \eqnshift@=\dimen175
 \alignsep@=\dimen176
 \tagshift@=\dimen177
 \tagwidth@=\dimen178
 \totwidth@=\dimen179
 \lineht@=\dimen180
-\@envbody=\toks24
+\@envbody=\toks23
 \multlinegap=\skip73
 \multlinetaggap=\skip74
-\mathdisplay@stack=\toks25
+\mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -273,32 +272,33 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
-\inpenc@prehook=\toks26
-\inpenc@posthook=\toks27
+\inpenc@prehook=\toks25
+\inpenc@posthook=\toks26
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verbatim
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2023/03/13 v3.1a Micro-typographical refinements (RS)
-\MT@toks=\toks28
+Package: microtype 2022/06/23 v3.0f Micro-typographical refinements (RS)
+\MT@toks=\toks27
 \MT@tempbox=\box57
 \MT@count=\count288
-LaTeX Info: Redefining \noprotrusionifhmode on input line 1059.
-LaTeX Info: Redefining \leftprotrusion on input line 1060.
-\MT@prot@toks=\toks29
-LaTeX Info: Redefining \rightprotrusion on input line 1078.
-LaTeX Info: Redefining \textls on input line 1368.
+LaTeX Info: Redefining \noprotrusionifhmode on input line 1045.
+LaTeX Info: Redefining \leftprotrusion on input line 1046.
+LaTeX Info: Redefining \rightprotrusion on input line 1056.
+LaTeX Info: Redefining \textls on input line 1234.
 \MT@outer@kern=\dimen181
-LaTeX Info: Redefining \textmicrotypecontext on input line 1988.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1858.
 \MT@listname@count=\count289
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2023/03/13 v3.1a Definitions specific to pdftex (RS)
-LaTeX Info: Redefining \lsstyle on input line 902.
-LaTeX Info: Redefining \lslig on input line 902.
+File: microtype-pdftex.def 2022/06/23 v3.0f Definitions specific to pdftex (RS)
+LaTeX Info: Redefining \lsstyle on input line 900.
+LaTeX Info: Redefining \lslig on input line 900.
 \MT@outer@space=\skip75
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2023/03/13 v3.1a microtype main configuration file (RS)
+File: microtype.cfg 2022/06/23 v3.0f microtype main configuration file (RS)
 )) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2021-03-14 v2.0h non-zero parskip adjustments
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/kvoptions/kvoptions.sty
@@ -340,7 +340,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count292
 \calc@Cskip=\skip81
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2023/05/11 v3.89 The Babel package
+Package: babel 2023/02/13 3.86 The Babel package
 \babel@savecnt=\count293
 \U@D=\dimen184
 \l@unhyphenated=\language3
@@ -348,12 +348,12 @@ Package: babel 2023/05/11 v3.89 The Babel package
 \bbl@readstream=\read2
 \bbl@dirlevel=\count294
 Package babel Info: You haven't specified a language as a class or package
-(babel)             option. I'll load 'nil'. Reported on input line 4262.
+(babel)             option. I'll load 'nil'. Reported on input line 4422.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/babel/nil.ldf
-Language: nil 2023/05/11 v3.89 Nil language
+Language: nil 2023/02/13 3.86 Nil language
 \l@nil=\language4
 ))
-\everypar=\toks30
+\everypar=\toks28
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex)
 Package babel Info: Importing data for english
 (babel)             from babel-en.ini. Reported on input line 90.
@@ -380,7 +380,7 @@ Package: longtable 2021-09-01 v4.17 Multi-page Table package (DPC)
 \LT@rows=\count297
 \c@LT@tables=\count298
 \c@LT@chunks=\count299
-\LT@p@ftn=\toks31
+\LT@p@ftn=\toks29
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/graphics/lscape.sty
 Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/multirow/multirow.sty
@@ -396,7 +396,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \col@sep=\dimen187
 \ar@mcellbox=\box63
 \extrarowheight=\dimen188
-\NC@list=\toks32
+\NC@list=\toks30
 \extratabsurround=\skip88
 \backup@length=\skip89
 \ar@cellbox=\box64
@@ -407,7 +407,7 @@ Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
 \TX@target=\dimen192
 \TX@delta=\dimen193
 \TX@cols=\count301
-\TX@ftn=\toks33
+\TX@ftn=\toks31
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/threeparttablex/threeparttablex.sty
 Package: threeparttablex 2013/07/23 v0.3 by daleif
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/environ/environ.sty
@@ -421,9 +421,9 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 Failed to patch abstract.
 Failed to patch title.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/xpatch/xpatch.sty (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2023-06-05 L3 programming layer (loader) 
+Package: expl3 2023-02-22 L3 programming layer (loader) 
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2023-04-19 L3 backend support: PDF output (pdfTeX)
+File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count302
 \l__pdf_internal_box=\box65
 ))
@@ -431,9 +431,9 @@ Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2023-02-02 L3 Experimental document command parser
 )) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lineno/lineno.sty
-Package: lineno 2023/05/20 line numbers on paragraphs v5.3
+Package: lineno 2023/01/19 line numbers on paragraphs v5.1
 \linenopenalty=\count303
-\output=\toks34
+\output=\toks32
 \linenoprevgraf=\count304
 \linenumbersep=\dimen194
 \linenumberwidth=\dimen195
@@ -447,7 +447,7 @@ Package: lineno 2023/05/20 line numbers on paragraphs v5.3
 \bframesep=\dimen198
 \bframebox=\box66
 \linenoamsmath@ams@eqpen=\count310
-LaTeX Info: Redefining \\ on input line 3180.
+LaTeX Info: Redefining \\ on input line 3131.
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@reset=\count311
@@ -456,7 +456,7 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@qlevel=\count314
 \csq@maxlvl=\count315
 \csq@tshold=\count316
-\csq@ltx@everypar=\toks35
+\csq@ltx@everypar=\toks33
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -527,8 +527,8 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \abovetabulinesep=\dimen263
 \belowtabulinesep=\dimen264
 \tabustrutrule=\dimen265
-\tabu@thebody=\toks36
-\tabu@footnotes=\toks37
+\tabu@thebody=\toks34
+\tabu@footnotes=\toks35
 \tabu@box=\box68
 \tabu@arstrutbox=\box69
 \tabu@hleads=\box70
@@ -538,7 +538,7 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen266
 \c@nlinenum=\count326
-\TeXr@lab=\toks38
+\TeXr@lab=\toks36
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2022-10-27 v0.13 Display of landscape pages in PDF
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
@@ -547,7 +547,7 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2023-05-16 v7.00y Hypertext links for LaTeX
+Package: hyperref 2023-02-07 v7.00v Hypertext links for LaTeX
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/pdftexcmds/pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/infwarerr/infwarerr.sty
@@ -567,7 +567,7 @@ Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/auxhook/auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2023-05-16 v2.51 Cross-referencing by name of section
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/refcount/refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
@@ -579,32 +579,34 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 \Hy@linkcounter=\count328
 \Hy@pagecounter=\count329
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2023-05-16 v7.00y Hyperref: PDFDocEncoding definition (HO)
+File: pd1enc.def 2023-02-07 v7.00v Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/intcalc/intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/etexcmds/etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count330
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/hyperref/puenc.def
-File: puenc.def 2023-05-16 v7.00y Hyperref: PDF Unicode definition (HO)
+File: puenc.def 2023-02-07 v7.00v Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
 )
-Package hyperref Info: Option `unicode' set `true' on input line 4050.
-Package hyperref Info: Hyper figures OFF on input line 4167.
-Package hyperref Info: Link nesting OFF on input line 4172.
-Package hyperref Info: Hyper index ON on input line 4175.
-Package hyperref Info: Plain pages OFF on input line 4182.
-Package hyperref Info: Backreferencing OFF on input line 4187.
+Package hyperref Info: Option `unicode' set `true' on input line 4060.
+Package hyperref Info: Hyper figures OFF on input line 4177.
+Package hyperref Info: Link nesting OFF on input line 4182.
+Package hyperref Info: Hyper index ON on input line 4185.
+Package hyperref Info: Plain pages OFF on input line 4192.
+Package hyperref Info: Backreferencing OFF on input line 4197.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4434.
+Package hyperref Info: Bookmarks ON on input line 4425.
 \c@Hy@tempcnt=\count331
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4772.
+LaTeX Info: Redefining \url on input line 4763.
 \XeTeXLinkMargin=\dimen268
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/generic/bitset/bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
@@ -614,13 +616,13 @@ Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 \Fld@menulength=\count332
 \Field@Width=\dimen269
 \Fld@charsize=\dimen270
-Package hyperref Info: Hyper figures OFF on input line 6051.
-Package hyperref Info: Link nesting OFF on input line 6056.
-Package hyperref Info: Hyper index ON on input line 6059.
-Package hyperref Info: backreferencing OFF on input line 6066.
-Package hyperref Info: Link coloring OFF on input line 6071.
-Package hyperref Info: Link coloring with OCG OFF on input line 6076.
-Package hyperref Info: PDF/A mode OFF on input line 6081.
+Package hyperref Info: Hyper figures OFF on input line 6042.
+Package hyperref Info: Link nesting OFF on input line 6047.
+Package hyperref Info: Hyper index ON on input line 6050.
+Package hyperref Info: backreferencing OFF on input line 6057.
+Package hyperref Info: Link coloring OFF on input line 6062.
+Package hyperref Info: Link coloring with OCG OFF on input line 6067.
+Package hyperref Info: PDF/A mode OFF on input line 6072.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
@@ -631,7 +633,7 @@ package with kernel methods
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2023-05-16 v7.00y Hyperref driver for pdfTeX
+File: hpdftex.def 2023-02-07 v7.00v Hyperref driver for pdfTeX
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/base/atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
@@ -657,24 +659,24 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 (./Bruna_etal_MetadataS1.aux)
 \openout1 = `Bruna_etal_MetadataS1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 210.
-LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 214.
+LaTeX Font Info:    ... okay on input line 214.
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -725,151 +727,145 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 )
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 210.
-Package microtype Info: Applying patch `item' on input line 210.
-Package microtype Info: Applying patch `toc' on input line 210.
-Package microtype Info: Applying patch `eqnum' on input line 210.
-Package microtype Info: Applying patch `footnote' on input line 210.
-Package microtype Info: Applying patch `verbatim' on input line 210.
+LaTeX Info: Redefining \microtypecontext on input line 214.
+Package microtype Info: Applying patch `item' on input line 214.
+Package microtype Info: Applying patch `toc' on input line 214.
+Package microtype Info: Applying patch `eqnum' on input line 214.
+Package microtype Info: Applying patch `footnote' on input line 214.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using protrusion set `basicmath'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 210.
+LaTeX Info: Redefining \showhyphens on input line 214.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-Package hyperref Info: Link coloring OFF on input line 210.
+Package hyperref Info: Link coloring OFF on input line 214.
 
 Class apa6 Warning: Abstract not defined.
 
-Class apa6 Info: Keywords not defined on input line 212.
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 212.
+Class apa6 Info: Keywords not defined on input line 216.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 212.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 212.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 212.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 212.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 212.
+(Font)              <12> on input line 216.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 212.
+(Font)              <8> on input line 216.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 212.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 212.
+(Font)              <6> on input line 216.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 212.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 216.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ) (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
-) [1{/Users/emiliobruna/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}
+) [1{/Users/emiliobruna/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ] [2]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 213.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 233.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [3] [4{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}] [5] [6] [7] [8]
+) [3] [4] [5] [6] [7] [8]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 312.
 (/Users/emiliobruna/Library/TinyTeX/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [9{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-<Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf, id=465, 469.755pt x 277.035pt>
+) [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
+<Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf, id=470, 469.755pt x 277.035pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf  used on input line 1204.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf  used on input line 1210.
 (pdftex.def)             Requested size: 469.75386pt x 277.03432pt.
 [36 <./Bruna_etal_MetadataS1_files/figure-latex/map-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf, id=477, 459.7175pt x 313.17pt>
+<Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf, id=482, 463.7325pt x 313.17pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf  used on input line 1211.
-(pdftex.def)             Requested size: 459.7304pt x 313.17877pt.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf  used on input line 1217.
+(pdftex.def)             Requested size: 463.73842pt x 313.174pt.
 [37 <./Bruna_etal_MetadataS1_files/figure-latex/repro-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf, id=492, 505.89pt x 506.89375pt>
+<Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf, id=497, 505.89pt x 506.89375pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf  used on input line 1219.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf  used on input line 1225.
 (pdftex.def)             Requested size: 469.76265pt x 470.69475pt.
 [38 <./Bruna_etal_MetadataS1_files/figure-latex/plotsone-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf, id=507, 505.89pt x 543.02875pt>
+<Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf, id=512, 505.89pt x 543.02875pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf  used on input line 1229.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf  used on input line 1235.
 (pdftex.def)             Requested size: 469.76265pt x 504.24919pt.
 [39 <./Bruna_etal_MetadataS1_files/figure-latex/plotsten-1.pdf>]
-<Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf, id=521, 433.62pt x 604.2575pt>
+<Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf, id=526, 433.62pt x 604.2575pt>
 File: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf Graphic file (type pdf)
 <use Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf>
-Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf  used on input line 1240.
+Package pdftex.def Info: Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf  used on input line 1246.
 (pdftex.def)             Requested size: 433.61894pt x 604.25603pt.
 
-LaTeX Warning: Float too large for page by 35.81845pt on input line 1245.
+LaTeX Warning: Float too large for page by 35.81845pt on input line 1251.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [40 <./Bruna_etal_MetadataS1_files/figure-latex/plotscf-1.pdf>]
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1260--1261
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1266--1267
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
 [41
 
 ]
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1292--1293
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1298--1299
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
 
-Overfull \hbox (8.34727pt too wide) in paragraph at lines 1297--1298
+Overfull \hbox (8.34727pt too wide) in paragraph at lines 1303--1304
 []|\T1/lmr/bx/n/12 (-20) Storage|  
  []
 
-[42] [43] AED endfloat: Processing end Figures and Tables (./Bruna_etal_MetadataS1.aux)
- ***********
-LaTeX2e <2023-06-01>
-L3 programming layer <2020/03/25>
- ***********
- ) 
+[42] [43] AED endfloat: Processing end Figures and Tables (./Bruna_etal_MetadataS1.aux) ) 
 Here is how much of TeX's memory you used:
- 19711 strings out of 477695
- 323496 string characters out of 5830298
- 1872759 words of memory out of 5000000
- 39498 multiletter control sequences out of 15000+600000
- 569117 words of font info for 147 fonts, out of 8000000 for 9000
+ 19708 strings out of 477984
+ 329667 string characters out of 5838069
+ 1871388 words of memory out of 5000000
+ 39171 multiletter control sequences out of 15000+600000
+ 568146 words of font info for 146 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 77i,14n,81p,3167b,701s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
-Output written on Bruna_etal_MetadataS1.pdf (43 pages, 5801190 bytes).
+ 77i,14n,81p,3167b,694s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}{/Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmmi12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmss8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></Users/emiliobruna/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on Bruna_etal_MetadataS1.pdf (43 pages, 5807831 bytes).
 PDF statistics:
- 664 PDF objects out of 1000 (max. 8388607)
- 563 compressed objects within 6 object streams
+ 674 PDF objects out of 1000 (max. 8388607)
+ 571 compressed objects within 6 object streams
  221 named destinations out of 1000 (max. 500000)
  28722 words of extra memory for PDF output out of 29859 (max. 10000000)
 

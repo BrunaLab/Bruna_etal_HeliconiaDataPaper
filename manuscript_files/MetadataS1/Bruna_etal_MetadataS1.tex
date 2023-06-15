@@ -177,6 +177,7 @@
 \newcommand{\blandscape}{\begin{landscape}}
 \newcommand{\elandscape}{\end{landscape}}
 \setlength\parindent{22pt}
+\renewenvironment{abstract}{}{}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -203,16 +204,15 @@
 
 \emph{Corresponding author}: Emilio M. Bruna (\href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}})
 
-\emph{Open Research Statement}: The data described here are available as Supporting Information at {[}\emph{url to be added}{]} and have been archived at the Dryad Digital Repository {[}\emph{url to be added}{]}. The version of the code used to review, correct, and prepare this archive is at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript -- including all statistical summaries, tables, and figures -- has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}).
+\newpage 
+\raggedright
+
+\emph{Open Research Statement}: The data described here are available as Supporting Information at {[}ESA \emph{url to be added}{]} and have been archived at the Dryad Digital Repository {[}\emph{url to be added}{]}. The version of the code used to review, correct, and prepare this archive is available at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}). \textbf{\emph{To be deleted following peer review:}} Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at \url{https://github.com/BrunaLab/HeliconiaSurveys} (data management) and \url{https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper} (manuscript).
 
 }
 
 \begin{document}
 \maketitle
-
-\begin{verbatim}
-## NULL
-\end{verbatim}
 
 \hypertarget{metadata}{%
 \section{METADATA}\label{metadata}}
@@ -428,7 +428,7 @@ Each \emph{Heliconia acuminata} has a basal rhizome from which erect vegetative 
 
 \begin{quote}
 \begin{quote}
-In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, FF-6, FF-7) and one in a continuous forest (CF 1) to test survey protocols and sample plants for genetic analyses. The remaining plots were established in 1998, which was also when the first complete census was conducted in all plots. To find and mark the plants, a team of 2-3 people walked slowly through each subplot to locate any \emph{Heliconia acuminata}, which they then marked with a wooden stake to which was attached an individually numbered aluminum tag. They also recorded (1) how many vegetative shoots the plant had, and (2) its height, measured as the distance from the ground to the top of the tallest leaf (rounded to the nearest cm). Both of these size metrics are highly correlated with the total leaf-area of a plant.
+In January 1997 we established four demographic plots in fragments (FF-3, FF-4, FF-6, FF-7) and one in a continuous forest (CF 3) to refine census protocols and sample plants for genetic analyses. The remaining three plots in forest fragments and two additional plots in Contiuous Forest (CF-1, CF-2) were established in January and February 1998, at which time a complete census was conducted in the ten plots established to date. To find and mark the plants, a team of 2-3 people walked slowly through each subplot to locate any \emph{Heliconia acuminata}, which they then marked with a wooden stake to which was attached an individually numbered aluminum tag. They also recorded (1) how many vegetative shoots the plant had, and (2) its height, measured as the distance from the ground to the top of the tallest leaf (rounded to the nearest cm). Both of these size metrics are significantly correlated with the total leaf-area of a plant (shoots-leaf area: \(\rho\) = 0.59, p \textless{} 0.0001; height-leaf area: \(\rho\) = 0.49, p \textless{} 0.0001). Finally, in November 1998 we established the final three plots in Continuouus Forest (CF-4, CF-5, CF-6) and censused them as above.
 \end{quote}
 \end{quote}
 
@@ -438,8 +438,14 @@ In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, F
 \setcounter{enumi}{2}
 \tightlist
 \item
-  \textbf{Frequency of Data Collection:} Plots were censused annually at the onset of the rainy season to coincide with seedling establishment (generally late January to February). The exception to this was the three continuous forest plots established in August 1998, which were censused in August 1999. Regular visits were made to all 13 plots throughout the rainy season to identify reproductive individuals and record the number of flowering shoots and infloresences that they had produced.
+  \textbf{Frequency of Data Collection:} Demographic surveys were conducted annually. Seedling establishment coincides with the onset of the rainy season, which is typically in late November or early December. We therefore began to census plots in late January and typically completed the survey by mid-February. The exception was the three Continuous Forest plots established in November 1998 -- after being censused in November 1999, they were censused in January from 2001 forward.
 \end{enumerate}
+\end{quote}
+
+\begin{quote}
+\begin{quote}
+Regular visits were made to all 13 plots throughout the rainy season to identify any reproductive individuals and record the number of flowering shoots (i.e., infloresences) that they produced.
+\end{quote}
 \end{quote}
 
 \begin{enumerate}
@@ -482,7 +488,7 @@ In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, F
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  \textbf{Project Managers:} Paulo Rubim (2007-2012), Maria Beatriz Nogueira (2002), Maria Rosa Darrigo (2002-2003), Cris Follman Jurinitz (2003), Simone Benedet (2004).
+  \textbf{Project Managers:} Maria Rosa Darrigo (2002-2003), Cris Follman Jurinitz (2003), Simone Benedet (2004), Maria Beatriz Nogueira (2005), Paulo Rubim (2006-2012)
 \end{enumerate}
 \end{quote}
 
@@ -502,7 +508,7 @@ In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, F
 \setcounter{enumi}{2}
 \tightlist
 \item
-  \textbf{Undergraduate \& Postgraduate Field Assistants:} Olavo Nardy (2000), Obed Garcia (2001), Sylvia Heredia (2001-2002), Maria Beatriz Nogueira (2002), Cris Follman Jurinitz (2003), David M. Lapola (2003), Denise Cruz (2003), Cristina Escate (2004), Bruno Turbiani (2005), Elisabete Marques da Costa (2006), Wesley Dáttilo da Cruz (2007), Jefferson José Valsko da Silva (2007).
+  \textbf{Undergraduate \& Postgraduate Field Assistants:} Olavo Nardy (2000), Obed Garcia (2001), Sylvia Heredia (2001-2002), Maria Beatriz Nogueira (2002), Cris Follman Jurinitz (2003), David M. Lapola (2003), Denise Cruz (2003), Cristina Escate (2004), Bruno Turbiani (2005), Elisabete Marques da Costa (2006), Wesley Dáttilo da Cruz (2007), Jefferson José Valsko da Silva (2007), Tony Vizcarra Bentos (2007).
 \end{enumerate}
 \end{quote}
 
@@ -524,9 +530,9 @@ In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, F
 \def\labelenumi{\alph{enumi}.}
 \tightlist
 \item
-  File 1 (\texttt{HDP\_plots.csv}): 2023-06-08.
+  File 1 (\texttt{HDP\_plots.csv}): 2023-06-15.
 \item
-  File 2 (\texttt{HDP\_survey.csv}): 2023-06-08
+  File 2 (\texttt{HDP\_survey.csv}): 2023-06-15
 \end{enumerate}
 \end{quote}
 
@@ -548,7 +554,7 @@ In January 1997 we demarcated four demographic plots in fragments (FF-3, FF-4, F
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  \textbf{Storage location and medium:} The data described here are available as Supporting Information at {[}\emph{url for ESA Archives to be added}{]} and have been archived at the Dryad Digital Repository {[}\emph{url to be added}{]}. The version of the code used to review, correct, and prepare this archive is at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript -- including all statistical summaries, tables, and figures -- has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}).
+  \textbf{Storage location and medium:} The data described here are available as Supporting Information at {[}ESA \emph{url to be added}{]} and have been archived at the Dryad Digital Repository {[}\emph{url to be added}{]}. The version of the code used to review, correct, and prepare this archive is available at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}). \textbf{\emph{To be deleted following peer review:}} Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at \url{https://github.com/BrunaLab/HeliconiaSurveys} (data management) and \url{https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper} (manuscript).
 \item
   \textbf{Contact person:} Emilio M. Bruna, Department of Wildlife Ecology and Conservation, Box 110430, Gainesville, FL 32611 USA. Phone: (352) 846-0634. Email: \href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}}
 \item

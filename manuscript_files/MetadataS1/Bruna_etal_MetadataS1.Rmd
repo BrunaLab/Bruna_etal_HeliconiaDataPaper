@@ -1,5 +1,5 @@
 ---
-title: **Demography of the understory herb _Heliconia acuminata_ (Heliconiaceae) in an experimentally fragmented tropical landscape**
+title: "**Demography of the understory herb _Heliconia acuminata_ (Heliconiaceae) in an experimentally fragmented tropical landscape**"
 shorttitle        : "Metadata, Bruna et al."
 author: 
   - name          : "Emilio M. Bruna"
@@ -134,8 +134,11 @@ header-includes:
   - \usepackage{booktabs}
   - \raggedbottom
   - \usepackage{fancyhdr}
-  - \pagestyle{empty}
-  - \thispagestyle{empty}
+  - \pagestyle{plain}
+  - \fancyfoot[R]{\thepage}
+  - \fancyhead[L]{}
+  - \fancyhead[R]{\small{Data Paper published in \textit{Ecology},  an Ecological Society of America journal}}
+  - \thispagestyle{fancy}
  # - \usepackage{endfloat} #[nomarkers] excludes the {insert figure x around here] from main text. The others exclude the list of tables and figures. https://cs.brown.edu/about/system/managed/latex/doc/endfloat.pdf
   - \usepackage{tabu}
   - \usepackage{makecell}
@@ -145,6 +148,8 @@ header-includes:
   - \newcommand{\elandscape}{\end{landscape}}
   - \setlength\parindent{22pt}
   - \renewenvironment{abstract}{}{} #suppress the abstract
+  - \usepackage{setspace}
+  # - \doublespacing
 
 bibliography: ["../references.bib"] 
 csl: "../ecology.csl"
@@ -660,7 +665,14 @@ This work would not have been possible without the technicians and field assista
 \endgroup
 
 
+```{=tex}
+\begingroup
+\singlespacing
+```
+
 \newpage
+
+
 
 ```{r map, out.width = "100%",fig.cap='Satellite image of the Biological Dynamics of Forest Fragments Project (ca. 1995) showing the location of the \\textit{Heliconia} Demographic Plots. Plots are located in Continuous Forest (CF1-CF6) or Forest Fragments (FF1-FF7), both of which are dark green. Light green areas are regenerating forest, while red indicates pasture. The BDFFP is located ~70 km north of Manaus, Brazil (inset map). For additional details on each plot see Table 1.'}
 
@@ -863,7 +875,7 @@ cf
 
 **Table 1**. Variable Information for "Data set File 1: _Descriptors of demographic plots_".
 <!-- table row spacing set with arraystretch -->
-\renewcommand{\arraystretch}{0.5}
+\renewcommand{\arraystretch}{1}
 ```{r table1, echo=FALSE, message = FALSE, warning=FALSE, results='asis'}
 # ha_plots <- read_csv("./survey_clean/HDP_plots.csv", col_types = cols())
 Variables<-names(ha_plots)
@@ -947,9 +959,12 @@ knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 ```
 
 \newpage
+
 <!-- \renewcommand{\arraystretch}{1.5} -->
 **Table 2**. Variable Information for "Data set File 2: _Heliconia Demographic Data_".
 \renewcommand{\arraystretch}{0.5}
+<!-- \renewcommand{\arraystretch}{1} -->
+
 ```{r table2, echo=FALSE, message = FALSE, warning=FALSE}
 ha_plants_t1 <- ha_plants %>% 
   relocate(tag_number,.after=plant_id)
@@ -986,7 +1001,7 @@ Codes<-c("FF1-FF7, CF1-CF6",
   "TRUE, FALSE",
   # "TRUE = established plant with no tag
   # \nFALSE = seedling or previously marked plant",
-  "branch: under fallen tree limbs
+  "branch: under fallen tree limbs 
   \ntree: under tree crown or fallen trees
   \nlitter: under accumulated leaf-litter
   \nNA: not relevant or no observation recorded",
@@ -1121,7 +1136,7 @@ tmp<-knitr::kable(table2,
    #                                "repeat_header"),
    #              font_size = 10,
    #              position = "left") %>%
-  row_spec(c(1:10), hline_after = T) %>%
+  row_spec(c(1:11), hline_after = T) %>%
   row_spec(c(0), bold = T) %>%
   column_spec(1, width = "9em") %>%
   column_spec(2, width = "15em") %>%
@@ -1132,6 +1147,8 @@ tmp<-knitr::kable(table2,
 knitr::asis_output(str_replace(tmp, "HACKIT", "$^{1}$"))
 
 ```
+
+
 
 ```{=tex}
 \elandscape

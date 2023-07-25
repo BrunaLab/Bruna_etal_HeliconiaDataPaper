@@ -52,6 +52,7 @@ header-includes:
   - \usepackage{fancyhdr}
   - \pagestyle{empty}
   - \thispagestyle{empty}
+
   
 output: papaja::apa6_pdf
 ---

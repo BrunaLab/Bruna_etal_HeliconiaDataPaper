@@ -5,16 +5,19 @@
 \documentclass[
   man, donotrepeattitle]{apa6}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -132,16 +135,12 @@
     {}{\InnerPatchFailed}%
   }
 {}{\PatchFailed}
-\keywords{Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates}
 \DeclareDelayedFloatFlavor{ThreePartTable}{table}
 \DeclareDelayedFloatFlavor{lltable}{table}
 \DeclareDelayedFloatFlavor*{longtable}{table}
 \makeatletter
 \renewcommand{\efloat@iwrite}[1]{\immediate\expandafter\protected@write\csname efloat@post#1\endcsname{}}
 \makeatother
-\usepackage{lineno}
-
-\linenumbers
 \usepackage{csquotes}
 \usepackage[titles]{tocloft}
 \cftpagenumbersoff{figure}
@@ -150,65 +149,40 @@
 \setlength{\cftfigindent}{0pt}
 \setlength{\cftafterloftitleskip}{0pt}
 \settowidth{\cftfignumwidth}{Figure 10.\qquad}
-\usepackage{booktabs}
-\raggedbottom
-\usepackage{tabu}
-\setlength\parindent{22pt}
-\authornote{\clearpage}
+\usepackage{fancyhdr}
+\pagestyle{empty}
+\thispagestyle{empty}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
-  pdfauthor={Emilio M. Bruna1,2,3, Maria Uriarte4, Maria Rosa Darrigo3, Paulo Rubim3, Cristiane F. Jurinitz3, Eric R. Scott1, Osmaildo Ferreira da Silva3, \& W. John Kress5},
+  pdfauthor={Emilio M. Bruna1,2,3,*, Maria Uriarte4, Maria Rosa Darrigo3, Paulo Rubim3, Cristiane F. Jurinitz3, Eric R. Scott1,†, Osmaildo Ferreira da Silva3, \& W. John Kress5},
   pdflang={en-EN},
-  pdfkeywords={Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{\emph{Ecology}: Data Paper\\
-\textbf{Demography of the understory herb \emph{Heliconia acuminata} (Heliconiaceae) in an experimentally fragmented tropical landscape}}
-\author{Emilio M. Bruna\textsuperscript{1,2,3}, Maria Uriarte\textsuperscript{4}, Maria Rosa Darrigo\textsuperscript{3}, Paulo Rubim\textsuperscript{3}, Cristiane F. Jurinitz\textsuperscript{3}, Eric R. Scott\textsuperscript{1}, Osmaildo Ferreira da Silva\textsuperscript{3}, \& W. John Kress\textsuperscript{5}}
+\title{\textbf{\large{Demography of the understory herb \textit{Heliconia acuminata} (Heliconiaceae) in an experimentally fragmented tropical landscape}}}
+\author{\flushleft Emilio M. Bruna\textsuperscript{1,2,3,*}, Maria Uriarte\textsuperscript{4}, Maria Rosa Darrigo\textsuperscript{3}, Paulo Rubim\textsuperscript{3}, Cristiane F. Jurinitz\textsuperscript{3}, Eric R. Scott\textsuperscript{1,†}, Osmaildo Ferreira da Silva\textsuperscript{3}, \& W. John Kress\textsuperscript{5}}
 \date{}
 
 
-\shorttitle{Tropical plant demography}
+\shorttitle{SHORT TITLE}
 
-\authornote{
-
-The authors made the following contributions. Emilio M. Bruna: Methodology, Data curation, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- original draft; Maria Uriarte: Methodology, Investigation, Funding acquisition, Conceptualization, Formal analysis, Methodology, Project administration, Resources, Software, Supervision, Validation, Visualization, Writing -- review \& editing; Maria Rosa Darrigo: Methodology, Investigation, Project administration, Writing -- review \& editing; Paulo Rubim: Methodology, Investigation, Project administration, Writing -- review \& editing; Cristiane F. Jurinitz: Methodology, Investigation, Project administration, Writing -- review \& editing; Eric R. Scott: Methodology, Data curation, Software, Validation, Visualization, Writing -- review \& editing; Osmaildo Ferreira da Silva: Investigation, Project administration; W. John Kress: Methodology, Investigation, Funding acquisition, Conceptualization, Methodology, Resources, Writing -- review \& editing.
-
-Correspondence concerning this article should be addressed to Emilio M. Bruna, Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA. E-mail: \href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}}
-
-}
-
-\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA}
-
-\note{
-
-\emph{Corresponding author}: Emilio M. Bruna (\href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}})
-
-\emph{Conflict of interest Statement}: The authors declare no conflict of interest
-
-\newpage 
-\raggedright
-
-\emph{Open Research Statement}: The data described here are available as Supporting Information at {[}ESA \emph{url to be added}{]} and have been archived at the Dryad Digital Repository {[}\emph{url to be added}{]}. The version of the code used to review, correct, and prepare this archive is available at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository (\url{https://github.com/BrunaLab/HeliconiaSurveys}). \textbf{\emph{To be deleted following peer review:}} Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at \url{https://github.com/BrunaLab/HeliconiaSurveys} (data management) and \url{https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper} (manuscript).
-
-}
-
-\abstract{%
-\par
-
-Habitat fragmentation remains a major focus of research by ecologists decades after being put forward as a threat to the integrity of ecosystems. While studies have documented myriad biotic changes in fragmented landscapes, including the local extinction of species from fragments, the demographic mechanisms underlying these extinctions are rarely known. However, many of them -- especially in lowland tropical forests -- are thought to be driven by one of two mechanisms: (1) reduced recruitment in fragments resulting from changes in the diversity or abundance of pollinators and seed dispersers or (2) increased rates of individual mortality in fragments due to dramatically altered abiotic conditions, especially near fragment edges. Unfortunately, there have been few tests of these potential mechanisms due to the paucity of long-term and comprehensive demographic data collected in both forest fragments and continuous forest sites. Here we report 11 years (1998-2009) of demographic data from populations of the Amazonian understory herb \emph{Heliconia acuminata} (LC Rich.) found at Brazil's Biological Dynamics of Forest Fragments Project (BDFFP). The dataset comprises \textgreater66,000 plant\(\times\)year records of 8586 plants, including 3464 seedlings established after the first census. Seven populations were in experimentally isolated fragments (one in each of four 1-ha fragments and one in each of three 10-ha fragments), with the remaining six populations in continuous forest. Each population was in a \(50\times100\)m permanent plot, with the distance between plots ranging from 500 m-60 km. The plants in each plot were censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of surviving individuals. Each plot was also surveyed 4-5 times during the flowering season to identify reproductive plants and record the number of inflorescences each produced. These data have been used to investigate topics ranging from the way fragmentation-related reductions in germination influence population dynamics to statistical methods for analyzing reproductive rates. This breadth of prior use reflects the value of these data to future researchers. In addition to analyses of plant responses to habitat fragmentation, these data can be used to address fundamental questions in plant demography, the evolutionary ecology of tropical plants, and for developing and testing demographic models and tools. Though we welcome opportunities to collaborate with interested users, there are no restrictions on the use this data set. However, we do request that those using the data for teaching or research inform us of how they are doing so and cite this paper and the data archive when appropriate. Any publication using the data must also include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator or E. M. Bruna.
-}
-
-
+\affiliation{\vspace{0.5cm}\textsuperscript{1} Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA\\\textsuperscript{2} Center for Latin American Studies, University of Florida, PO Box 115530, Gainesville, FL 32611-5530, USA\\\textsuperscript{3} Biological Dynamics of Forest Fragments Project, INPA-PDBFF, CP 478, Manaus, AM 69011-970, Brazil\\\textsuperscript{4} Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA\\\textsuperscript{5} Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA\\\textsuperscript{*} Corresponding Author E-mail: \href{mailto:embruna@ufl.edu}{\nolinkurl{embruna@ufl.edu}}\\\textsuperscript{†} Current address: College of Agriculture and Life Sciences, University of Arizona, Tucson, AZ 85721, USA}
 
 \begin{document}
 \maketitle
+
+\raggedright
+
+\textbf{Abstract:} Habitat fragmentation remains a major focus of research by ecologists decades after being put forward as a threat to the integrity of ecosystems. While studies have documented myriad biotic changes in fragmented landscapes, including the local extinction of species from fragments, the demographic mechanisms underlying these extinctions are rarely known. However, many of them -- especially in lowland tropical forests -- are thought to be driven by one of two mechanisms: (1) reduced recruitment in fragments resulting from changes in the diversity or abundance of pollinators and seed dispersers or (2) increased rates of individual mortality in fragments due to dramatically altered abiotic conditions, especially near fragment edges. Unfortunately, there have been few tests of these potential mechanisms due to the paucity of long-term and comprehensive demographic data collected in both forest fragments and continuous forest sites. Here we report 11 years (1998-2009) of demographic data from populations of the Amazonian understory herb \emph{Heliconia acuminata} (LC Rich.) found at Brazil's Biological Dynamics of Forest Fragments Project (BDFFP). The dataset comprises \textgreater66,000 plant\(\times\)year records of 8586 plants, including 3464 seedlings established after the first census. Seven populations were in experimentally isolated fragments (one in each of four 1-ha fragments and one in each of three 10-ha fragments), with the remaining six populations in continuous forest. Each population was in a \(50\times100\)m permanent plot, with the distance between plots ranging from 500 m-60 km. The plants in each plot were censused annually, at which time we recorded, identified, marked, and measured new seedlings, identified any previously marked plants that died, and recorded the size of surviving individuals. Each plot was also surveyed 4-5 times during the flowering season to identify reproductive plants and record the number of inflorescences each produced. These data have been used to investigate topics ranging from the way fragmentation-related reductions in germination influence population dynamics to statistical methods for analyzing reproductive rates. This breadth of prior use reflects the value of these data to future researchers. In addition to analyses of plant responses to habitat fragmentation, these data can be used to address fundamental questions in plant demography, the evolutionary ecology of tropical plants, and for developing and testing demographic models and tools. Though we welcome opportunities to collaborate with interested users, there are no restrictions on the use this data set. However, we do request that those using the data for teaching or research inform us of how they are doing so and cite this paper and the data archive when appropriate. Any publication using the data must also include a BDFFP Technical Series Number in the Acknowledgments. Authors can request this series number upon the acceptance of their article by contacting the BDFFP's Scientific Coordinator or E. M. Bruna.
+
+\emph{Key words:} Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates
+
+Open Research: The complete data set described here is available as Supporting Information at: {[}ESA \emph{url to be added}{]} and at the Dryad Digital Repository: {[}\emph{doi to be added}{]}. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo {[}\emph{url to be added}{]}. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo {[}\emph{url to be added}{]}. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: \url{https://github.com/BrunaLab/HeliconiaSurveys}.
 
 
 \clearpage

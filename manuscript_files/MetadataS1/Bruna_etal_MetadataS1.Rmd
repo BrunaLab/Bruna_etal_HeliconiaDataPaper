@@ -1,11 +1,9 @@
 ---
-title: |
-    | _METADATA FOR:_
-    | **Demography of the understory herb _Heliconia acuminata_ (Heliconiaceae) in an experimentally fragmented tropical landscape**
+title: **Demography of the understory herb _Heliconia acuminata_ (Heliconiaceae) in an experimentally fragmented tropical landscape**
 shorttitle        : "Metadata, Bruna et al."
 author: 
   - name          : "Emilio M. Bruna"
-    affiliation   : "1,2,3"
+    affiliation   : "1,2,3,*"
 #    address       : "Department of Wildlife Ecology and Conservation, University of Florida, PO Box 110430, Gainesville, FL 32611-0430, USA"
     email         : "embruna@ufl.edu"
     # role:
@@ -63,7 +61,7 @@ author:
     #   - Project administration
     #   - Writing – review & editing
   - name          : "Eric R. Scott"
-    affiliation   : "1"
+    affiliation   : "1,†"
     # affiliation   : "1,*"
     # role:
     #   - Methodology
@@ -98,21 +96,23 @@ affiliation:
     institution   : "Department of Ecology, Evolution and Environmental Biology, Columbia University, 1200 Amsterdam Ave., New York, New York 10027, USA"
   - id            : "5"
     institution   : "Department of Botany, National Museum of Natural History, PO Box 37012, Smithsonian Institution, PO Box 37012, Washington DC, USA"
-  # - id            : "*"
-  #   institution   : "Current Address: ---, University of Arizona, Pheonix, AZ ZIP CODE, USA"
-    
+  - id            : "*"
+    institution   : "Corresponding Author E-mail: embruna@ufl.edu"
+  - id            : "†"
+    institution   : "Current address: College of Agriculture and Life Sciences, University of Arizona, Tucson, AZ 85721, USA"
+        
 abstract: " "
 # 
 #   text
 #
 note: | 
     
-    _Corresponding author_: Emilio M. Bruna (embruna@ufl.edu)  
+    _Corresponding Author E-mail_: embruna@ufl.edu
     
     \newpage 
     \raggedright
     
-    _Open Research Statement_: The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). ***To be deleted following peer review:*** Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at https://github.com/BrunaLab/HeliconiaSurveys (data management) and https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper (manuscript). 
+    _Open Research_: The complete data set described here is available as Supporting Information at: [ESA _url to be added_] and at the Dryad Digital Repository: [_doi to be added_]. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: [https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys).
     
     
 floatsintext      : yes
@@ -133,6 +133,9 @@ header-includes:
   - \floatplacement{figure}{H}
   - \usepackage{booktabs}
   - \raggedbottom
+  - \usepackage{fancyhdr}
+  - \pagestyle{empty}
+  - \thispagestyle{empty}
  # - \usepackage{endfloat} #[nomarkers] excludes the {insert figure x around here] from main text. The others exclude the list of tables and figures. https://cs.brown.edu/about/system/managed/latex/doc/endfloat.pdf
   - \usepackage{tabu}
   - \usepackage{makecell}
@@ -210,68 +213,42 @@ ha_repro2<-read_csv(url(urlfile_reprodata2))
 
 ```
 
+```{r file_sizes, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
+
+file_plots_size <- file.info("./manuscript_files/MetadataS1/data_downloaded/ha_plots.csv")$size
+
+# Depending on size, save as either "bytes" or "MB"
+
+if (file_plots_size<1000){
+    file_plots_size<-paste(file_plots_size,"bytes", sep = " ")
+} else if  (file_plots_size>=1000 & file_plots_size<1000000){
+    file_plots_size<-paste(file_plots_size/1000,"KB",sep = " ")
+} else {
+  file_plots_size<-round((file_plots_size/1000000),2)
+    file_plots_size<-paste(file_plots_size,"MB",sep = " ")
+}
 
 
 
-```{r plot_file_info, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
 
-# Function to find size of the file
-library(rvest)
-
-plot_url<-paste0("https://github.com/BrunaLab/HeliconiaSurveys/",
-            "blob/9d56950ae221911dc90e4826c1fbb8f46c62b659/",
-            "data/survey_archive/HDP_plots.csv")
-  plot_page <- read_html(plot_url)
-  
-  plot_file <- tail(strsplit(plot_url, "/")[[1]], 1)
-  plot_div1 <- "text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1"
-  
-  
-  file_plots_size <- plot_page %>%
-    html_elements(xpath = paste0("//div[@class='", plot_div1, "']")) %>%
-    html_text() %>%
-    strsplit("\n") %>%
-    sapply(trimws) %>%
-    getElement(5)
-  
-
-rm(plot_url)
-rm(plot_page)
-rm(plot_file)
-rm(plot_div1)
 
 file_plots_rows <- nrow(ha_plots)+1 
-```
-
-```{r plants_file_size, cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
- 
- # Function to find size of the file
- library(rvest)
-
- plant_url<-paste0("https://github.com/BrunaLab/HeliconiaSurveys/",
-                   "blob/9d56950ae221911dc90e4826c1fbb8f46c62b659/",
-                   "data/survey_archive/HDP_survey.csv")
-
-   plant_page <- read_html(plant_url)
-
-   plant_file <- tail(strsplit(plant_url, "/")[[1]], 1)
-   plant_div1 <- "text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1"
 
 
-   file_plants_size <- plant_page %>%
-     html_elements(xpath = paste0("//div[@class='", plant_div1, "']")) %>%
-     html_text() %>%
-     strsplit("\n") %>%
-     sapply(trimws) %>%
-     getElement(3)
+file_plants_size <- file.info("./manuscript_files/MetadataS1/data_downloaded/ha_plants.csv")$size
 
- rm(plant_url)
- rm(plant_page)
- rm(plant_file)
- rm(plant_div1)
+# Depending on size, save as either "bytes" or "MB"
 
- # No of rows in the file
- file_plants_rows <- nrow(ha_plants)+1 # Need to add one for the header
+if (file_plants_size<1000){
+    file_plants_size<-paste(file_plants_size,"bytes", sep = " ")
+} else if  (file_plants_size>=1000 & file_plants_size<1000000){
+    file_plants_size<-paste(file_plants_size/1000,"KB",sep = " ")
+} else {
+    file_plants_size<-round((file_plants_size/1000000),2)
+    file_plants_size<-paste(file_plants_size,"MB",sep = " ")
+}
+file_plants_rows <- nrow(ha_plants)+1 # Need to add one for the header
+
 ```
 
 ```{r cached=TRUE, echo = FALSE, warning=FALSE,message = FALSE}
@@ -457,20 +434,20 @@ ht_p<-format(ht_p,scientific = FALSE)
 
 1.  **Latest updates:** 
 
->a. File 1 (`HDP_plots.csv`): `r version_plots[2]`. 
+>a. File 1 (`HDP_plots.csv`): `r version_plots[2]` 
 >b. File 2 (`HDP_survey.csv`): `r version_survey[2]` 
 
 2.  **Latest archive date:** [_date of archiving at Dryad to be added upon acceptance_]
 
 3.  **Metadata status:** Complete (last update: 
-`r substr(file.info("./MetadataS1/Bruna_etal_MetadataS1.Rmd")$mtime, 1,10)`)
+`r substr(file.info("./manuscript_files/MetadataS1/Bruna_etal_MetadataS1.Rmd")$mtime, 1,10)`)
 
 4.  **Data verification:** An extensive review of the data was conducted in preparation for archiving. We began by generating a list of potential anomalies that could indicate errors (e.g. extremely large changes in size from one year to the next, plants marked as dead that had subsequent measurements), and then wrote code to search for these anomalies using the R statistical programming language [@rcoredevelopmentteamLanguageEnvironmentStatistical2014]. We also used the `pointblank` library [@iannonePointblankDataValidation2022] to identify cases in the data set for review and validation. All records flagged were evaluated by E. M. Bruna by checking the values in the electronic records against the original data sheets. Corrections to the data set were made using R scripts; the code documenting and implementing these changes is archived at Zenodo [_url to be added upon acceptance_]. Questions regarding the data set or code should be posted as `Issues` on the HDP Repository (https://github.com/BrunaLab/HeliconiaSurveys/issues) or referred to E. M. Bruna, who will investigate and update the database or code as needed.  Summaries of any post-publication updates will be posted to the `NEWS.md` file of the HDP Github Repository (https://github.com/BrunaLab/HeliconiaSurveys), with revised data sets assigned new version numbers based on the ‘Frictionless Data’ guidelines (https://frictionlessdata.io/specs/patterns/). This will allow users to reference the version of the data used in their analyses to ensure their reproducibility [reviewed in @10.1371/journal.pbio.3000125].
 
 \noindent 
 **B. Accessibility**  
 
-1. **Storage location and medium:** The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)). ***To be deleted following peer review:*** Code for data management and all statistics/figures/tables presented in the manuscript is available for peer review at https://github.com/BrunaLab/HeliconiaSurveys (data management) and https://github.com/BrunaLab/Bruna_etal_HeliconiaDataPaper (manuscript). 
+1. **Storage location and medium:** The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [_url to be added_]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [_url to be added_]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).  
 
 2.  **Contact person:** Emilio M. Bruna, Department of Wildlife Ecology and Conservation, Box 110430, Gainesville, FL 32611 USA. Phone: (352) 846-0634. Email: [embruna\@ufl.edu](mailto:embruna@ufl.edu){.email}
 

@@ -112,7 +112,7 @@ note: |
     \newpage 
     \raggedright
     
-    _Open Research_: The complete data set described here is available as Supporting Information at: [ESA _url to be added_] and at the Dryad Digital Repository: https://doi.org/10.5061/dryad.stqjq2c8d. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo: https://doi.org/10.5281/zenodo.8284379. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: [https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys).
+    _Open Research_: The complete data set described here is available as Supporting Information at: [ESA _url to be added_] and at the Dryad Digital Repository: https://doi.org/10.5061/dryad.stqjq2c8d. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo: https://doi.org/10.5281/zenodo.8284379. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo https://doi.org/10.5281/zenodo.8284430. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: [https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys).
     
     
 floatsintext      : yes
@@ -452,7 +452,7 @@ ht_p<-format(ht_p,scientific = FALSE)
 \noindent 
 **B. Accessibility**  
 
-1. **Storage location and medium:** The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [@brunaDemographyUnderstoryHerb2023]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [@emilio_m_bruna_2023_8284379]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).  
+1. **Storage location and medium:** The data described here are available as Supporting Information at [ESA _url to be added_] and have been archived at the Dryad Digital Repository [@brunaDemographyUnderstoryHerb2023]. The version of the code used to review, correct, and prepare this archive is available at Zenodo [@emilio_m_bruna_2023_8284379]. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [@emilio_m_bruna_2023_8284430]. Post-publication updates to code and the data sets, along with other project-related information, can be found in the HDP Github Repository ([https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys)).  
 
 2.  **Contact person:** Emilio M. Bruna, Department of Wildlife Ecology and Conservation, Box 110430, Gainesville, FL 32611 USA. Phone: (352) 846-0634. Email: [embruna\@ufl.edu](mailto:embruna@ufl.edu){.email}
 

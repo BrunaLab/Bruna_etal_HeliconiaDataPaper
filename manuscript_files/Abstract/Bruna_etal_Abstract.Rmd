@@ -63,7 +63,7 @@ output: papaja::apa6_pdf
 
 _Key words:_ Amazon, Brazil, deforestation, demography, edge effects, forest fragments, habitat fragmentation, integral projection models, matrix models, population dynamics, vital rates  
 
-Open Research: The complete data set described here is available as Supporting Information at: [ESA _url to be added_] and at the Dryad Digital Repository: https://doi.org/10.5061/dryad.stqjq2c8d. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo: https://doi.org/10.5281/zenodo.8284379. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo [_url to be added_]. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: [https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys).  
+Open Research: The complete data set described here is available as Supporting Information at: [ESA _url to be added_] and at the Dryad Digital Repository: https://doi.org/10.5061/dryad.stqjq2c8d. The version of the code used to review, correct, and prepare this archive (v1.0.0) is available at Zenodo: https://doi.org/10.5281/zenodo.8284379. The code used to prepare this manuscript, including statistical summaries reported in the text, tables, and figures, has also been archived at Zenodo https://doi.org/10.5281/zenodo.8284430. Post-publication updates to code and data sets, along with other project-related information, can be found at Github: [https://github.com/BrunaLab/HeliconiaSurveys](https://github.com/BrunaLab/HeliconiaSurveys).  
 
 
     
